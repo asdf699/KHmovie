@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	 <!--
+      WAS가 구동되면서 web.xml의 dispatcher servlet을 읽고 Spring이 load되면서 
+      applicationContext가 dispatcher-servlet에 선언된 bean들을 찾아서 load하게 된다.
+      bean 설정 파일에서 controller들을 load함.
+      web.xml 에서 기술한 .see로 끝나는 URI들을 모두 맵핑.
+   	 -->
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+	</context-param>
+	
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>appServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<!-- servlet-mapping 태그를 이용하여 요청 URL 패턴 설정 -->
+	<!-- appServlet라는 이름으로 서블릿 정의, *.see 확장자는 모두 appServlet 서블릿을 거치게 된다. -->
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>*.see</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 인코딩 필터, 폼 입력 항목에 한글 사용 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>	
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+</web-app>

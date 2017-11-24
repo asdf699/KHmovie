@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="notice">
+	
+	<resultMap type="noticeModel" id="noticeModelRes">
+		<result property="notice_no" column="notice_no" />
+		<result property="notice_subject" column="notice_subject" />
+		<result property="notice_content" column="notice_content" />
+	</resultMap>
+	
+	<insert id="noticeWrite" parameterType="noticeModel">
+		insert into tboard(notice_no, notice_subject, notice_content)
+		values (notice_no_seq.NEXTVAL, #{notice_subject}, #{notice_content})
+	</insert>
+	
+</mapper>

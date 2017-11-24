@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="movie">
+
+	<resultMap id="movieRes" type="MovieModel">
+		<result property="movie_no" column="movie_no" />
+		<result property="movie_name" column="movie_name" />
+		<result property="movie_director" column="movie_director" />
+		<result property="movie_actor" column="movie_actor" />
+		<result property="movie_story" column="movie_story" />
+		<result property="movie_poster" column="movie_poster" />
+		<result property="movie_stillcut" column="movie_stillcut" />
+		<result property="movie_stillcut1" column="movie_stillcut1" />
+		<result property="movie_stillcut2" column="movie_stillcut2" />
+		<result property="movie_stillcut3" column="movie_stillcut3" />
+		<result property="movie_stillcut4" column="movie_stillcut4" />
+		<result property="movie_stillcut5" column="movie_stillcut5" />
+		<result property="movie_genre" column="movie_genre" />
+		<result property="movie_age" column="movie_age" />
+		<result property="movie_date" column="movie_date" />
+		<result property="movie_regdate" column="movie_regdate" />
+		<result property="movie_type" column="movie_type" />
+	</resultMap>
+
+<!-- 	<resultMap id="moviescore" type="MovieScoreModel">
+		<result property="movie_score_movie_no" column="movie_score_movie_no" />
+		<result property="movie_score_member_no" column="movie_score_member_no" />
+		<result property="movie_score_comment" column="movie_score_comment" />
+	</resultMap> -->
+	
+	<!-- 무비 셀렉 -->
+	
+	<select id="selectMovie_ALL" resultMap="movieRes">
+		select * from MOVIE order
+		by movie_no DESC
+	</select>
+	
+</mapper>
