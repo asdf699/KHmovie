@@ -92,14 +92,15 @@
 
 	
 	<li><a href="${viewURL }" class="list">
-	<img src="/movie/upload/movie/ggun.jsp"/> 
-	
+	<img src="/upload/movie/ggun.jsp"/> 
 	</a>
 </div>
 </c:forEach>
 <!-- 그림 -->
 <div class="w3-container w3-border w3-border-green">
-  <p>그림.jsp</p>
+  <p>
+	<img src="<%= cp %>/images/upload/movie/ggun.jpg">
+ </p>
 </div>
 
 <!-- Event -->
