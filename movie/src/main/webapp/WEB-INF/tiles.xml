@@ -13,4 +13,16 @@
 		<put-attribute name="main_footer" value="/WEB-INF/views/tiles/main/footer/main_footer.jsp" />
 	</definition>
 	
+
+	<!-- 빠른예매 페이지 -->
+	<definition name="reserveMain" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/reserve/ReserveMain.jsp" />
+	</definition>
+	<!-- 상영시간표 페이지 -->
+	<definition name="reserveList" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/reserve/ReserveList.jsp" />
+	</definition>
+	
+
+
 </tiles-definitions>
