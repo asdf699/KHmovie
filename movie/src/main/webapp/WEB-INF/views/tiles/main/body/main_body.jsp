@@ -8,7 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
+<link rel="stylesheet" type="text/css" href="/css/movie.css" />
 <title>Insert title here</title>
 </head>
 <style>
@@ -43,69 +43,54 @@
 </style>
 
 <body>
-<!-- 윗부분 -->
+<div id="container" class="main">
 
-<div class="w3-cell-row w3-cell">
-<div class="w3-container w3-red">
-<h2 align="center">
-<img src="/LCHS/Image/Main/h2_boxoffice.png" alt="BOX OFFICE" ></h2>
-<ul class="officeTab" align="center">
-<li><a href="javascript:void(0);" onclick="setMainRankList(this,'1')">예매순</a></li>
-<li><a href="javascript:void(0);" onclick="setMainRankList(this,'3')">평점순</a></li>
-</ul>
-</div>
 
-<div class="w3-container w3-green">
-<ul class="w3-ul w3-hoverable" align="center">
-<li><a href="javascript:void(0)" onmouseover="currentMovie(this)" onclick="goToTiketing('11981')" class="tit"><em>1.</em> <span class="grade_15">15</span><span class="mvTit">꾼</span></a> <span class="memRk">예매율<em>59.4%</em></span></li>
- <br/>
-<li><a href="javascript:void(0)" onmouseover="currentMovie(this)" onclick="goToTiketing('11981')" class="tit"><em>1.</em> <span class="grade_15">15</span><span class="mvTit">꾼</span></a> <span class="memRk">예매율<em>59.4%</em></span></li>
- <br/>
- <li><a href="javascript:void(0)" onmouseover="currentMovie(this)" onclick="goToTiketing('11981')" class="tit"><em>1.</em> <span class="grade_15">15</span><span class="mvTit">꾼</span></a> <span class="memRk">예매율<em>59.4%</em></span></li>
- <br/>
- <li><a href="javascript:void(0)" onmouseover="currentMovie(this)" onclick="goToTiketing('11981')" class="tit"><em>1.</em> <span class="grade_15">15</span><span class="mvTit">꾼</span></a> <span class="memRk">예매율<em>59.4%</em></span></li>
- <br/>
- <li><a href="javascript:void(0)" onmouseover="currentMovie(this)" onclick="goToTiketing('11981')" class="tit"><em>1.</em> <span class="grade_15">15</span><span class="mvTit">꾼</span></a> <span class="memRk">예매율<em>59.4%</em></span></li>
- <br/>
- <li><a href="javascript:void(0)" onmouseover="currentMovie(this)" onclick="goToTiketing('11981')" class="tit"><em>1.</em> <span class="grade_15">15</span><span class="mvTit">꾼</span></a> <span class="memRk">예매율<em>59.4%</em></span></li>
- <br/>
- <li><a href="javascript:void(0)" onmouseover="currentMovie(this)" onclick="goToTiketing('11981')" class="tit"><em>1.</em> <span class="grade_15">15</span><span class="mvTit">꾼</span></a> <span class="memRk">예매율<em>59.4%</em></span></li>
- <br/>
- <li><a href="javascript:void(0)" onmouseover="currentMovie(this)" onclick="goToTiketing('11981')" class="tit"><em>1.</em> <span class="grade_15">15</span><span class="mvTit">꾼</span></a> <span class="memRk">예매율<em>59.4%</em></span></li>
- <br/>
- <li><a href="javascript:void(0)" onmouseover="currentMovie(this)" onclick="goToTiketing('11981')" class="tit"><em>1.</em> <span class="grade_15">15</span><span class="mvTit">꾼</span></a> <span class="memRk">예매율<em>59.4%</em></span></li>
- <br/>
- <li><a href="javascript:void(0)" onmouseover="currentMovie(this)" onclick="goToTiketing('11981')" class="tit"><em>1.</em> <span class="grade_15">15</span><span class="mvTit">꾼</span></a> <span class="memRk">예매율<em>59.4%</em></span></li>
- <br/>
- </ul>
+<div class="mKeyVi">
+<div class="main_key_visual" style="">
+<div class="event"></div>
+<div class="office"></div>
+<div class="trailer"></div>
 </div>
 </div>
 
-<!-- 동영상부분 -->
-<div class="w3-container w3-gray w3-cell">
-  <img class="mySlides" src="http://caching2.lottecinema.co.kr/lotte_image/2017/Pororo/Pororo_1115645.jpg" onclick="location.href='http://caching2.lottecinema.co.kr/lotte_image/2017/Pororo/Pororo_1280720.mp4'">
-</div>
 
-<!-- 영화 리스트부분 -->
-<div class="w3-container ">
+
+<div class="slidePoster">
+
+<div class="slide"></div>
+<ul>
 <c:forEach var="list" items="${list}" varStatus="stat">
+<li>
+<a class="list"></a>
+<img src="<%= cp %>/resources/upload/movie/${list.movie_poster}">
 
-	
-	<li><a href="${viewURL }" class="list">
-	<img src="/upload/movie/ggun.jsp"/> 
-	</a>
-</div>
+</li>
 </c:forEach>
-<!-- 그림 -->
-<div class="w3-container w3-border w3-border-green">
-  <p>
-	<img src="<%= cp %>/images/upload/movie/ggun.jpg">
- </p>
+</ul>
+<div class="btnSt"></div>
 </div>
 
-<!-- Event -->
-<div class="w3-container w3-border w3-border-green">
-  <p>Event</p>
+
+<div class="banner_box">
+<div class="banner_thum">
+<ul style="left: 0px">
+<c:forEach var="banner" items="${banner}" varStatus="stat">
+<li>
+<img src="<%= cp %>/resources/upload/movie/banner/${banner.movie_banner}">
+
+</li>
+</ul>
+</c:forEach>
 </div>
+</div>
+
+
+
+<div class="eventBxMain" style="display: block;"></div>
+<div class="bnShortcuts"></div>
+<div style="display: none;" id="AD_PC_02"></div>
+</div>
+
 </body>
 </html>

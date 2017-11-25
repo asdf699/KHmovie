@@ -25,6 +25,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="movie_type" column="movie_type" />
 	</resultMap>
 
+	<resultMap id="moviebanner" type="MovieBannerModel">
+		<result property="movie_banner" column="movie_banner" />
+	</resultMap>
+	
 <!-- 	<resultMap id="moviescore" type="MovieScoreModel">
 		<result property="movie_score_movie_no" column="movie_score_movie_no" />
 		<result property="movie_score_member_no" column="movie_score_member_no" />
@@ -38,4 +42,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		by movie_no DESC
 	</select>
 	
+	<select id="selectBanner" resultMap="moviebanner">
+		select * from MAIN_BANNER
+		by movie_banner DESC
+	</select>
 </mapper>

@@ -24,6 +24,7 @@ public class MovieModel {
 	private Date movie_date;
 	private Date movie_regdate;
 	private String movie_type;
+	
 	public int getMovie_no() {
 		return movie_no;
 	}

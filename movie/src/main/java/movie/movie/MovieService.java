@@ -18,5 +18,10 @@ public class MovieService implements MovieDAO{
 		// TODO Auto-generated method stub
 		return sqlSessionTemplate.selectList("movie.selectMovie_ALL");
 	}
-
+	
+	public List<MovieModel> bannerList() {
+		// TODO Auto-generated method stub
+		return sqlSessionTemplate.selectList("movie.selectBanner");
+	}
 }
+

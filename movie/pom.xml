@@ -5,7 +5,7 @@
 	<groupId>com.see</groupId>
 	<artifactId>movie</artifactId>
 	<name>MovieSee</name>
-	<packaging>war</packaging>
+	<packaging>war</packaging> 
 	<!-- test -->
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>

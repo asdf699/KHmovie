@@ -26,8 +26,10 @@ public class MainController {
 		
 		ModelAndView mv = new ModelAndView();
 		List<MovieModel> movieList = movieService.movieList();
+		List<MovieModel> bannerList = movieService.movieList();
 		
 		mv.addObject("list", movieList);
+		mv.addObject("banner", bannerList);
 		
 		mv.setViewName("main");
 		return mv;
