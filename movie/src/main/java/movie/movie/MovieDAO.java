@@ -6,4 +6,5 @@ public interface MovieDAO {
 
 	List<MovieModel> movieList();
 
+	MovieBannerModel bannerList(); 
 }

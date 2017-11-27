@@ -28,18 +28,23 @@
 
 
 <div class="slidePoster">
-
-<div class="slide"></div>
-
-<%-- <c:forEach var="list" items="${list}" varStatus="stat">
-<ul>
-<li>
-<a class="list"></a>
-<img src="<%= cp %>/resources/upload/movie/${list.movie_poster}"> 
+<div class="slide">
+<ul style="left: 0px;">
+<c:forEach var="list" items="${list}" varStatus="stat">
+<li class>
+<a href="javascript:void(0);"> 
+<img src="<%= cp %>/resources/upload/movie/main_movie/${list.movie_poster}">
+</a>
+<div class="layer_hover">
+<a href="javascript:void(0);" onclick="goToTiketing()" class="btn_reserve">예매하기</a>
+<a href="javascript:void(0);" onclick="goToMovie()" class="btn_View">상세보기</a>
+</div>
 
 </li>
+</c:forEach>
 </ul>
-</c:forEach> --%>
+</div>
+
 
 <div class="btnSt"></div>
 </div>
@@ -68,16 +73,8 @@
 </div>
 </div>
 
-<div class="eventBxMain" style="display: block;">
-            <h2><strong>Event</strong></h2>
-            <div class="eventBxMain_in"><div class="flbx"><ul class="fl"><li class="pbBn"><a href="javascript:void(0);" onclick="goEventDtailsMove('101110000817033','111', '0', '1')"><img src="http://caching.lottecinema.co.kr//Media/Event/7eef4964c239481ea345de97ffce73f5.jpg" alt=""></a></li><li><a href="javascript:void(0);" onclick="goEventDtailsMove('201010016917170','101', '0', '1')"><img src="http://caching.lottecinema.co.kr//Media/Event/728bd51e2d084faa9e08eea2717656f6.jpg" alt="12세이상관람가
-OTELLO 오텔로
-11월8일~12월6일(11월29일제외)
-매주수요일19시, 일요일19시"></a></li></ul><ul class="fr"><li class="pbBn"><a href="javascript:void(0);" onclick="goEventDtailsMove('101010000817097','101', '0', '1')"><img src="http://caching.lottecinema.co.kr//Media/Event/368f5f2e85ab476cae20380915ecc594.png" alt=""></a></li><li><a href="javascript:void(0);" onclick="goEventDtailsMove('101080024617007','108', '0', '1')"><img src="http://caching.lottecinema.co.kr//Media/Event/eb6e12b2bf974f2aa42d87b4ca4d87af.jpg" alt="VIP 회원을 위한 특별한 초대 MOVIE DATE VIP 강철비"></a></li></ul><a href="javascript:void(0);" class="pbBnT" onclick="goEventDtailsMove('101010000816036','101', '0', '1')"><img src="http://caching.lottecinema.co.kr//Media/Event/b7f641ecb20446fa887c05c1b3d2c210.jpg" alt="이제 기다리지 마세요! 바로티켓
-바로티켓 예매하고 앱 켜면"></a></div><ul class="fr"><li class="pbBn"><a href="javascript:void(0);" onclick="goEventDtailsMove('101010000817095','101', '0', '1')"><img src="http://caching.lottecinema.co.kr//Media/Event/e1fadfe874f64e11a7659e331a29de3c.jpg" alt=""></a></li><li><a href="javascript:void(0);" onclick="goEventDtailsMove('501010024617006','101', '0', '1')"><img src="http://caching.lottecinema.co.kr//Media/Event/999c1b22efb648398adaab4888e16a4e.jpg" alt=""></a></li></ul></div>
-        </div>
 
-<!-- <div class="eventBxMain" style="display: block;">
+<div class="eventBxMain" style="display: block;">
 <h2>
 	<strong>Event</strong>
 </h2>
@@ -86,17 +83,11 @@ OTELLO 오텔로
 
 <ul class="fl">
 <li class="pbBn">
-
-
-	<img src="/movie/resources/upload/movie/main_banner/left.jpg">
-
-
+	<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.movie_left}">
 </li>
 
 <li>
-
-	<img src="/movie/resources/upload/movie/main_banner/left1.jpg">
-
+	<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.movie_left1}">
 </li>
 </ul>
 
@@ -104,20 +95,20 @@ OTELLO 오텔로
 
 <li class="pbBn">
 
-	<img src="/movie/resources/upload/movie/main_banner/center.jpg">
+	<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.movie_center}">
 </li>
 
 
 
 <li>
-	<img src="/movie/resources/upload/movie/main_banner/center1.jpg">
+	<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.movie_center1}">
 </li>
 
 </ul>
 <a href="javascript:void(0);" class="pbBnT">
 
 <li class="pbBn">
-<img src="/movie/resources/upload/movie/main_banner/bottom.jpg">
+<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.movie_bottom}">
 </li>
 
 </a>
@@ -126,19 +117,19 @@ OTELLO 오텔로
 <ul class="fr">
 
 <li class="pbBn">
-<img src="/movie/resources/upload/movie/main_banner/right.jpg">
+<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.movie_right}">
 </li>
 
 
 
 
 <li class="pbBn">
-<img src="/movie/resources/upload/movie/main_banner/right1.jpg">
+<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.movie_right1}">
 </li>
 
 </ul>
 </div>
-</div> -->
+</div> 
 
 
 <div class="bnShortcuts">

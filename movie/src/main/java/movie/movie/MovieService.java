@@ -13,15 +13,15 @@ public class MovieService implements MovieDAO{
 	@Resource(name = "sqlSessionTemplate")
 	private SqlSessionTemplate sqlSessionTemplate;
 	
-	@Override
+	
 	public List<MovieModel> movieList() {
 		// TODO Auto-generated method stub
 		return sqlSessionTemplate.selectList("movie.selectMovie_ALL");
 	}
 	
-	public List<MovieModel> bannerList() {
+	public MovieBannerModel bannerList() {
 		// TODO Auto-generated method stub
-		return sqlSessionTemplate.selectList("movie.selectBanner");
+		return sqlSessionTemplate.selectOne("movie.selectBanner");
 	}
 }
 
