@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import movie.movie.MovieModel;
 import movie.movie.MovieService;
+import movie.movie.MovieBannerModel;
 
 @Controller
 public class MainController {
@@ -26,7 +27,7 @@ public class MainController {
 		
 		ModelAndView mv = new ModelAndView();
 		List<MovieModel> movieList = movieService.movieList();
-		List<MovieModel> bannerList = movieService.movieList();
+		List<MovieModel> bannerList = movieService.bannerList();
 		
 		mv.addObject("list", movieList);
 		mv.addObject("banner", bannerList);
