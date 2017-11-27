@@ -8,11 +8,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" type="text/css" href=/resources/css/movie.css?ver=1" />
-<link rel="stylesheet" type="text/css" href=/resources/css/movie2.css?ver=2" />
+<link rel="stylesheet" type="text/css" href="<%=cp %>/resources/css/movie.css?ver=1" />
+<link rel="stylesheet" type="text/css" href="<%=cp %>/resources/css/movie2.css?ver=2" />
 <script type="text/javascript" src=/resources/js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src=/resources/js/jquery-ui.min.js"></script>
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="/resources/js/aa.js"></script>
+<script src="<%=cp %>/resources/js/aa.js"></script>
+
 
 
 <title>MOVIESEE</title>
