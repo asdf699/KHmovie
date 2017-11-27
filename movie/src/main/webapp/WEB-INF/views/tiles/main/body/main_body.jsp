@@ -83,11 +83,11 @@
 
 <ul class="fl">
 <li class="pbBn">
-	<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.movie_left}">
+	<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.banner_left}">
 </li>
 
 <li>
-	<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.movie_left1}">
+	<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.banner_left1}">
 </li>
 </ul>
 
@@ -95,20 +95,20 @@
 
 <li class="pbBn">
 
-	<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.movie_center}">
+	<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.banner_center}">
 </li>
 
 
 
 <li>
-	<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.movie_center1}">
+	<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.banner_center1}">
 </li>
 
 </ul>
 <a href="javascript:void(0);" class="pbBnT">
 
 <li class="pbBn">
-<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.movie_bottom}">
+<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.banner_bottom}">
 </li>
 
 </a>
@@ -117,14 +117,14 @@
 <ul class="fr">
 
 <li class="pbBn">
-<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.movie_right}">
+<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.banner_right}">
 </li>
 
 
 
 
 <li class="pbBn">
-<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.movie_right1}">
+<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.banner_right1}">
 </li>
 
 </ul>

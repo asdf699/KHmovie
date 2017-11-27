@@ -5,6 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="movie">
 
+	<!-- 영화 -->
 	<resultMap id="movieRes" type="MovieModel">
 		<result property="movie_no" column="movie_no" />
 		<result property="movie_name" column="movie_name" />
@@ -25,15 +26,28 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="movie_type" column="movie_type" />
 	</resultMap>
 
-	<resultMap id="moviebanner" type="MovieBannerModel">
-		<result property="movie_left" column="movie_left" />
-		<result property="movie_left1" column="movie_left1" />
-		<result property="movie_center" column="movie_center" />
-		<result property="movie_center1" column="movie_center1" />
-		<result property="movie_right" column="movie_right" />
-		<result property="movie_right1" column="movie_right1" />
-		<result property="movie_bottom" column="movie_bottom" />
+	<!-- 배너 선택  -->
+	<resultMap id="banner" type="MovieBannerModel">
+		<result property="banner_left" column="banner_left" />
+		<result property="banner_left1" column="banner_left1" />
+		<result property="banner_center" column="banner_center" />
+		<result property="banner_center1" column="banner_center1" />
+		<result property="banner_right" column="banner_right" />
+		<result property="banner_right1" column="banner_right1" />
+		<result property="banner_bottom" column="banner_bottom" />
+		<result property="banner_footer" column="banner_footer" />
+		<result property="banner_footer1" column="banner_footer1" />
 	</resultMap>
+	
+	<!-- 영화탭 선택 -->
+	<resultMap id="movieintro" type="MovieIntroModel">
+		<result property="MOVIE_INTRO_BOXOFFICE" column="MOVIE_INTRO_BOXOFFICE" />
+		<result property="MOVIE_INTRO_arte" column="MOVIE_INTRO_arte" />
+		<result property="MOVIE_INTRO_gcinema" column="MOVIE_INTRO_gcinema" />
+		<result property="movie_intro_chinamovie" column="movie_intro_chinamovie" />
+		<result property="movie_intro_opera" column="movie_intro_opera" />
+	</resultMap>
+	
 	
 <!-- 	<resultMap id="moviescore" type="MovieScoreModel">
 		<result property="movie_score_movie_no" column="movie_score_movie_no" />
@@ -42,13 +56,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap> -->
 	
 	<!-- 무비 셀렉 -->
-	
 	<select id="selectMovie_ALL" resultMap="movieRes">
 		select * from MOVIE order
 		by movie_no DESC
 	</select>
 	
-	<select id="selectBanner" resultMap="moviebanner">
-		select * from MAIN_BANNER
+	<!-- 상세보기 -->
+	<select id="selectMovie_one" resultMap="movieRes" parameterType="int">
+		select * from MOVIE where movie_no = #{movie_no}
 	</select>
+	
+	<!-- 배너 선택 -->
+	<select id="selectBanner" resultMap="movieintro">
+		select * from BANNER
+	</select>
+	
+	<!-- 영화탭 -->
+	<select id="selectintror" resultMap="banner">
+		select * from movie_intro
+	</select>
+	
 </mapper>

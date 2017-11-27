@@ -457,7 +457,7 @@
 .special li.super_plex .desc {width:600px; margin-left:-300px;}
 
 /* 메인이벤트 */
-.eventBxMain {padding:40px 0; border-top:1px solid #e3e1d6; background:url('movie/resources/upload/movie/ggun.jpg') repeat left top;}
+.eventBxMain {padding:40px 0; border-top:1px solid #e3e1d6; background:url('/LCHS/Image/Main/bg_pattern.png') repeat left top;}
 .eventBxMain > h2 {padding-bottom:40px; color:#231f20; font-size:40px; width:980px; margin:0 auto; text-align:center; font-weight:normal;}
 .eventBxMain > h2 strong {display:block; font-family:'linlivertine'; font-style:italic;}
 .eventBxMain > h2 em {color:#666; font-size:14px; display:block; padding-top:5px;}
