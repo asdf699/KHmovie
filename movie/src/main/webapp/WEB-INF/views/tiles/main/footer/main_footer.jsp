@@ -41,7 +41,7 @@
                 <!-- 20170726 - 광고 주석 복원 -->
                 <!-- javascript에서 그림 변환시켜줌 -->
                                 <!-- <script type="text/javascript" src="http://nvapi.feeldmc.com/ad/p/in/v1_0/imp?slotid=stw_lottelotte_4"></script> -->
-                                <img src="<%= cp %>/resources/upload/movie/main_banner/${banner.footer}" style="width:980;height:180;border:0px"></a>
+                                <img src="<%= cp %>/resources/upload/movie/main_banner/${banner.banner_footer}" style="width:980;height:180;border:0px"></a>
             </div>
         </div>
     </div>
@@ -53,7 +53,7 @@
 				      <!-- javascript에서 그림변환시켜줌 -->
                                <!--  <script type="text/javascript" src="http://nvapi.feeldmc.com/ad/p/in/v1_0/imp?slotid=stw_lottelotte_21"></script> -->
                                 <div style="width:980px;margin:0 auto">
-                                <img src="<%= cp %>/resources/upload/movie/main_banner/${banner.footer1}" style="width:980;height:240;border:0px">	</a></div>
+                                <img src="<%= cp %>/resources/upload/movie/main_banner/${banner.banner_footer1}" style="width:980;height:240;border:0px">	</a></div>
 			        </div>
 		        </div>
                 <!-- 온라인광고 신규 2017-06 -->
