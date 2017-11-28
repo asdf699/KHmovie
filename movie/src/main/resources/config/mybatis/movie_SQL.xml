@@ -41,11 +41,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 영화탭 선택 -->
 	<resultMap id="movieintro" type="MovieIntroModel">
-		<result property="MOVIE_INTRO_BOXOFFICE" column="MOVIE_INTRO_BOXOFFICE" />
-		<result property="MOVIE_INTRO_arte" column="MOVIE_INTRO_arte" />
-		<result property="MOVIE_INTRO_gcinema" column="MOVIE_INTRO_gcinema" />
-		<result property="movie_intro_chinamovie" column="movie_intro_chinamovie" />
-		<result property="movie_intro_opera" column="movie_intro_opera" />
+		<result property="movie_intro_boxoffice_top" column="movie_intro_boxoffice_top" />
+		<result property="movie_intro_boxoffice_top1" column="movie_intro_boxoffice_top1" />
+		<result property="movie_intro_boxoffice_top2" column="movie_intro_boxoffice_top2" />
+		<result property="movie_intro_boxoffice_top3" column="movie_intro_boxoffice_top3" />
+		<result property="movie_intro_arte_top" column="movie_intro_arte_top" />
+		<result property="movie_intro_gcinema_top" column="movie_intro_gcinema_top" />
+		<result property="movie_intro_gcinema_content" column="movie_intro_gcinema_content" />
+		<result property="movie_intro_opera_top" column="movie_intro_opera_top" />
+		<result property="movie_intro_opera_content" column="movie_intro_opera_content" />
 	</resultMap>
 	
 	
@@ -72,7 +76,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<!-- 영화탭 -->
-	<select id="selectintror" resultMap="movieintro">
+	<select id="selectIntro" resultMap="movieintro">
 		select * from movie_intro
 	</select>
 	

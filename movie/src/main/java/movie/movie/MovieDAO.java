@@ -6,7 +6,9 @@ public interface MovieDAO {
 
 	List<MovieModel> movieList();
 
-	MovieBannerModel bannerList(); 
+	MovieBannerModel banner_select(); 
 	
 	List<MovieModel> movieList_one(int movie_no);
+
+	MovieIntroModel movieintro_select();
 }

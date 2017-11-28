@@ -27,10 +27,10 @@ public class MainController {
 		
 		ModelAndView mv = new ModelAndView();
 		List<MovieModel> movieList = movieService.movieList();
-		MovieBannerModel bannerList = movieService.bannerList();
+		MovieBannerModel bannerselect = movieService.banner_select();
 		
 		mv.addObject("list", movieList);
-		mv.addObject("banner", bannerList);
+		mv.addObject("bannerselect", bannerselect);
 		
 		mv.setViewName("main");
 		return mv;

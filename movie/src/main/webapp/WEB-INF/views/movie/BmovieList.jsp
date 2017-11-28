@@ -7,7 +7,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="/css/movie.css">
+<link rel="stylesheet" type="text/css" href="/css/movie.css" />
+<link rel="stylesheet" type="text/css" href="/css/movie2.css" />
 <style>
 /* 배너이미지 조정 */
 .bannerImg img {

@@ -55,4 +55,60 @@ public class MovieController{
 		mv.setViewName("movieView");
 		return mv;
 	}
+	
+	
+	// 영화 부분
+	@RequestMapping("aMovieList.see")
+	   public ModelAndView aMovieList(HttpServletRequest request){
+	      
+	      ModelAndView mv = new ModelAndView();
+	      MovieIntroModel movieintroselect = movieService.movieintro_select();
+	      
+	      mv.addObject("movieintroselect", movieintroselect);
+	      mv.setViewName("aMovieList");
+	      return mv;
+	   }
+	@RequestMapping("bMovieList.see")
+	   public ModelAndView bmovieList(HttpServletRequest request){
+	      
+	      ModelAndView mv = new ModelAndView();
+	      MovieIntroModel movieintroselect = movieService.movieintro_select();
+	      
+	      mv.addObject("movieintroselect", movieintroselect);
+	      mv.setViewName("bMovieList");
+	      return mv;
+	   }
+	@RequestMapping("cMovieList.see")
+	   public ModelAndView cMovieList(HttpServletRequest request){
+	      
+	      ModelAndView mv = new ModelAndView();
+	      MovieIntroModel movieintroselect = movieService.movieintro_select();
+	      
+	      mv.addObject("movieintroselect", movieintroselect);
+	      mv.setViewName("cMovieList");
+	      return mv;
+	   }
+	@RequestMapping("dMovieList.see")
+	   public ModelAndView dMovieList(HttpServletRequest request){
+	      
+	      ModelAndView mv = new ModelAndView();
+	      MovieIntroModel movieintroselect = movieService.movieintro_select();
+	      
+	      mv.addObject("movieintroselect", movieintroselect);
+	      mv.setViewName("dMovieList");
+	      return mv;
+	   }
+	@RequestMapping("eMovieList.see")
+	   public ModelAndView eMovieList(HttpServletRequest request){
+	      
+	      ModelAndView mv = new ModelAndView();
+	      MovieIntroModel movieintroselect = movieService.movieintro_select();
+	      
+	      mv.addObject("movieintroselect", movieintroselect);
+	      mv.setViewName("eMovieList");
+	      return mv;
+	   }
+
+	
+	
 }

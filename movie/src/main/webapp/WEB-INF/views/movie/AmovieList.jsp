@@ -7,8 +7,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie.css?ver=1" />
-<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie2.css?ver=2" />
+<link rel="stylesheet" type="text/css" href="/css/movie.css" />
+<link rel="stylesheet" type="text/css" href="/css/movie2.css" />
 
 <title>박스오피스</title>
 </head>
@@ -86,7 +86,6 @@
 				<a href="" id="aRank">평점순</a>
 			</li>
 		</ul>
-
 <br/>
 <!-- 	<div class="item_list">
 		<ul id="ulNowOrder" style="display: block;">
@@ -126,7 +125,7 @@
 				<span class="img">
 					<img src="<%= cp %>/resources/upload/movie/board/6.jpg" alt="7호실">
 				</span>
-				<span class="img">
+				<span class="img"> mmm  ,
 					<img src="<%= cp %>/resources/upload/movie/board/7.jpg" alt="래빗 스쿨">
 				</span>
 				<span class="img">

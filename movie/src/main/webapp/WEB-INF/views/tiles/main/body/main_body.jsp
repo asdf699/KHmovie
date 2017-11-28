@@ -8,15 +8,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" type="text/css" href="<%=cp %>/resources/css/movie.css?ver=1" />
-<link rel="stylesheet" type="text/css" href="<%=cp %>/resources/css/movie2.css?ver=2" />
-<script type="text/javascript" src=/resources/js/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src=/resources/js/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/movie.css?ver=1" />
+<link rel="stylesheet" type="text/css" href="/css/movie2.css?ver=2" />
+<script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui.min.js"></script>
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="/resources/js/aa.js"></script>
-<script src="<%=cp %>/resources/js/aa.js"></script>
-
-
+<script type="text/javascript" src="/js/aa.js"></script>
 
 <title>MOVIESEE</title>
 </head>
@@ -43,6 +40,7 @@
 <img src="<%= cp %>/resources/upload/movie/main_movie/${list.movie_poster}">
 
 </a>
+
 <div class="layer_hover">
 <a href="javascript:void(0);" onclick="goToTiketing()" class="btn_reserve">예매하기</a>
 <a href="javascript:void(0);" onclick="goToMovie()" class="btn_View">상세보기</a>
@@ -62,7 +60,7 @@
 <!-- 고정배너 CHARLOTTE -->
 <div class="banner_box">
 <div class="banner_thum">
-<ul style="left: 0px">
+<ul style="left: 0px;">
 <li><a href="#" onclick=""><img src="<%= cp %>/resources/upload/movie/banner/charlotte.jpg" alt="샤롯데바로가기"></a></li>
 <li><a href="#" onclick=""><img src="<%= cp %>/resources/upload/movie/banner/cineBiz.jpg" alt="수퍼플렉스 G 바로가기"></a></li>
 <li><a href="#" onclick=""><img src="<%= cp %>/resources/upload/movie/banner/cinecouple.jpg" alt="-"></a></li>
@@ -93,29 +91,29 @@
 
 <ul class="fl">
 <li class="pbBn">
-	<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.banner_left}">
+	<img src="<%= cp %>/resources/upload/movie/main_banner/${bannerselect.banner_left}">
 </li>
 
 <li>
-	<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.banner_left1}">
+	<img src="<%= cp %>/resources/upload/movie/main_banner/${bannerselect.banner_left1}">
 </li>
 </ul>
 
 <ul class="fr">
 <li class="pbBn">
 
-	<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.banner_center}">
+	<img src="<%= cp %>/resources/upload/movie/main_banner/${bannerselect.banner_center}">
 </li>
 
 <li>
-	<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.banner_center1}">
+	<img src="<%= cp %>/resources/upload/movie/main_banner/${bannerselect.banner_center1}">
 </li>
 </ul>
 
 <a href="javascript:void(0);" class="pbBnT">
 
 <li class="pbBn">
-	<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.banner_bottom}">
+	<img src="<%= cp %>/resources/upload/movie/main_banner/${bannerselect.banner_bottom}">
 </li>
 </a>
 </div>
@@ -123,14 +121,14 @@
 <ul class="fr">
 
 <li class="pbBn">
-<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.banner_right}">
+<img src="<%= cp %>/resources/upload/movie/main_banner/${bannerselect.banner_right}">
 </li>
 
 
 
 
 <li class="pbBn">
-<img src="<%= cp %>/resources/upload/movie/main_banner/${banner.banner_right1}">
+<img src="<%= cp %>/resources/upload/movie/main_banner/${bannerselect.banner_right1}">
 </li>
 
 </ul>
