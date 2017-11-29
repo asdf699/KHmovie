@@ -9,26 +9,26 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>MOVIESEE</title>
-
-<script type="text/javascript">
-/* $('.slidePoster .slide ul li').mouseenter(function () {
+<script>
+/* $(document).ready(function(){
+$('.slidePoster li').mouseenter(function () {
+            //console.log($(this).index());
             $(this).addClass('hover');
-        });
-$('.slidePoster .slide ul li').mouseleave(function () {
+        }).mouseleave(function () {
             $(this).removeClass('hover');
-        }); */
-$(".slidePoster li").hover(function(){
-	$(this).addClass('hover');
-}, function(){
-	$(this).removeClass('hover');
-});    
-</script>
+        });
+
+        $('.slidePoster li > a').focusin(function () {
+            $(this).parent().addClass('hover').siblings().removeClass('hover');
+        });
+}); */
+        </script>
 </head>
 <body>
 <div id="container" class="main">	
 
 <div class="mKeyVi">
-<div class="main_key_visual" style="">
+<div class="main_key_visual">
 <div class="event"></div>
 <div class="office"></div>
 <div class="trailer"></div>
@@ -88,31 +88,39 @@ $(".slidePoster li").hover(function(){
 </div>
 
 <!-- Event배너 -->
-<div class="eventBxMain" style="display: block;">
+<div class="eventBxMain">
 <h2>
 	<strong>Event</strong>
 </h2>
 <div class="eventBxMain_in">
+
 <div class="flbx">
 
 <ul class="fl">
 <li class="pbBn">
+<a href="javascript:void(0)">
 	<img src="<%= cp %>/resources/upload/movie/main_banner/${bannerselect.banner_left}">
+</a>
 </li>
 
 <li>
+<a href="javascript:void(0)">
 	<img src="<%= cp %>/resources/upload/movie/main_banner/${bannerselect.banner_left1}">
+</a>
 </li>
-</ul>
+</ul> <!-- flbx까지 -->
 
 <ul class="fr">
 <li class="pbBn">
-
+<a href="javascript:void(0)">
 	<img src="<%= cp %>/resources/upload/movie/main_banner/${bannerselect.banner_center}">
+</a>
 </li>
 
 <li>
+<a href="javascript:void(0)">
 	<img src="<%= cp %>/resources/upload/movie/main_banner/${bannerselect.banner_center1}">
+</a>
 </li>
 </ul>
 
@@ -124,52 +132,61 @@ $(".slidePoster li").hover(function(){
 <ul class="fr">
 
 <li class="pbBn">
+<a href="javascript:void(0)">
 <img src="<%= cp %>/resources/upload/movie/main_banner/${bannerselect.banner_right}">
+</a>
 </li>
 
 
 
 
-<li class="pbBn">
+<li>
 <img src="<%= cp %>/resources/upload/movie/main_banner/${bannerselect.banner_right1}">
 </li>
 
 </ul>
 </div>
-</div> 
+</div>
 
 <!-- 할인안내/포인트/VIP/틴틴클럽/브라보클럽 -->
 <div class="bnShortcuts">
 <ul class="shortList">
 <!-- 반복문  -->
 <li>
-<a href="http://"/>
+<a href="www.naver.com">
 <img src="<%= cp %>/resources/upload/movie/banner/sale.gif">
+</a>
 </li>
 
 <li>
-<a href="http://"/>
+<a href="">
 <img src="<%= cp %>/resources/upload/movie/banner/point.gif">
+</a>
 </li>
 
 
 <li>
-<a href="http://"/>
+<a href="">
 <img src="<%= cp %>/resources/upload/movie/banner/vip.gif">
+</a>
 </li>
 
 <li>
-<a href="http://"/><img src="<%= cp %>/resources/upload/movie/banner/tintin.gif">
+<a href=""><img src="<%= cp %>/resources/upload/movie/banner/tintin.gif">
+</a>
 </li>
 
 <li>
-<a href="http://"/>
+<a href="">
 <img src="<%= cp %>/resources/upload/movie/banner/bravo.gif">
+</a>
 </li>
 </ul>
 </div>
 
-<div style="display: none;" id="AD_PC_02"></div>
+<div style="display: none;" id="AD_PC_02">
 </div>
+</div>
+<script src="/js/Index.js"></script>
 </body>
 </html>

@@ -9,11 +9,9 @@
 <head>
 <link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie.css?ver=1" />
 <link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie2.css?ver=2" />
-<script type="text/javascript" src="<%= cp %>/resources/js/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="<%= cp %>/resources/js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="<%= cp %>/resources/js/aa.js"></script>
-<script type="text/javascript" src="<%= cp %>/resources/js/json2.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie3.css?ver=3" />
+
+
 
 <title></title>
 </head>
@@ -39,6 +37,8 @@
 	
 </div>
 
-
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="/js/jquery-ui.min.js"></script>
+<script src="/js/json2.js"></script>
 </body>
 </html>
