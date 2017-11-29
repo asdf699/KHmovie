@@ -72,7 +72,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 배너 선택 -->
 	<select id="selectBanner" resultMap="banner">
-		select * from BANNER
+		select * from banner
 	</select>
 	
 	<!-- 영화탭 -->
