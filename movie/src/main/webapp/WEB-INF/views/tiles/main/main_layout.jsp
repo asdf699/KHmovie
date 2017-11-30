@@ -7,9 +7,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie.css?ver=1" />
-<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie2.css?ver=2" />
-<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie3.css?ver=3" />
+<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie.css?ver=6" />
+<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie2.css?ver=1" />
+<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie3.css?ver=2" />
 
 	
 
@@ -36,12 +36,12 @@
 	
 	
 </div>
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="<%= cp %>/resources/js/jquery-ui.min.js"></script>
 <script src="<%= cp %>/resources/js/json2.js"></script>
-<script src="<%= cp %>/resources/js/Index.js"></script>
+<script src="<%= cp %>/resources/js/index.js"></script>
 
-<script>
+<!-- <script>
 $(document).ready(function(){
 $('.slidePoster li').mouseenter(function () {
             //console.log($(this).index());
@@ -54,6 +54,6 @@ $('.slidePoster li').mouseenter(function () {
             $(this).parent().addClass('hover').siblings().removeClass('hover');
         });
 });        
-</script>
+</script> -->
 </body>
 </html>

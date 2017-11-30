@@ -430,7 +430,7 @@
 .slidePoster .slide ul li:first-child {margin-left:0;}
 .slidePoster .slide ul li > a > img {width:188px; height:274px;}
 .slidePoster .slide ul li .layer_hover {display:none;}
-.slidePoster .slide ul li.hover .layer_hover {display:block; position:absolute; left:0; top:0; z-index:20; width:100%; height:100%; padding-top:80px; box-sizing:border-box; background:url('/movie/resources/upload/movie/banner/superg.jpg') repeat left top;}
+.slidePoster .slide ul li.hover .layer_hover {display:block; position:absolute; left:0; top:0; z-index:20; width:100%; height:100%; padding-top:80px; box-sizing:border-box; background:url('/movie/resources/upload/movie/main_bg/bg_mainMask1.png') repeat left top;}
 .slidePoster .slide ul li.hover .layer_hover > a {display:block; margin:0 15px; border:1px solid #c1b687; height:48px; line-height:48px; font-weight:bold; font-size:15px; color:#c1b687; text-align:center;}
 .slidePoster .slide ul li.hover .layer_hover .btn_View {margin-top:10px;}
 
