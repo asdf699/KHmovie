@@ -39,7 +39,7 @@
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="<%= cp %>/resources/js/jquery-ui.min.js"></script>
 <script src="<%= cp %>/resources/js/json2.js"></script>
-<script src="<%= cp %>/resources/js/index.js"></script>
+<script src="<%= cp %>/resources/js/Index.js"></script>
 
 <!-- <script>
 $(document).ready(function(){
