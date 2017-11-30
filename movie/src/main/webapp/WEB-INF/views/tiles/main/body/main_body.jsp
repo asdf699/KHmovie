@@ -9,20 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>MOVIESEE</title>
-<script>
-/* $(document).ready(function(){
-$('.slidePoster li').mouseenter(function () {
-            //console.log($(this).index());
-            $(this).addClass('hover');
-        }).mouseleave(function () {
-            $(this).removeClass('hover');
-        });
 
-        $('.slidePoster li > a').focusin(function () {
-            $(this).parent().addClass('hover').siblings().removeClass('hover');
-        });
-}); */
-        </script>
 </head>
 <body>
 <div id="container" class="main">	
@@ -187,6 +174,6 @@ $('.slidePoster li').mouseenter(function () {
 <div style="display: none;" id="AD_PC_02">
 </div>
 </div>
-<script src="/js/Index.js"></script>
+
 </body>
 </html>

@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie2.css?ver=2" />
 <link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie3.css?ver=3" />
 
-
+	
 
 <title></title>
 </head>
@@ -36,9 +36,24 @@
 	
 	
 </div>
-
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="/js/jquery-ui.min.js"></script>
-<script src="/js/json2.js"></script>
+<script src="<%= cp %>/resources/js/jquery-ui.min.js"></script>
+<script src="<%= cp %>/resources/js/json2.js"></script>
+<script src="<%= cp %>/resources/js/Index.js"></script>
+
+<script>
+$(document).ready(function(){
+$('.slidePoster li').mouseenter(function () {
+            //console.log($(this).index());
+            $(this).addClass('hover');
+        }).mouseleave(function () {
+            $(this).removeClass('hover');
+        });
+
+        $('.slidePoster li > a').focusin(function () {
+            $(this).parent().addClass('hover').siblings().removeClass('hover');
+        });
+});        
+</script>
 </body>
 </html>

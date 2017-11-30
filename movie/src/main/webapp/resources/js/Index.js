@@ -523,6 +523,7 @@ appendMainMovieList = function (obj) {
             }
         }
         var slideGeneration1 = new $.fn.slideGeneration({ target: '.slidePoster', box: '.slide', item: 'ul', space: 100, animation: 'slide', btn: true, prev: '.prev', next: '.next', });
+        
         $('.slidePoster li').mouseenter(function () {
             //console.log($(this).index());
             $(this).addClass('hover');
@@ -537,8 +538,7 @@ appendMainMovieList = function (obj) {
         CheckException(e, "appendMainMovieList: ");
 
     }
-
-}
+};
 
 // 영화 리스트용 영화 item code를 작성후 결과를 반환한다.
 // params>
