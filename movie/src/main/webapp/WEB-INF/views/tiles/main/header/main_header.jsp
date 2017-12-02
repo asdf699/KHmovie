@@ -11,7 +11,6 @@
 <title>Header</title>
 </head>
 <body>
-<div id="wrap">
 <div class="header">
 
 <!-- 왼쪽상단 링크 -->
@@ -67,16 +66,16 @@
 <li>
 <a href="http://www.lottecinema.co.kr/LCHS/Contents/ticketing/ticketing.aspx" title="예매">예매</a>
 <div class="depth">
-</div>
 <ul>
 <li></li>
 <li></li>
 <li></li>
 </ul>
+</div>
 </li>
 
 <li class="">
-<a href="<%=cp %>/MovieList.see" title="영화">영화</a>
+<a href="<%=cp %>/aMovieList.see" title="영화">영화</a>
 <div class="depth">
 
 <ul>
@@ -92,7 +91,6 @@
 <li>
 <a href="http://www.lottecinema.co.kr/LCHS/Contents/Cinema/charlotte-special-cinema.aspx?divisionCode=2&amp;screendivcd=300" title="영화관">영화관</a>
 <div class="depth">
-</div>
 <ul>
 <li></li>
 <li></li>
@@ -104,6 +102,7 @@
 <li></li>
 <li></li>
 </ul>
+</div>
 </li>
 
 <li>
@@ -124,7 +123,6 @@
 </li>
 
 </ul>
-</div>
 </div>
 </div>
 </body>

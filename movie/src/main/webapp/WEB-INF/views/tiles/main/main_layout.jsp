@@ -7,36 +7,30 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie.css?ver=6" />
-<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie2.css?ver=1" />
-<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie3.css?ver=2" />
+<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie.css?ver=642" />
+<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie2.css?ver=1356" />
+<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie3.css?ver=214" />
 
 	
 
 <title></title>
 </head>
 <body>
-
-<div>
+<div id="wrap">
 
 	<!-- header -->
-	<div>
+
 		<tiles:insertAttribute name="main_header" />
-	</div>
+	
 	
 	<!-- body -->
-	<div>
 		<tiles:insertAttribute name="main_body" />
-	</div>
 
 	<!-- footer -->
-	<div>
 		<tiles:insertAttribute name="main_footer" />
-	</div>
 	
-	
-</div>
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+</div>	
+<script src="<%= cp %>/resources/jquery-1.11.3.min.js"></script>
 <script src="<%= cp %>/resources/js/jquery-ui.min.js"></script>
 <script src="<%= cp %>/resources/js/json2.js"></script>
 <script src="<%= cp %>/resources/js/Index.js"></script>

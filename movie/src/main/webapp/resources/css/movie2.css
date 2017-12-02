@@ -91,7 +91,6 @@ input.disabled {border-color:#dbdbdb !important; background-color:#f7f7f7 !impor
 
 .blind{overflow:hidden; position:absolute; left:-9999px !important; top:-9999px !important}
 
-踰꾧렇�븘�씠肄�
 .btn_bug {border-radius:2px; background:#f40b27; font-weight:bold; color:#fff !important; padding:2px 10px;}
 
 etc
@@ -212,7 +211,7 @@ margin / padding
 
 .block {display:block !important;}
 
-skipNavi 
+/* skipNavi  */
 #skipNavi {position:relative; top:0; left:0; width:100%; z-index:999}
 #skipNavi a {position:absolute; top:-999em; right:0;width:100%; background:#0b50a1; overflow:hidden; font-size:18px; color:#fff; text-align:center}
 #skipNavi a:focus, 
@@ -220,16 +219,16 @@ skipNavi
 #skipNavi a:hover {top:0; padding:15px 0}
 
 
-layout
+/* layout */
 #wrap {width:100%; min-width:980px}
 
-font (�굹�닎諛붾Ⅸ怨좊뵓/�쁺臾명룿�듃 媛��씠�뱶 css)
+/* font (�굹�닎諛붾Ⅸ怨좊뵓/�쁺臾명룿�듃 媛��씠�뱶 css) */
 .fontArea {padding:30px}
 .fontArea h1 {margin:0 0 20px 0}
 .fontArea p {padding:10px; color:#000; border-bottom:1px dotted #666;}
 .fontArea p span {display:block; margin:0 0 10px 0; width:40px; padding:5px; text-align:center; font-size:15px; background:#000; color:#fff}
 
-Header
+/* Header */
 .header {position:relative; width:100%; height:180px; }
 .header .luncher {width:100%; height:30px; background:#efebdb; line-height:12px;}
 .header .luncher ul {float:right; padding-right:15px;}
@@ -248,7 +247,6 @@ Header
 .header .laypop_evtFB a:before {content: '';display: block;position: absolute;top: -2px;width:16px;height:16px;background: url('/LCHS/Image/Main/icon_fb_top.png') 0 0 no-repeat; }
 .header .laypop_evtFB .laypop_FB {position: absolute;top:21px;width:195px;padding: 5px;border: 1px solid #2a2e33;background: #fff;color:#231f20;z-index: 99;}
 .header .laypop_evtFB .laypop_FB:before {content: '';display: block;position: absolute; top:-6px;left: 55px;width: 10px;height: 6px;background: url('/LCHS/Image/Main/icon_fb_arrow.png') 0 0 no-repeat; }
-濡��뜲�떆�꽕留� APP �젅�씠�뼱�뙘�뾽
 .header .laypop_evtAPP {position: absolute;top:8px;left:50%;margin-left: -356px; line-height: 14px;}
 .header .laypop_evtAPP a.app {display:block;height:22px;padding-left: 22px;font-weight:600;}
 .header .laypop_evtAPP a.app:before {content: '';display: block;position: absolute;top: -1px;left:0;width:16px;height:16px;background: url('/LCHS/Image/Main/icon_lottecinemaapp.png') 0 0 no-repeat;}
@@ -342,7 +340,7 @@ color:#2a2e33}
 .visual {width:1400px; margin:0 auto}
 .visual img {height:380px}
 
-Location
+/* Location */
 #container {position:relative; min-width:980px; border-top:1px solid #e9e4d2;min-height:669px}
 #container:after {content:''; display:block; clear:both}
 #container.sub {margin:39px 0 0 0;}
@@ -350,7 +348,7 @@ Location
 #container.subGnbNo .quick_ver2 {top:181px;}
 #content {position:relative; min-height:400px}
 
-怨듭��궗�빆
+/* 怨듭��궗�빆 */
 .notice_wrap {width:100%; border-bottom:1px solid #dedede;}
 .notice_wrap.type2 {width:100%; border-top:none; background:#f5f5f5;}
 

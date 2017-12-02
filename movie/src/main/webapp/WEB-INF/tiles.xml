@@ -54,4 +54,9 @@
       <put-attribute name="main_body" value="/WEB-INF/views/movie/EmovieList.jsp" />
    </definition>
 
+	
+	<!-- 영화관 상세보기 -->
+	<definition name="aMovieTheater" extends="main">
+      <put-attribute name="main_body" value="/WEB-INF/views/movie/AmovieTheater.jsp" />
+	</definition>
 </tiles-definitions>

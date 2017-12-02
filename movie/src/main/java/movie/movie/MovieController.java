@@ -109,6 +109,16 @@ public class MovieController{
 	      return mv;
 	   }
 
-	
+	//MovieTheater 부분
+		@RequestMapping("aMovieTheater.see")
+		   public ModelAndView aMovieTheater(HttpServletRequest request){
+		      
+		      ModelAndView mv = new ModelAndView();
+		      MovieIntroModel movieintroselect = movieService.movieintro_select();
+		      
+		      mv.addObject("movieintroselect", movieintroselect);
+		      mv.setViewName("aMovieTheater");
+		      return mv;
+		   }
 	
 }
