@@ -10,3 +10,11 @@ $('.slidePoster li').mouseenter(function () {
             $(this).parent().addClass('hover').siblings().removeClass('hover');
         });
 });
+
+$(document).ready(function(){
+	var sBtn = $(".header .gnb > ul > li")
+	sBtn.find(" > a").click(function(){
+	sBtn.removeClass("active");
+		$(this).parent().addClass("active");
+	});
+});

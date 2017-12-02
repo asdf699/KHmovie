@@ -74,7 +74,7 @@
 </div>
 </li>
 
-<li class="">
+<li >
 <a href="<%=cp %>/aMovieList.see" title="영화">영화</a>
 <div class="depth">
 

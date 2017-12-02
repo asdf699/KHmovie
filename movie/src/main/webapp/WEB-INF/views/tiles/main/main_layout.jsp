@@ -16,6 +16,9 @@
 <title></title>
 </head>
 <body>
+<div id="skipNavi">
+<a href="#container"></a>
+</div>
 <div id="wrap">
 
 	<!-- header -->
@@ -29,11 +32,12 @@
 	<!-- footer -->
 		<tiles:insertAttribute name="main_footer" />
 	
-</div>	
-<script src="<%= cp %>/resources/jquery-1.11.3.min.js"></script>
+
+</div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.js"></script>
 <script src="<%= cp %>/resources/js/jquery-ui.min.js"></script>
 <script src="<%= cp %>/resources/js/json2.js"></script>
-<script src="<%= cp %>/resources/js/Index.js"></script>
+<script src="<%= cp %>/resources/js/Index.js?ver=1"></script>
 
 <!-- <script>
 $(document).ready(function(){

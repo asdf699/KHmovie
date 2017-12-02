@@ -63,8 +63,11 @@ public class MovieController{
 	      
 	      ModelAndView mv = new ModelAndView();
 	      MovieIntroModel movieintroselect = movieService.movieintro_select();
+	      MovieBannerModel bannerselect = movieService.banner_select();
 	      
 	      mv.addObject("movieintroselect", movieintroselect);
+	      mv.addObject("bannerselect", bannerselect);
+	      
 	      mv.setViewName("aMovieList");
 	      return mv;
 	   }
