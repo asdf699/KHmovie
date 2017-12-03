@@ -24,6 +24,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="movie_date" column="movie_date" />
 		<result property="movie_regdate" column="movie_regdate" />
 		<result property="movie_type" column="movie_type" />
+		<result property="movie_intro" column="movie_intro" />
 	</resultMap>
 
 	<!-- 배너 선택  -->
@@ -61,8 +62,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 무비 셀렉 -->
 	<select id="selectMovie_ALL" resultMap="movieRes">
-		select * from MOVIE order
-		by movie_no DESC
+		select * from movie order by DBMS_RANDOM.RANDOM
 	</select>
 	
 	<!-- 상세보기 -->

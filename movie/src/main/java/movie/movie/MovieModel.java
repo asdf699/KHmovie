@@ -24,6 +24,7 @@ public class MovieModel {
 	private Date movie_date;
 	private Date movie_regdate;
 	private String movie_type;
+	private String movie_intro;
 	
 	public int getMovie_no() {
 		return movie_no;
@@ -126,5 +127,11 @@ public class MovieModel {
 	}
 	public void setMovie_type(String movie_type) {
 		this.movie_type = movie_type;
+	}
+	public String getMovie_intro() {
+		return movie_intro;
+	}
+	public void setMovie_intro(String movie_intro) {
+		this.movie_intro = movie_intro;
 	}
 }

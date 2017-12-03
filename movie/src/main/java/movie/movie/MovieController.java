@@ -76,9 +76,11 @@ public class MovieController{
 	      
 	      ModelAndView mv = new ModelAndView();
 	      MovieIntroModel movieintroselect = movieService.movieintro_select();
+	      MovieBannerModel bannerselect = movieService.banner_select();
 	      
 	      mv.addObject("movieintroselect", movieintroselect);
 	      mv.setViewName("bMovieList");
+	      mv.addObject("bannerselect", bannerselect);
 	      return mv;
 	   }
 	@RequestMapping("cMovieList.see")
@@ -86,9 +88,11 @@ public class MovieController{
 	      
 	      ModelAndView mv = new ModelAndView();
 	      MovieIntroModel movieintroselect = movieService.movieintro_select();
+	      MovieBannerModel bannerselect = movieService.banner_select();
 	      
 	      mv.addObject("movieintroselect", movieintroselect);
 	      mv.setViewName("cMovieList");
+	      mv.addObject("bannerselect", bannerselect);
 	      return mv;
 	   }
 	@RequestMapping("dMovieList.see")
@@ -96,9 +100,11 @@ public class MovieController{
 	      
 	      ModelAndView mv = new ModelAndView();
 	      MovieIntroModel movieintroselect = movieService.movieintro_select();
+	      MovieBannerModel bannerselect = movieService.banner_select();
 	      
 	      mv.addObject("movieintroselect", movieintroselect);
 	      mv.setViewName("dMovieList");
+	      mv.addObject("bannerselect", bannerselect);
 	      return mv;
 	   }
 	@RequestMapping("eMovieList.see")
@@ -106,9 +112,11 @@ public class MovieController{
 	      
 	      ModelAndView mv = new ModelAndView();
 	      MovieIntroModel movieintroselect = movieService.movieintro_select();
+	      MovieBannerModel bannerselect = movieService.banner_select();
 	      
 	      mv.addObject("movieintroselect", movieintroselect);
 	      mv.setViewName("eMovieList");
+	      mv.addObject("bannerselect", bannerselect);
 	      return mv;
 	   }
 

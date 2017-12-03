@@ -10,6 +10,69 @@
 <title>박스오피스</title>
 </head>
 <body>
+<div class="gnb">
+<ul>
+<li>
+<a href="http://www.lottecinema.co.kr/LCHS/Contents/ticketing/ticketing.aspx" title="예매">예매</a>
+<div class="depth">
+</div>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+</li>
+
+<li class="active">
+<a href="<%=cp %>/aMovieList.see" title="영화">영화</a>
+<div class="depth">
+
+<ul>
+<li class="active"><a href="<%=cp %>/aMovieList.see" title="박스오피스">박스오피스</a></li>
+<li class=""><a href="<%=cp %>/bMovieList.see" title="아르떼">아르떼</a></li>
+<li class=""><a href="<%=cp %>/cMovieList.see" title="G시네마">G시네마</a></li>
+<li class=""><a href="<%=cp %>/dMovieList.see" title="중국영화상영관/영화제">중국영화상영관/영화제</a></li>
+<li class=""><a href="<%=cp %>/eMovieList.see" title="오페라">오페라</a></li>
+</ul>
+</div>
+</li>
+
+<li>
+<a href="http://www.lottecinema.co.kr/LCHS/Contents/Cinema/charlotte-special-cinema.aspx?divisionCode=2&amp;screendivcd=300" title="영화관">영화관</a>
+<div class="depth">
+</div>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+</li>
+
+<li>
+<a href="http://event.lottecinema.co.kr/LCHS/Contents/Event/event-summary-list.aspx" title="이벤트">이벤트</a>
+<div class="depth">
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+</div>
+</li>
+
+<li>
+<a href="http://www.lottecinema.co.kr/LCHS/Contents/Cinema-Mall/gift-shop.aspx" title="기프트샵">기프트샵</a>
+</li>
+
+</ul>
+</div>
 
 <div class="content">
 

@@ -7,9 +7,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie.css?ver=642" />
-<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie2.css?ver=1356" />
-<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie3.css?ver=214" />
+<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie.css?ver=64278046" />
+<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie2.css?ver=137840" />
+<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie3.css?ver=278460" />
 
 	
 
@@ -20,19 +20,14 @@
 <a href="#container"></a>
 </div>
 <div id="wrap">
-
 	<!-- header -->
-
 		<tiles:insertAttribute name="main_header" />
 	
 	
 	<!-- body -->
 		<tiles:insertAttribute name="main_body" />
-
 	<!-- footer -->
 		<tiles:insertAttribute name="main_footer" />
-	
-
 </div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.js"></script>
 <script src="<%= cp %>/resources/js/jquery-ui.min.js"></script>
