@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <% String cp = request.getContextPath(); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -70,8 +72,8 @@
                         </div>
                     </div>
                     <ul class="bannerImg" id="ulMovieKeyValue">
-                    <li class="active" style="background: url(&quot;http://caching.lottecinema.co.kr//Media/WebAdmin/8b8e5a082229438eb775a236850ba0ff.jpg&quot;) 50% 0px no-repeat; left: 0px;">
-                    <img src="<%= cp %>/resources/upload/movie/banner/${movieIntroImg.movie_intro_gcinema_top}" alt="G시네마">
+                    <li class="active">
+                    <img src="<%= cp %>/resources/upload/movie/movie_intro/${movieintroselect.movie_intro_gcinema_top}" alt="G시네마">
                     <span class="blind">G시네마 경기도 다양성영화관 롯데시네마와 (재)경기콘텐츠진흥원이 한국 다양성영화 활성화를 위해 운영하</span>
                     </li>
                     </ul>
@@ -80,36 +82,44 @@
             
 <!-- 내용 이미지 -->
 <div class="screen_cwrap">
-				<img src="<%= cp %>/resources/upload/movie/banner/${movieIntroImg.movie_intro_gcinema_content}" alt="대체 텍스트" longdesc="#message_gcinema">
+				<img src="<%= cp %>/resources/upload/movie/movie_intro/${movieintroselect.movie_intro_gcinema_content}" alt="대체 텍스트" longdesc="#message_gcinema">
 				<div id="message_gcinema" class="blind">
-					<!-- <p>시네마 경기도 다양성 영화관</p>
-					<dl>
-						<dt>G시네마 운영관</dt>
-						<dd>부천(신중동역) 2관 (95석)</dd>
-						<dd>안양일번가 2관(78관)</dd>
-						<dd>라페스타 3관(121석)</dd>
-						<dt>상영시간(상영시작 시간 기준)</dt>
-						<dd>오전 10시~13시 1회차</dd>
-						<dd>오후 18시~21시 1회차</dd>
-					</dl>
-					<p>프로모션</p>
-					<dl>
-						<dt>다양성 영화의 날</dt>
-						<dd>매주 수요일 5,000원 요금 적용</dd>
-						<dt>관객과의 대화</dt>
-						<dd>감독, 주연배우, 제작자를 만날 수 있는 GV 정기진행</dd>
-					</dl> -->
+
 				</div>
-			</div>
+</div>
 
 			
 			<!-- 하단 -->
 			<div class="intro_Wrap">
             <ul class="curr_list movie_clist">
-            <div class="srchResult_none">
-            <span class="txt">상영 중인 영화가 없습니다.</span>
-            </div>
-            </ul>
+<c:forEach var="moviegcinemaList" items="${moviegcinemaList}" varStatus="stat">
+
+<li>
+<div class="curr_box">
+<span class="img">
+	<a href=''>
+	<img src="<%= cp %>/resources/upload/movie/main_movie/${moviegcinemaList.movie_poster}"></a>
+</span>
+</div>
+
+
+	<!-- hover시 이미지 -->
+<div class="layer_hover">
+	<a href='javascript:goToTiketing("12154");' class="btn_reserve">예매하기</a>
+	<a href='javascript:goToMovie("12154");' class="btn_View">상세보기</a>
+</div>
+<dl class="list_text">
+	<dt>
+		<a href='javascript:GoToMovie("12154");'><span class="grade_all">전체</span>${moviegcinemaList.movie_name}</a>
+	</dt>
+	<dd>
+		<span class="rate">예매율 0.0%</span>
+		<span class="list_score">관람평점 0.0</span>
+	</dd>
+</dl>
+</li>
+</c:forEach>		
+</ul>
             <div class="info_box">
             <h4 class="infoB_tit">유의사항</h4>
             <p>G시네마 - 롯데시네마와 (재)경기콘텐츠진흥원이 한국 다양성영화 활성화를 위해 운영하는 특별상영관입니다.</p>

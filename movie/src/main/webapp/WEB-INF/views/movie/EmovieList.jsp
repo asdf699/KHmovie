@@ -67,52 +67,62 @@
                         <div class="ctr_btn">
                           <!--   <a href="javascript:void(0);" class="rolling_play" style="display: none;">
                                 <img src="/LCHS/Image/Btn/btn_m_play.png" alt="자동롤링 재생"></a>
-                            <a href="javascript:void(0);" class="rolling_stop" style="display: none;">
+                            <a href="javascript:vo]\id(0);" class="rolling_stop" style="display: none;">
                                 <img src="/LCHS/Image/Btn/btn_m_stop.png" alt="자동롤링 멈춤"></a> -->
                         </div>
                     </div>
                     <ul class="bannerImg" id="ulMovieKeyValue">
-                    <li class="active" style="background: url(&quot;http://caching.lottecinema.co.kr//Media/WebAdmin/e98055ed97664b668703d48dca1b2fc5.jpg&quot;) 50% 0px no-repeat; left: 0px;">
-                    <img src="<%= cp %>/resources/upload/movie/banner/${movieIntroImg.movie_intro_opera_top}" alt="극장에서즐기는오페라&amp;발레시리즈세계명작의생생한감동을지금느껴보세요">
+                    <li class="active">
+                    <img src="<%= cp %>/resources/upload/movie/movie_intro/${movieintroselect.movie_intro_opera_top}">
                     <span class="blind">극장에서즐기는오페라&amp;발레시리즈세계명작의생생한감동을지금느껴보세요</span>
                     </li>
                     </ul>
                 </div>
             </div>
 
+<!-- content 부분 -->
 <div class="screen_cwrap">
-                <!-- 20170404 이미지 수정 -->
-                <img src="http://caching.lottecinema.co.kr/Images/Movie/Opera/Homepage/homepage_opera_20170403.jpg" alt="로열 오페라 하우스 CINEMA SEASON 2017 대체 텍스트" longdesc="#message_upcoming">
-				<div id="message_upcoming" class="blind">
-				</div>
-			</div>
+<img src="<%= cp %>/resources/upload/movie/movie_intro/${movieintroselect.movie_intro_opera_content}" alt="대체 텍스트" longdesc="#message_gcinema">
+<div id="message_gcinema" class="blind">
+
+</div>
+</div>
+
+			
+<!-- 하단 -->
+<div class="screen_cwrap">
+<div class="tab_content on">
+<!-- 영화 LIST 출력 -->
+	<ul class="curr_list movie_clist" id="arteMovieList">
+	
+<c:forEach var="movieoperaList" items="${movieoperaList}" varStatus="stat">
+
+<li>
+<div class="curr_box">
+<span class="img">
+	<a href=''>
+	<img src="<%= cp %>/resources/upload/movie/main_movie/${movieoperaList.movie_poster}"></a>
+</span>
+</div>
 
 
-<!-- 내용 이미지 -->
-<div class="screen_cwrap">
-                <div class="tab_content on">
-                    <ul class="curr_list movie_clist">
-                    <li>    
-                    <div class="curr_box">        
-                    <span class="img">            
-                    <a href="javascript:void(0);">                
-                    <img src="<%= cp %>/resources/upload/movie/banner/${movieIntroImg.movie_intro_opera_content}" alt="오텔로"></a>        
-                    </span>    
-                    </div>    
-                    <div class="layer_hover">        
-                    <a href='javascript:goToTiketing("12144");' class="btn_reserve">예매하기</a>        
-                    <a href='javascript:goToMovie("12144");' class="btn_View">상세보기</a>    
-                    </div>    
-                    <dl class="list_text">        
-                    <dt>
-                    <a href="javascript:void(0);"><span class="grade_12">12</span>오텔로</a>
-                    </dt>        
-                    <dd>
-                    <span class="rate">예매율 0.0%</span>
-                    <span class="list_score">관람평점 9.2</span></dd>    
-                    </dl>
-                    </li>
-                    </ul>
+	<!-- hover시 이미지 -->
+<div class="layer_hover">
+	<a href='javascript:goToTiketing("12154");' class="btn_reserve">예매하기</a>
+	<a href='javascript:goToMovie("12154");' class="btn_View">상세보기</a>
+</div>
+<dl class="list_text">
+	<dt>
+		<a href='javascript:GoToMovie("12154");'><span class="grade_all">전체</span>${movieoperaList.movie_name}</a>
+	</dt>
+	<dd>
+		<span class="rate">관람 평점 0.0%</span>
+		<span class="list_score">관람평점 0.0</span>
+	</dd>
+</dl>
+</li>
+</c:forEach>		
+</ul>
 
                     <div class="srchResult_none" style="display:none;" id="searchResultNone">
                         <span class="txt">상영 중인 영화가 없습니다.</span>

@@ -65,8 +65,8 @@
                         </div>
                     </div>
                     <ul class="bannerImg" id="ulMovieKeyValue">
-                    <li class="active" style="background: url(&quot;http://caching.lottecinema.co.kr//Media/WebAdmin/26736606906c4e6c8d6c4d61163b340b.jpg&quot;) 50% 0px no-repeat; left: 0px;">
-                    <img src="resources/upload/movie/banner/${movieIntroImg.movie_intro_chinamovie_top}" alt="-">
+                    <li class="active">
+                    <img src="resources/upload/movie/movie_intro/${movieIntroImg.movie_intro_chinamovie_top}" alt="-">
                     <span class="blind">-</span>
                     </li>
                     </ul>
@@ -77,27 +77,32 @@
 <div class="intro_Wrap">
 <h2 class="sub_tit">중국영화상영관</h2>
 <ul class="curr_list movie_clist">
+<c:forEach var="moviechinamovieList" items="${moviechinamovieList}" varStatus="stat">
+
 <li>    
 <div class="curr_box">        
 <span class="img">            
 <a href="#">                
-<img src="http://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/201712/10941_103_1.jpg" alt="러브"></a>        
+<img src="<%= cp %>/resources/upload/movie/main_movie/${moviechinamovieList.movie_poster}"></a>        
 </span>    
 </div>    
-<div class="layer_hover">        
-<a href="javascript:goToMovie('10941');" class="btn_View">상세보기</a>    
-</div>    
-<dl class="list_text">        
-<dt>
-<a href="#">
-<span class="grade_15">15세이상관람가</span>러브</a>
-</dt>        
-<dd>
-<span class="rate">예매율 0.0%</span>
-<span class="list_score">관람평점 0.0</span>
-</dd>    
+
+<!-- hover시 이미지 -->
+<div class="layer_hover">
+	<a href='javascript:goToTiketing("12154");' class="btn_reserve">예매하기</a>
+	<a href='javascript:goToMovie("12154");' class="btn_View">상세보기</a>
+</div>
+<dl class="list_text">
+	<dt>
+		<a href='javascript:GoToMovie("12154");'><span class="grade_all">전체</span>${moviechinamovieList.movie_name}</a>
+	</dt>
+	<dd>
+		<span class="rate">예매율 0.0%</span>
+		<span class="list_score">관람평점 0.0</span>
+	</dd>
 </dl>
 </li>
+</c:forEach>
 </ul>
 
 <div class="info_box">

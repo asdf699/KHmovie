@@ -103,7 +103,7 @@
 		<a href='javascript:GoToMovie("12154");'><span class="grade_all">전체</span>${moviearteList.movie_name}</a>
 	</dt>
 	<dd>
-		<span class="rate">${moviearteList.movie_name}</span>
+		<span class="rate">관람 평점 0.0%</span>
 		<span class="list_score">관람평점 0.0</span>
 	</dd>
 </dl>
