@@ -40,7 +40,7 @@
 </li>
 
 <li>
-<a href="http://www.lottecinema.co.kr/LCHS/Contents/Cinema/charlotte-special-cinema.aspx?divisionCode=2&amp;screendivcd=300" title="영화관">영화관</a>
+<a href="<%=cp %>/aMovieTheater.see" title="영화관">영화관</a>
 <div class="depth">
 </div>
 <ul>
@@ -91,15 +91,17 @@
 <div class="slide">
 <ul style="left:0px;">
 <c:forEach var="list" items="${list}" varStatus="stat">
+<c:url var="viewURL" value="/movieView.see">
+	<c:param name="movie_no" value="${list.movie_no }" />
+	<%-- <c:param name="currentPage" value="${currentPage }" /> --%>
+</c:url>
 <li class="">
-<a href=""> 
 <img src="<%= cp %>/resources/upload/movie/main_movie/${list.movie_poster}">
-
 </a>
 
 <div class="layer_hover">
 <a href="javascript:void(0);" onclick="goToTiketing()" class="btn_reserve">예매하기</a>
-<a href="javascript:void(0);" onclick="goToMovie()" class="btn_View">상세보기</a>
+<a href="${viewURL}" class="btn_View">상세보기</a>
 
 </div>
 </li>

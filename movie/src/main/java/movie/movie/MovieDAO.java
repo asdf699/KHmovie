@@ -9,7 +9,7 @@ public interface MovieDAO {
 	MovieBannerModel banner_select(); 
 	
 	List<MovieModel> movieList_one(int movie_no);
-
+	
 	MovieIntroModel movieintro_Select();
 	
 	List<MovieModel> movieBoxofficeList();
@@ -20,5 +20,6 @@ public interface MovieDAO {
 	
 	List<MovieModel> movieChinamovieList();
 	
-	List<MovieModel> movieOperaList();
+	
+	
 }

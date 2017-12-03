@@ -283,19 +283,19 @@ margin / padding
 .gnb > ul > li > a {display:inline-block; width:100%;}
 .gnb > ul > li.active > a {padding-bottom:13px; background:url('/movie/images/bullet02.gif') no-repeat center bottom; font-weight:bold}
 .gnb .depth {display:none; position:absolute; top:71px; left:0; width:100%; height:40px; background:#dad2b4; z-index:1000}
-.gnb .depth > ul {width:880px; margin:0 auto; text-align:center;}
+.gnb .depth > ul {/* width:880px; */ margin:0 auto; text-align:center;}
 .gnb .depth > ul > li {display:inline-block; padding:0 20px; font-size:14px;}
 .gnb .depth > ul > li > a {display:inline-block; height:40px; line-height:40px; color:#000; box-sizing:border-box;}
 .gnb .depth > ul > li.active > a {font-weight:bold; border-bottom:2px solid #6f6247}
 .gnb > ul > li.active .depth {display:block;}
 .gnb .depth > ul > li.active .depth_03 {display:none;}
 
-.header .gnb .depth .depth_03 {display:none; position:absolute; top:40px; left:0; width:100%; background:url('/LCHS/Image/Bg/bg_mask_3dep.png') repeat; text-align:left;}
-.header .gnb .depth .depth_03 ul {width:860px; margin:0 auto; padding:7px 60px 16px; text-align:center;}
-.header .gnb .depth .depth_03 ul li {display:inline-block; vertical-align:top; padding:11px 20px 0 0; color:#c5c5c5;}
-.header .gnb .depth .depth_03 ul li a {display:inline-block; padding-bottom:4px; color:#c5c5c5; text-decoration:none; box-sizing:border-box;}
-.header .gnb .depth .depth_03 ul li a:hover {border-bottom:1px solid #dbdbda; color:#fff;}
-.header .gnb .depth .depth_03 ul li.active a {border-bottom:1px solid #dbdbda; color:#fff;}
+.gnb .depth .depth_03 {display:none; position:absolute; top:40px; left:0; width:100%; background:url('/movie/images/bg_mask_3dep.png') repeat; text-align:left;}
+.gnb .depth .depth_03 ul {width:860px; margin:0 auto; padding:7px 60px 16px; text-align:center;}
+.gnb .depth .depth_03 ul li {display:inline-block; vertical-align:top; padding:11px 20px 0 0; color:#c5c5c5;}
+.gnb .depth .depth_03 ul li a {display:inline-block; padding-bottom:4px; color:#c5c5c5; text-decoration:none; box-sizing:border-box;}
+.gnb .depth .depth_03 ul li a:hover {border-bottom:1px solid #dbdbda; color:#fff;}
+.gnb .depth .depth_03 ul li.active a {border-bottom:1px solid #dbdbda; color:#fff;}
 
 .loginInfo {position:absolute; right:15px; top:77px; z-index:1100;}
 .loginInfo .lF_login {position:relative; display:block; width:100%; width:193px; height:34px; padding: 0 12px; background:#cdc197; color:#231f20; line-height:32px; vertical-align:middle; z-index:500; box-sizing:border-box;}

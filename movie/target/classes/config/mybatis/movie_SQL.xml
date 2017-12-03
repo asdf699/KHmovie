@@ -70,6 +70,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from MOVIE where movie_no = #{movie_no}
 	</select>
 	
+	<select id="selectView" resultMap="movieRes">
+		select * from MOVIE where movie_no like '1'
+	</select>
+	
 	<!-- 영화 intro 분류-->
 	
 	<select id="selectMovie_Boxoffice" resultMap="movieRes">

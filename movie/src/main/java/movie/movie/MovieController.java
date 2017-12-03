@@ -19,44 +19,44 @@ import movie.movie.MovieService;
 import movie.movie.MovieBannerModel;
 
 @Controller
-
 public class MovieController{
 	
 	@Resource
 	private MovieService movieService;
-	
-	private int currentPage = 1;
-	private int totalCount;
-	private int blockCount = 10;
-	private int blockPage = 5;
-	private String pagingHtml;
-	private Paging paging;
-
 	//영화 상세보기
 	//movieList.see  list_no로 갖다씀
 	
-	@RequestMapping(value="movieView.see", method = RequestMethod.GET)
+	@RequestMapping(value="/movieView.see", method = RequestMethod.GET)
 	public ModelAndView movieList(HttpServletRequest request){
 		ModelAndView mv = new ModelAndView();
 	
 		int no = Integer.parseInt(request.getParameter("movie_no"));
 		
-		if (request.getParameter("currentPage") == null || request.getParameter("currentPage").trim().isEmpty()
+		/*if (request.getParameter("currentPage") == null || request.getParameter("currentPage").trim().isEmpty()
 				|| request.getParameter("currentPage").equals("0")) {
 			currentPage = 1;
 		}
 		else {
 			currentPage = Integer.parseInt(request.getParameter("currentPage"));
-		}
+		}*/
 		List<MovieModel> list_no = movieService.movieList_one(no);
+		MovieBannerModel bannerselect = movieService.banner_select();
 		
+		/*mv.addObject("currentPage", currentPage);*/
 		mv.addObject("list_no", list_no);
-		
-		mv.setViewName("movieView");
+		mv.addObject("bannerselect", bannerselect);
+		mv.setViewName("MovieView");
 		return mv;
 	}
 	
-	
+/*	@RequestMapping("view.see")
+	public ModelAndView movieView(HttpServletRequest request){
+	      ModelAndView mav = new ModelAndView();
+	      MovieModel movieView = movieService.movieView_select(); 
+	      mav.addObject("movieView", movieView);
+	      mav.setViewName("MovieView");
+	      return mav;
+	   }*/
 	// 영화 부분
 	@RequestMapping("aMovieList.see")
 	   public ModelAndView aMovieList(HttpServletRequest request){
@@ -66,9 +66,9 @@ public class MovieController{
 	      List<MovieModel> movieboxofficeList = movieService.movieBoxofficeList();
 	      MovieBannerModel bannerselect = movieService.banner_select();
 	      
-	      mv.addObject("movieintroselect", movieintroselect);
-	      mv.addObject("movieboxofficeList", movieboxofficeList);
-	      mv.addObject("bannerselect", bannerselect);
+	      mv.addObject("movieintroselect", movieintroselect);		// top, content 배너
+	      mv.addObject("movieboxofficeList", movieboxofficeList);	// 영화 list
+	      mv.addObject("bannerselect", bannerselect);				// 하단 배너
 	      
 	      mv.setViewName("aMovieList");
 	      return mv;
@@ -111,7 +111,7 @@ public class MovieController{
 	      List<MovieModel> moviechinamovieList = movieService.movieChinamovieList();
 	      MovieBannerModel bannerselect = movieService.banner_select();
 	      
-	      mv.addObject("movieintroselect", movieintroselect);
+	      mv.addObject("movieintroselect", movieintroselect);  
 	      mv.addObject("moviechinamovieList", moviechinamovieList);
 	      mv.addObject("bannerselect", bannerselect);
 	      

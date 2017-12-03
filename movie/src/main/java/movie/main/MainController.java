@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import movie.main.Paging;
+
 import movie.movie.MovieModel;
 import movie.movie.MovieService;
 import movie.movie.MovieBannerModel;
@@ -17,13 +19,15 @@ import movie.movie.MovieBannerModel;
 @Controller
 public class MainController {
 
-	Logger log = Logger.getLogger(this.getClass());
 	
 	@Resource
-	private MovieService movieService;
+	MovieService movieService;
 	
-	@RequestMapping("main.see")
+	Logger log = Logger.getLogger(this.getClass());
+		
+	@RequestMapping("/main.see")
 	public ModelAndView mainView(HttpServletRequest request){
+		
 		
 		ModelAndView mv = new ModelAndView();
 		List<MovieModel> movieList = movieService.movieList();

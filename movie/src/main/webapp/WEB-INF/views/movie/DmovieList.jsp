@@ -33,7 +33,7 @@
 		</li>
 
 		<li>
-			<a href="http://www.lottecinema.co.kr/LCHS/Contents/Cinema/charlotte-special-cinema.aspx?divisionCode=2&amp;screendivcd=300" title="영화관">영화관</a>
+			<a href="<%=cp %>/aMovieTheater.see" title="영화관">영화관</a>
 		</li>
 
 		<li>
@@ -66,7 +66,7 @@
                     </div>
                     <ul class="bannerImg" id="ulMovieKeyValue">
                     <li class="active">
-                    <img src="resources/upload/movie/movie_intro/${movieIntroImg.movie_intro_chinamovie_top}" alt="-">
+                    <img src="<%= cp %>/resources/upload/movie/movie_intro/${movieintroselect.movie_intro_chinamovie_top}">
                     <span class="blind">-</span>
                     </li>
                     </ul>

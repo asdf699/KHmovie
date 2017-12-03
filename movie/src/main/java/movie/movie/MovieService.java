@@ -28,6 +28,7 @@ public class MovieService implements MovieDAO{
 		// TODO Auto-generated method stub
 		return sqlSessionTemplate.selectList("movie.selectMovie_One",movie_no);
 	}
+	
 	// intro 이미지 선택
 	public MovieIntroModel movieintro_Select() {
 		return sqlSessionTemplate.selectOne("movie.selectIntro");
