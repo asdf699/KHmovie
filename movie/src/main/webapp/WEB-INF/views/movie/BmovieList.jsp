@@ -76,17 +76,20 @@
 			</div>
 
 	<!-- content 부분 -->
-	<!-- list부분 -->
 <div class="screen_cwrap">
 
 <div class="tab_content on">
+<!-- 영화 LIST 출력 -->
 	<ul class="curr_list movie_clist" id="arteMovieList">
-		<li class="">
-		
+	
+<c:forEach var="moviearteList" items="${moviearteList}" varStatus="stat">
+
+<li>
 <div class="curr_box">
 <span class="img">
-	<a href='javascript:GoToMovie("12154");'>
-	<img src="<%= cp %>/resources/upload/movie/main_movie/12154_103_1.jpg" alt="아이엠호프맨"></a></span>
+	<a href=''>
+	<img src="<%= cp %>/resources/upload/movie/main_movie/${moviearteList.movie_poster}"></a>
+</span>
 </div>
 
 
@@ -97,14 +100,15 @@
 </div>
 <dl class="list_text">
 	<dt>
-		<a href='javascript:GoToMovie("12154");'><span class="grade_all">전체</span>아이엠호프맨</a>
+		<a href='javascript:GoToMovie("12154");'><span class="grade_all">전체</span>${moviearteList.movie_name}</a>
 	</dt>
 	<dd>
-		<span class="rate">예매율 0.8%</span>
+		<span class="rate">${moviearteList.movie_name}</span>
 		<span class="list_score">관람평점 0.0</span>
 	</dd>
 </dl>
-		</li>				
+</li>
+</c:forEach>		
 </ul>
 						
 						

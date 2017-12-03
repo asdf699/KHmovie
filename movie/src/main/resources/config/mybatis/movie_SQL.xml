@@ -66,8 +66,30 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<!-- 상세보기 -->
-	<select id="selectMovie_one" resultMap="movieRes" parameterType="int">
+	<select id="selectMovie_One" resultMap="movieRes" parameterType="int">
 		select * from MOVIE where movie_no = #{movie_no}
+	</select>
+	
+	<!-- 영화 intro 분류-->
+	
+	<select id="selectMovie_Boxoffice" resultMap="movieRes">
+		select * from movie where movie_intro like 'boxoffice'
+	</select>
+	
+	<select id="selectMovie_Arte" resultMap="movieRes">
+		select * from movie where movie_intro like 'arte'
+	</select>
+	
+	<select id="selectMovie_Gcinema" resultMap="movieRes">
+		select * from movie where movie_intro like 'gcinema'
+	</select>
+	
+	<select id="selectMovie_Chinamovie" resultMap="movieRes">
+		select * from movie where movie_intro like 'chinamovie'
+	</select>
+	
+	<select id="selectMovie_Opera" resultMap="movieRes">
+		select * from movie where movie_intro like 'opera'
 	</select>
 	
 	<!-- 배너 선택 -->
@@ -79,5 +101,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectIntro" resultMap="movieintro">
 		select * from movie_intro
 	</select>
+	
 	
 </mapper>

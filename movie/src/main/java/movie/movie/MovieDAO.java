@@ -10,5 +10,15 @@ public interface MovieDAO {
 	
 	List<MovieModel> movieList_one(int movie_no);
 
-	MovieIntroModel movieintro_select();
+	MovieIntroModel movieintro_Select();
+	
+	List<MovieModel> movieBoxofficeList();
+	
+	List<MovieModel> movieArteList();
+	
+	List<MovieModel> movieGcinemaList();
+	
+	List<MovieModel> movieChinamovieList();
+	
+	List<MovieModel> movieOperaList();
 }

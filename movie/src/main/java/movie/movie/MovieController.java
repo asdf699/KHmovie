@@ -62,10 +62,12 @@ public class MovieController{
 	   public ModelAndView aMovieList(HttpServletRequest request){
 	      
 	      ModelAndView mv = new ModelAndView();
-	      MovieIntroModel movieintroselect = movieService.movieintro_select();
+	      MovieIntroModel movieintroselect = movieService.movieintro_Select();
+	      List<MovieModel> movieboxofficeList = movieService.movieBoxofficeList();
 	      MovieBannerModel bannerselect = movieService.banner_select();
 	      
 	      mv.addObject("movieintroselect", movieintroselect);
+	      mv.addObject("movieboxofficeList", movieboxofficeList);
 	      mv.addObject("bannerselect", bannerselect);
 	      
 	      mv.setViewName("aMovieList");
@@ -75,48 +77,60 @@ public class MovieController{
 	   public ModelAndView bmovieList(HttpServletRequest request){
 	      
 	      ModelAndView mv = new ModelAndView();
-	      MovieIntroModel movieintroselect = movieService.movieintro_select();
+	      MovieIntroModel movieintroselect = movieService.movieintro_Select();
+	      List<MovieModel> moviearteList = movieService.movieArteList();
 	      MovieBannerModel bannerselect = movieService.banner_select();
 	      
 	      mv.addObject("movieintroselect", movieintroselect);
-	      mv.setViewName("bMovieList");
+	      mv.addObject("moviearteList", moviearteList);
 	      mv.addObject("bannerselect", bannerselect);
+	      
+	      mv.setViewName("bMovieList");
 	      return mv;
 	   }
 	@RequestMapping("cMovieList.see")
 	   public ModelAndView cMovieList(HttpServletRequest request){
 	      
 	      ModelAndView mv = new ModelAndView();
-	      MovieIntroModel movieintroselect = movieService.movieintro_select();
+	      MovieIntroModel movieintroselect = movieService.movieintro_Select();
+	      List<MovieModel> moviegcinemaList = movieService.movieGcinemaList();
 	      MovieBannerModel bannerselect = movieService.banner_select();
 	      
 	      mv.addObject("movieintroselect", movieintroselect);
-	      mv.setViewName("cMovieList");
+	      mv.addObject("moviegcinemaList", moviegcinemaList);
 	      mv.addObject("bannerselect", bannerselect);
+	      
+	      mv.setViewName("cMovieList");
 	      return mv;
 	   }
 	@RequestMapping("dMovieList.see")
 	   public ModelAndView dMovieList(HttpServletRequest request){
 	      
 	      ModelAndView mv = new ModelAndView();
-	      MovieIntroModel movieintroselect = movieService.movieintro_select();
+	      MovieIntroModel movieintroselect = movieService.movieintro_Select();
+	      List<MovieModel> moviechinamovieList = movieService.movieChinamovieList();
 	      MovieBannerModel bannerselect = movieService.banner_select();
 	      
 	      mv.addObject("movieintroselect", movieintroselect);
-	      mv.setViewName("dMovieList");
+	      mv.addObject("moviechinamovieList", moviechinamovieList);
 	      mv.addObject("bannerselect", bannerselect);
+	      
+	      mv.setViewName("dMovieList");
 	      return mv;
 	   }
 	@RequestMapping("eMovieList.see")
 	   public ModelAndView eMovieList(HttpServletRequest request){
 	      
 	      ModelAndView mv = new ModelAndView();
-	      MovieIntroModel movieintroselect = movieService.movieintro_select();
+	      MovieIntroModel movieintroselect = movieService.movieintro_Select();
+	      List<MovieModel> movieoperaList = movieService.movieOperaList();
 	      MovieBannerModel bannerselect = movieService.banner_select();
 	      
 	      mv.addObject("movieintroselect", movieintroselect);
-	      mv.setViewName("eMovieList");
+	      mv.addObject("movieoperaList", movieoperaList);
 	      mv.addObject("bannerselect", bannerselect);
+	      
+	      mv.setViewName("eMovieList");
 	      return mv;
 	   }
 
@@ -125,7 +139,7 @@ public class MovieController{
 		   public ModelAndView aMovieTheater(HttpServletRequest request){
 		      
 		      ModelAndView mv = new ModelAndView();
-		      MovieIntroModel movieintroselect = movieService.movieintro_select();
+		      MovieIntroModel movieintroselect = movieService.movieintro_Select();
 		      
 		      mv.addObject("movieintroselect", movieintroselect);
 		      mv.setViewName("aMovieTheater");

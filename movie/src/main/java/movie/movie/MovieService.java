@@ -26,11 +26,31 @@ public class MovieService implements MovieDAO{
 	//영화 상세보기
 	public List<MovieModel> movieList_one(int movie_no) {
 		// TODO Auto-generated method stub
-		return sqlSessionTemplate.selectList("movie.selectMovie_one",movie_no);
+		return sqlSessionTemplate.selectList("movie.selectMovie_One",movie_no);
 	}
 	// intro 이미지 선택
-	public MovieIntroModel movieintro_select() {
+	public MovieIntroModel movieintro_Select() {
 		return sqlSessionTemplate.selectOne("movie.selectIntro");
+	}
+	// intro arte list
+	public List<MovieModel> movieBoxofficeList() {
+		return sqlSessionTemplate.selectList("movie.selectMovie_Boxoffice");
+	}
+	
+	public List<MovieModel> movieArteList() {
+		return sqlSessionTemplate.selectList("movie.selectMovie_Arte");
+	}
+	
+	public List<MovieModel> movieGcinemaList() {
+		return sqlSessionTemplate.selectList("movie.selectMovie_Gcinema");
+	}
+	
+	public List<MovieModel> movieChinamovieList() {
+		return sqlSessionTemplate.selectList("movie.selectMovie_Chinamovie");
+	}
+	
+	public List<MovieModel> movieOperaList() {
+		return sqlSessionTemplate.selectList("movie.selectMovie_Opera");
 	}
 }
 
