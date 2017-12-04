@@ -9,7 +9,14 @@ public class MovieModel {
 	private int movie_no;
 	private String movie_name;
 	private String movie_director;
+	private String movie_director_picture;
 	private String movie_actor;
+	private String movie_actor1;
+	private String movie_actor2;
+	private String movie_actor_picture;
+	private String movie_actor_picture1;
+	private String movie_actor_picture2;
+	private String movie_company;
 	private String movie_story;
 	private String movie_poster;
 	private String movie_stillcut;
@@ -17,7 +24,6 @@ public class MovieModel {
 	private String movie_stillcut2;
 	private String movie_stillcut3;
 	private String movie_stillcut4;
-	private String movie_stillcut5;
 	private String movie_genre;
 	private String movie_age;
 	@DateTimeFormat(pattern="yyyyMMdd")
@@ -44,11 +50,53 @@ public class MovieModel {
 	public void setMovie_director(String movie_director) {
 		this.movie_director = movie_director;
 	}
+	public String getMovie_director_picture() {
+		return movie_director_picture;
+	}
+	public void setMovie_director_picture(String movie_director_picture) {
+		this.movie_director_picture = movie_director_picture;
+	}
 	public String getMovie_actor() {
 		return movie_actor;
 	}
 	public void setMovie_actor(String movie_actor) {
 		this.movie_actor = movie_actor;
+	}
+	public String getMovie_actor1() {
+		return movie_actor1;
+	}
+	public void setMovie_actor1(String movie_actor1) {
+		this.movie_actor1 = movie_actor1;
+	}
+	public String getMovie_actor2() {
+		return movie_actor2;
+	}
+	public void setMovie_actor2(String movie_actor2) {
+		this.movie_actor2 = movie_actor2;
+	}
+	public String getMovie_actor_picture() {
+		return movie_actor_picture;
+	}
+	public void setMovie_actor_picture(String movie_actor_picture) {
+		this.movie_actor_picture = movie_actor_picture;
+	}
+	public String getMovie_actor_picture1() {
+		return movie_actor_picture1;
+	}
+	public void setMovie_actor_picture1(String movie_actor_picture1) {
+		this.movie_actor_picture1 = movie_actor_picture1;
+	}
+	public String getMovie_actor_picture2() {
+		return movie_actor_picture2;
+	}
+	public void setMovie_actor_picture2(String movie_actor_picture2) {
+		this.movie_actor_picture2 = movie_actor_picture2;
+	}
+	public String getMovie_company() {
+		return movie_company;
+	}
+	public void setMovie_company(String movie_company) {
+		this.movie_company = movie_company;
 	}
 	public String getMovie_story() {
 		return movie_story;
@@ -91,12 +139,6 @@ public class MovieModel {
 	}
 	public void setMovie_stillcut4(String movie_stillcut4) {
 		this.movie_stillcut4 = movie_stillcut4;
-	}
-	public String getMovie_stillcut5() {
-		return movie_stillcut5;
-	}
-	public void setMovie_stillcut5(String movie_stillcut5) {
-		this.movie_stillcut5 = movie_stillcut5;
 	}
 	public String getMovie_genre() {
 		return movie_genre;

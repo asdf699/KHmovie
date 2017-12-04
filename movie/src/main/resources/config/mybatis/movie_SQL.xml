@@ -10,7 +10,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="movie_no" column="movie_no" />
 		<result property="movie_name" column="movie_name" />
 		<result property="movie_director" column="movie_director" />
+		<result property="movie_director_picture" column="movie_director_picture" />
 		<result property="movie_actor" column="movie_actor" />
+		<result property="movie_actor1" column="movie_actor1" />
+		<result property="movie_actor2" column="movie_actor2" />
+		<result property="movie_actor_picture" column="movie_actor_picture" />
+		<result property="movie_actor_picture1" column="movie_actor_picture1" />
+		<result property="movie_actor_picture2" column="movie_actor_picture2" />
+		<result property="movie_company" column="movie_company" />
 		<result property="movie_story" column="movie_story" />
 		<result property="movie_poster" column="movie_poster" />
 		<result property="movie_stillcut" column="movie_stillcut" />
@@ -18,7 +25,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="movie_stillcut2" column="movie_stillcut2" />
 		<result property="movie_stillcut3" column="movie_stillcut3" />
 		<result property="movie_stillcut4" column="movie_stillcut4" />
-		<result property="movie_stillcut5" column="movie_stillcut5" />
 		<result property="movie_genre" column="movie_genre" />
 		<result property="movie_age" column="movie_age" />
 		<result property="movie_date" column="movie_date" />

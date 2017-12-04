@@ -7,6 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <title>영화 상세보기</title>
 
 </head>
@@ -76,6 +77,7 @@
 </div>
 
 <div id="container" class="sub">
+<c:forEach var="list_no" items="${list_no}" varStatus="stat">
       <!-- content -->
       <div id="content"> 
          <div class="movie_trailer detail_typeA" style="">
@@ -85,7 +87,6 @@
                   <a href="#" class="btnc_next"><img src="<%= cp %>/resources/upload/movie/btn/btnc_next.png" alt="다음"></a>
                </div>
                <ul class="bannerImg" id="ulMovieKeyValue">
-               <c:forEach var="list" items="${list}" varStatus="stat">
                <li class="active" style="left: 0px;"><a href="javascript:void(0);" onclick="PlayMovie(&quot;http://caching.lottecinema.co.kr//Media/MovieFile/MovieMedia/201711/1414_301_1.mp4&quot;);" class="btnc_play">
                <img src="<%= cp %>/resources/upload/movie/btn/btnc_play.png" alt="재생"></a>
                <img src="http://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/201711/1414_105_1.jpg" alt="이프 온리 스틸컷1">
@@ -125,11 +126,10 @@
                <li style="left: -887px; opacity: 0.3;" class="dummy_first">
                <img src="http://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/201711/1414_105_10.jpg" alt="이프 온리 스틸컷10">
                </li>
-               </c:forEach>
                </ul>
             </div>
          </div>
-			
+         
          <!-- wide_info_area -->
          <div class="wide_info_area">
             <div class="main_info_slide" style="">
@@ -146,18 +146,17 @@
             
             <!-- 정보 시작부분 -->
             <div class="wide_inner">
-            <c:forEach var="list" items="${list}" varStatus="stat">
-            <div class="wide_top">
+			<div class="wide_top">
             
                <div class="thumb">
                   
-                     <span class="img"><img src="<%= cp %>/resources/images/${list.poster}" alt="이프 온리"></span>
+                     <span class="img"><img src="<%= cp %>/resources/upload/movie/main_movie/${list_no.movie_poster}"></span>
                      
                      
                      <a href="javascript:void(0);" class="btn_reserve Lang-LBL0000" >예매하기</a>  <!-- style="display: inline-block;" -->
                   </div>
                   <div class="info_main">
-                     <div class="info_data"><h2 class="info_tit">이프 온리</h2></div>
+                     <div class="info_data"><h2 class="info_tit">${list_no.movie_name}</h2></div>
                      <ul class="ranking_list">
                         <li>
                            <strong class="rate_tit Lang-LBL0000">예매율</strong>
@@ -165,8 +164,8 @@
                         </li>
                         <li id="score"><strong class="score_member">관람평점</strong><span class="starscore"><span class="starinner" style="width: 0%;">평점</span></span><span class="num">0.0</span><span class="rate_txt">(누적관객 수 859,630명)</span></li>
                      </ul>
-                     <dl class="info_spec" id="dSpec0"><dt>등급</dt><dd id="dVClass">[국내] 15세이상관람가</dd><dt>개봉일</dt><dd id="dReleaseDate">2017.11.29</dd><dt>기본정보</dt><dd id="dBaseInfo">멜로/애정/로맨스   미국 (96분)  </dd></dl>
-                     <dl class="info_spec" id="dSpec1"><dt>타입</dt><dd>필름,2D | 일반 |  일반사운드 |  </dd></dl>
+                     <dl class="info_spec" id="dSpec0"><dt>등급</dt><dd id="dVClass">[국내] 15세이상관람가</dd><dt>개봉일</dt><dd id="dReleaseDate">2017.11.29</dd><dt>기본정보</dt><dd id="dBaseInfo">${list_no.movie_genre}</dd></dl>
+                     <dl class="info_spec" id="dSpec1"><dt>타입</dt><dd>${list_no.movie_type}</dd></dl>
                      <ul class="sns_list">
                       
                      </ul>
@@ -187,12 +186,7 @@
                <div class="obj_section">
                   <h3 class="obj_tit Lang-LBL0000">시놉시스</h3>
                   <p class="obj_txt" id="pSynopsis">
-                  <b>오늘, 비로소 사랑을 알았어</b><br>
-               눈앞에서 사랑하는 연인을 잃은 남자는 다음 날 아침, 자신의 옆에서 자고 있는 연인을 보고 소스라치게 놀란다.
-               <br>기쁨도 잠시, 정해진 운명은 바꿀 수 없단 것을 깨달은 그는 더 늦기 전에 자신의 진정한 사랑을 전하기로 마음먹는데…<br>
-            <br>
-               <b>네가 아니었다면 난 영영 사랑을 몰랐을 거야<br>
-               사랑하는 법을 알게 해줘서 고마워, 사랑받는 법도</b></p>
+                  <b>${list_no.movie_story}</b></p>
                </div>
 
                <div class="score" id="divScoreBoard" style="display: none;">
@@ -238,35 +232,68 @@
                   </dl> -->
                   
                </div>
-			</c:forEach>
             </div>
             
          </div>
          <!--// wide_info_area -->
-		
+      
          <!-- mpeople_wrap -->
          <div class="mpeople_wrap">
             <div class="mpeople_inner">
                <h3 class="mpeople_tit Lang-LBL0000">감독 및 출연</h3>
+               
+               
                <div class="slide_mbox">
-                  <a href="#" class="btn_prev" style="display: ;"><img src="<%= cp %>/resources/upload/movie/btn/btn_slide_prev.png" alt="이전"></a>
+                  <a href="#" class="btn_prev" style="display: none;">
+                  <img src="<%= cp %>/resources/upload/movie/btn/btn_slide_prev.png" alt="이전">
+                  </a>
+                  
+                  
                   <div class="slide_spot">
                      <ul id="ulCasting">
                         <li style="left: 0px;">
                         <div class="pic">
                         <span class="mask"></span>
-                        <img src="<%= cp %>/resources/upload/movie/thum/${movieView.movie_director}" alt="제니퍼 러브 휴잇배우">
+                        <img src="<%= cp %>/resources/upload/movie/main_movie/${list_no.movie_director_picture}">
                         </div>
-                        <p class="name">제니퍼 러브 휴잇</p>
-                        <p class="role">배우</p>
+                        <p class="name">${list_no.movie_director}</p>
+                        <p class="role">감독</p>
                         </li>
+                        
                         <li style="left: 168px;">
                         <div class="pic">
                         <span class="mask"></span>
-                        <img src="<%= cp %>/resources/upload/movie/thum/${movieView.movie_actor}" alt="폴 니콜스배우">
+                        <img src="<%= cp %>/resources/upload/movie/main_movie/${list_no.movie_actor_picture}">
                         </div>
-                        <p class="name">폴 니콜스</p>
+                        <p class="name">${list_no.movie_actor}</p>
                         <p class="role">배우</p>
+                        </li>
+                        
+                        <li style="left: 336px;">
+                        <div class="pic">
+                        <span class="mask"></span>
+                        <img src="<%= cp %>/resources/upload/movie/main_movie/${list_no.movie_actor_picture1}">
+                        </div>
+                        <p class="name">${list_no.movie_actor1}</p>
+                        <p class="role">배우</p>
+                        </li>
+                        
+                        <li style="left: 504px;">
+                        <div class="pic">
+                        <span class="mask"></span>
+                        <img src="<%= cp %>/resources/upload/movie/main_movie/${list_no.movie_actor_picture2}">
+                        </div>
+                        <p class="name">${list_no.movie_actor2}</p>
+                        <p class="role">배우</p>
+                        </li>
+                        
+                        <li style="left: 672px;">
+                        <div class="pic">
+                        <span class="mask"></span>
+                        <img src="<%= cp %>/resources/upload/movie/main_movie/img_non_actor.jpg">
+                        </div>
+                        <p class="name">${list_no.movie_company}</p>
+                        <p class="role">제작사</p>
                         </li>
                         </ul>
                   </div>
@@ -326,7 +353,7 @@
                <strong class="warn_tit">유의사항</strong>
                <!-- 0313 수정 -->
                <ul class="warn_list">
-                   <li>리뷰 작성에 대한 L.POINT는 익일 적립되며, 관람 후 초기 1회에 대해서만 적립됩니다.</li>
+                  <li>리뷰 작성에 대한 L.POINT는 익일 적립되며, 관람 후 초기 1회에 대해서만 적립됩니다.</li>
                   <li>수정/삭제 후 재등록 시에는 포인트 적립이 되지 않습니다.</li>
                   <li>리뷰는 관람 내역당 1회만 작성 가능하며, 상영 종료된 영화의 리뷰는 작성 불가합니다.</li>
                   <li>작성하신 리뷰는 마이시네마 &gt; 무비히스토리 &gt; 나의 리뷰에서 확인하실 수 있습니다.</li>
@@ -347,6 +374,7 @@
          
          <!-- //event_fwrap -->
 </div>
+</c:forEach>
 </div>
 </body>
 </html>

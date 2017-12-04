@@ -435,10 +435,10 @@
 .slidePoster .slide ul li.hover .layer_hover .btn_View {margin-top:10px;}
 
 .slidePoster .btnSt {position:absolute; left:50%; top:50%; width:980px; margin-left:-490px;}
-.slidePoster .btnSt > .prev {overflow:hidden; width:25px; height:52px; display:block; position:absolute; top:0; left:-50px; margin-top:-26px; font-size:0; line-height:0; text-indent:-7000000em; background:url('/LCHS/Image/Main/btn_prev2_off.png') no-repeat 0 0;}
-.slidePoster .btnSt > .next {overflow:hidden; width:25px; height:52px; display:block; position:absolute; top:0; right:-50px; margin-top:-26px; font-size:0; line-height:0; text-indent:-7000000em; background:url('/LCHS/Image/Main/btn_next2_off.png') no-repeat 0 0;}
-.slidePoster .btnSt > .prev.on {background:url('/LCHS/Image/Main/btn_prev2_on.png') no-repeat 0 0;}
-.slidePoster .btnSt > .next.on {background:url('/LCHS/Image/Main/btn_next2_on.png') no-repeat 0 0;}	
+.slidePoster .btnSt > .prev {overflow:hidden; width:25px; height:52px; display:block; position:absolute; top:0; left:-50px; margin-top:-26px; font-size:0; line-height:0; text-indent:-7000000em; background:url('/movie/images/btn/btn_prev2_off.png') no-repeat 0 0;}
+.slidePoster .btnSt > .next {overflow:hidden; width:25px; height:52px; display:block; position:absolute; top:0; right:-50px; margin-top:-26px; font-size:0; line-height:0; text-indent:-7000000em; background:url('/movie/images/btn/btn_next2_off.png') no-repeat 0 0;}
+.slidePoster .btnSt > .prev.on {background:url('/movie/images/btn/btn_prev2_on.png') no-repeat 0 0;}
+.slidePoster .btnSt > .next.on {background:url('/movie/images/btn/btn_next2_on.png') no-repeat 0 0;}	
 
 
 /* 메인_스페셜배너 */
@@ -1829,7 +1829,7 @@
 .slide_spot ul li {position:absolute; left:0; top:0; height:175px; width: 129px; text-align:center; font-size:14px}/* 201703212 sunho 사이즈 변경 */
 .slide_spot ul li:first-child {margin-left:0}
 .slide_spot .pic {position:relative; overflow:hidden; width:129px; height:128px; margin:0 auto}
-.slide_spot .pic .mask {display:block; position:absolute; top:0; left:0; width:100%; height:128px; background:url('/LCHS/Image/Bg/bg_mask_event02.png') no-repeat 0 0; z-index:2}
+.slide_spot .pic .mask {display:block; position:absolute; top:0; left:0; width:100%; height:128px; background:url('/movie/images/bg_mask_event02.png') no-repeat 0 0; z-index:2}
 .slide_spot .pic img {width:100%; min-height:128px}
 .slide_spot ul li .name {margin-top:15px; color:#231f20; font-size:12px; line-height: 15px;}/* 201703212 sunho line height 추가 */
 .slide_spot ul li .role {color:#666; line-height:18px; font-size:12px}

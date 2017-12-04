@@ -7,9 +7,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie.css?ver=602426" />
-<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie2.css?ver=1231240" />
-<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie3.css?ver=22420" />
+<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie.css?ver=602242232622" />
+<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie2.css?ver=12235123240" />
+<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie3.css?ver=222243220" />
+<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/swiper.min.css?ver=22192" />
 
 	
 
@@ -32,21 +33,31 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.js"></script>
 <script src="<%= cp %>/resources/js/jquery-ui.min.js"></script>
 <script src="<%= cp %>/resources/js/json2.js"></script>
-<script src="<%= cp %>/resources/js/Index.js?ver=1"></script>
+<script src="<%= cp %>/resources/js/Index.js?ver=122"></script>
+<%-- <script src="<%= cp %>/resources/js/swiper.min.js?ver=12125231"></script> --%>
+<script src="/LCHS/Script/Movie/Movie-Detail-View.js?ver=22"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.esm.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.esm.bundle.js"></script>
 
-<!-- <script>
-$(document).ready(function(){
-$('.slidePoster li').mouseenter(function () {
-            //console.log($(this).index());
-            $(this).addClass('hover');
-        }).mouseleave(function () {
-            $(this).removeClass('hover');
-        });
-
-        $('.slidePoster li > a').focusin(function () {
-            $(this).parent().addClass('hover').siblings().removeClass('hover');
-        });
-});        
-</script> -->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
 </body>
 </html>
