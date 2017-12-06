@@ -28,6 +28,13 @@ public class MovieService implements MovieDAO{
 		// TODO Auto-generated method stub
 		return sqlSessionTemplate.selectList("movie.selectMovie_One",movie_no);
 	}
+	//영화 삭제하기
+	public boolean movieDelete(int movie_no) {
+		// TODO Auto-generated method stub
+		sqlSessionTemplate.delete("movie.movieDelete",movie_no);
+		return true;
+	}
+	
 	
 	// intro 이미지 선택
 	public MovieIntroModel movieintro_Select() {

@@ -6,69 +6,110 @@
        
 <tiles-definitions>
    <!-- main page -->
-   <definition name="main" template="/WEB-INF/views/tiles/main/main_layout.jsp">
-      <put-attribute name="title" value="MovieSee" />
-      <put-attribute name="main_header" value="/WEB-INF/views/tiles/main/header/main_header.jsp" />
-      <put-attribute name="main_body" value="/WEB-INF/views/tiles/main/body/main_body.jsp" />
-      <put-attribute name="main_footer" value="/WEB-INF/views/tiles/main/footer/main_footer.jsp" />
-   </definition>
+	<definition name="main" template="/WEB-INF/views/tiles/main/main_layout.jsp">
+		<put-attribute name="title" value="MovieSee" />
+		<put-attribute name="main_header" value="/WEB-INF/views/tiles/main/header/main_header.jsp" />
+		<put-attribute name="main_body" value="/WEB-INF/views/tiles/main/body/main_body.jsp" />
+		<put-attribute name="main_footer" value="/WEB-INF/views/tiles/main/footer/main_footer.jsp" />
+	</definition>
    
 
-   <definition name="reserveMain" extends="main">
-      <put-attribute name="main_body" value="/WEB-INF/views/reserve/ReserveMain.jsp" />
-   </definition>
-   <!-- 상영시간표 페이지 -->
-   <definition name="reserveList" extends="main">
-      <put-attribute name="main_body" value="/WEB-INF/views/reserve/ReserveList.jsp" />
-   </definition>
+	<definition name="reserveMain" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/reserve/ReserveMain.jsp" />
+	</definition>
+	<!-- 상영시간표 페이지 -->
+	<definition name="reserveList" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/reserve/ReserveList.jsp" />
+	</definition>
    
    
    
-   <!-- Movie 부분 -->
-   <definition name="movieTicketing" extends="main">
-      <put-attribute name="main_body" value="/WEB-INF/views/movie/MovieTicketing.jsp" />
-   </definition>
+	<!-- Movie 부분 -->
+	<definition name="movieTicketing" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/movie/MovieTicketing.jsp" />
+	</definition>
    
-   <definition name="movieTicketing1" extends="main">
-      <put-attribute name="main_body" value="/WEB-INF/views/movie/MovieTicketing1.jsp" />
-   </definition>
+	<definition name="movieTicketing1" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/movie/MovieTicketing1.jsp" />
+	</definition>
    
-   <!-- 예매 진행부분 -->
-   <!-- 영화 상세보기-->
-   <definition name="MovieView" extends="main">
-      <put-attribute name="main_body" value="/WEB-INF/views/movie/MovieView.jsp" />
-   </definition>
+	<!-- 예매 진행부분 -->
+	<!-- 영화 상세보기-->
+	<definition name="MovieView" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/movie/MovieView.jsp" />
+	</definition>
    
    
-   <!-- 영화 탭 -->
-   <!-- 박스오피스  -->
-   <definition name="aMovieList" extends="main">
-      <put-attribute name="main_body" value="/WEB-INF/views/movie/AmovieList.jsp" />
-   </definition>
-   <!-- 아르떼 -->
-   <definition name="bMovieList" extends="main">
-      <put-attribute name="main_body" value="/WEB-INF/views/movie/BmovieList.jsp" />
-   </definition>
-   <!-- G시네마 -->
-   <definition name="cMovieList" extends="main">
-      <put-attribute name="main_body" value="/WEB-INF/views/movie/CmovieList.jsp" />
-   </definition>
-   <!-- 중국영화상영관/영화제 -->
-   <definition name="dMovieList" extends="main">
-      <put-attribute name="main_body" value="/WEB-INF/views/movie/DmovieList.jsp" />
-   </definition>
-   <!-- 오페라 -->
-   <definition name="eMovieList" extends="main">
-      <put-attribute name="main_body" value="/WEB-INF/views/movie/EmovieList.jsp" />
-   </definition>
+	<!-- 영화 탭 -->
+	<!-- 박스오피스  -->
+	<definition name="aMovieList" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/movie/AmovieList.jsp" />
+	</definition>
+		<!-- 아르떼 -->
+	<definition name="bMovieList" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/movie/BmovieList.jsp" />
+	</definition>
+   	<!-- G시네마 -->
+	<definition name="cMovieList" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/movie/CmovieList.jsp" />
+		</definition>
+	<!-- 중국영화상영관/영화제 -->
+	<definition name="dMovieList" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/movie/DmovieList.jsp" />
+	</definition>
+	<!-- 오페라 -->
+	<definition name="eMovieList" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/movie/EmovieList.jsp" />
+	</definition>
 
 	
 	<!-- 영화관 상세보기 -->
 	<definition name="aMovieTheater" extends="main">
-      <put-attribute name="main_body" value="/WEB-INF/views/movie/AmovieTheater.jsp" />
+		<put-attribute name="main_body" value="/WEB-INF/views/movie/AmovieTheater.jsp" />
 	</definition>
 	
 	<definition name="bMovieTheater" extends="main">
-      <put-attribute name="main_body" value="/WEB-INF/views/movie/BmovieTheater.jsp" />
-   </definition>
+		<put-attribute name="main_body" value="/WEB-INF/views/movie/BmovieTheater.jsp" />
+    </definition>
+   
+   
+   
+   
+   <!-- admin page-->
+	<definition name="admin" template="/WEB-INF/views/tiles/admin/admin_layout.jsp">
+		<put-attribute name="title" value="MovieSeeAdmin" />
+		<put-attribute name="admin_header" value="/WEB-INF/views/tiles/admin/header/admin_header.jsp" />
+		<put-attribute name="admin_body" value="/WEB-INF/views/tiles/admin/body/admin_body.jsp" />
+		<put-attribute name="admin_footer" value="/WEB-INF/views/tiles/admin/footer/admin_footer.jsp" />
+	</definition>
+	
+	<definition name="MovieWrite" extends="admin">
+		<put-attribute name="admin_body" value="/WEB-INF/views/admin/movieWrite.jsp" />
+	</definition>
+   
+	<!-- 상영작 리스트 -->
+    <definition name="MovieList" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/movie/BmovieTheater.jsp" />
+    </definition>
+
+	<!-- 상영작 상세보기-->
+	<definition name="MovieView" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/movie/BmovieTheater.jsp" />
+	</definition>
+    
+    <!-- 상영작 리스트 -->
+	<definition name="MovieWrite" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/movie/BmovieTheater.jsp" />
+	</definition>
+    
+    <!-- 상영작 수정폼 -->
+	<definition name="AdminMovieUpdate" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/movie/BmovieTheater.jsp" />
+    </definition>   
+    
+    <!-- 영화 상영타임 리스트 -->
+	<definition name="TimeTableList" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/movie/BmovieTheater.jsp" />
+    </definition>
+        
 </tiles-definitions>

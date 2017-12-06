@@ -80,6 +80,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from MOVIE where movie_no like '1'
 	</select>
 	
+	<!-- 영화 삭제하기 -->
+	<delete id="movieDelete" parameterType="int">
+		delete from MOVIE where
+		movie_no = #{movie_no}
+	</delete>
+	
 	<!-- 영화 intro 분류-->
 	
 	<select id="selectMovie_Boxoffice" resultMap="movieRes">

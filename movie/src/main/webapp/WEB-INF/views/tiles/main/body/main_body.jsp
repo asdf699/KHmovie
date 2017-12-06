@@ -182,12 +182,15 @@
 <c:url var="viewURL" value="/movieView.see">
 	<c:param name="movie_no" value="${list.movie_no }"/>
 </c:url>
+<c:url var="reserveURL" value="/movieTicketing.see">
+	<c:param name="movie_no" value="${list.movie_no}"/>
+</c:url>
 <li class="">
 <a href="javascript:void(0)";>
 <img src="<%= cp %>/resources/upload/movie/main_movie/${list.movie_poster}">
 </a>
 <div class="layer_hover">
-<a href="javascript:void(0);" onclick="goToTiketing()" class="btn_reserve">예매하기</a>
+<a href="${reserveURL}" onclick="goToTiketing()" class="btn_reserve">예매하기</a>
 <a href="${viewURL}" class="btn_View">상세보기</a>
 
 </div>

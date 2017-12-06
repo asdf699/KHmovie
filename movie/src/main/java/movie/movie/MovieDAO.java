@@ -20,6 +20,6 @@ public interface MovieDAO {
 	
 	List<MovieModel> movieChinamovieList();
 	
-	
+	public boolean movieDelete(int no);
 	
 }
