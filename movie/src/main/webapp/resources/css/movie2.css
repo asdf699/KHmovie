@@ -346,7 +346,7 @@ color:#2a2e33}
 #container.sub {margin:39px 0 0 0;}
 #container.subGnbNo {padding:0; border-top:1px solid #e9e4d2}
 #container.subGnbNo .quick_ver2 {top:181px;}
-#content {position:relative; min-height:400px}
+#content {position:relative; min-height:400px margin-top:39px;}
 
 /* 怨듭��궗�빆 */
 .notice_wrap {width:100%; border-bottom:1px solid #dedede;}

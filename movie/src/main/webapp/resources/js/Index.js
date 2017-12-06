@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function(){
 $('.slidePoster li').mouseenter(function () {
             //console.log($(this).index());
             $(this).addClass('hover');

@@ -1598,7 +1598,7 @@
 .cards_info td {height:40px; padding-bottom:0 !important;}
 
 /* 영화 - 현재 상영작 리스트 */
-.movie_trailer {position:relative;}
+.movie_trailer {position:relative; margin-top:39px;}
 .movile_box {position:relative; z-index:1;}
 .bannerImg {overflow:hidden; position:relative; z-index:2;  height:420px; text-align:center; background:#231f20;}/*20170206 웹접근성 backgroudn # 제거 sunho*/
 .bannerImg > li {overflow:hidden; position:absolute; z-index:1;  top:0; left:0; width:100%; height:420px; text-align:left; background-position:center top; background-repeat:no-repeat; background-size:100% 100%;}
@@ -3269,7 +3269,7 @@
 .area_list {overflow:hidden; width:409px;}
 .area_list li {float:left; margin:0 0 8px 7px; display:table;}
 .area_list li a {overflow:hidden; display:table-cell; vertical-align:middle; width:129px; height:40px; border:1px solid #efefef; background:#efefef; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; line-height:16px; font-size:12px; color:#666; text-align:center; letter-spacing:-1px;}
-.area_list li a.on {padding:0 25px; border:1px solid #999; color:#231f20; font-weight:bold; background:#fff url('/LCHS/Image/bg/bg_ckth.png') no-repeat 10px 50%;}
+.area_list li a.on {padding:0 25px; border:1px solid #999; color:#231f20; font-weight:bold; background:#fff url('/movie/images/bg_ckth.png') no-repeat 10px 50%;}
 .area_list li a.disabled {color:#d1d1d1; background:#fafafa; border:none; cursor:default; border:1px solid #fafafa;}/* 1105 추가 */
 .area_list li a.disabled.on {color:#d1d1d1; background:#fafafa url('/LCHS/Image/bg/bg_ckth.png') no-repeat 10px 50%; border:1px solid #999; cursor:default;}
 
@@ -3591,7 +3591,7 @@
 
 
 /* 예매 Content Ticket*/
-.cont_ticket {width:100%; min-height:100px; background:#f9f6ec;}
+.cont_ticket {width:100%; min-height:100px; background:#f9f6ec; margin-top:39px;}
 .cont_ticket_Area {width:980px; min-height:100px; margin:0 auto; padding-top:30px;}
 
 /* 예매 Calendar (달력 공통 ) */

@@ -49,6 +49,38 @@ public class MovieController{
 		return mv;
 	}
 	
+	@RequestMapping("/movieTicketing.see")
+	   public ModelAndView movieticketing(HttpServletRequest request){
+	      
+	      ModelAndView mv = new ModelAndView();
+	      MovieIntroModel movieintroselect = movieService.movieintro_Select();
+	      List<MovieModel> movieboxofficeList = movieService.movieBoxofficeList();
+	      MovieBannerModel bannerselect = movieService.banner_select();
+	      
+	      mv.addObject("movieintroselect", movieintroselect);		// top, content 배너
+	      mv.addObject("movieboxofficeList", movieboxofficeList);	// 영화 list
+	      mv.addObject("bannerselect", bannerselect);				// 하단 배너
+	      
+	      mv.setViewName("movieTicketing");
+	      return mv;
+	   }
+	
+	@RequestMapping("/movieTicketing1.see")
+	   public ModelAndView movieticketing1(HttpServletRequest request){
+	      
+	      ModelAndView mv = new ModelAndView();
+	      MovieIntroModel movieintroselect = movieService.movieintro_Select();
+	      List<MovieModel> movieboxofficeList = movieService.movieBoxofficeList();
+	      MovieBannerModel bannerselect = movieService.banner_select();
+	      
+	      mv.addObject("movieintroselect", movieintroselect);		// top, content 배너
+	      mv.addObject("movieboxofficeList", movieboxofficeList);	// 영화 list
+	      mv.addObject("bannerselect", bannerselect);				// 하단 배너
+	      
+	      mv.setViewName("movieTicketing1");
+	      return mv;
+	   }
+	
 /*	@RequestMapping("view.see")
 	public ModelAndView movieView(HttpServletRequest request){
 	      ModelAndView mav = new ModelAndView();
@@ -145,5 +177,16 @@ public class MovieController{
 		      mv.setViewName("aMovieTheater");
 		      return mv;
 		   }
+		
+		 @RequestMapping("bMovieTheater.see")
+         public ModelAndView bMovieTheater(HttpServletRequest request){
+			 
+            ModelAndView mv = new ModelAndView();
+            MovieIntroModel movieintroselect = movieService.movieintro_Select();
+            
+            mv.addObject("movieintroselect", movieintroselect);
+            mv.setViewName("bMovieTheater");
+            return mv;
+         }
 	
 }

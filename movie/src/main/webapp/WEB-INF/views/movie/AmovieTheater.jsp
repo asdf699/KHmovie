@@ -80,7 +80,7 @@
 </ul>
 </div>
 
-<li><a href="">서울</a></li>
+<li><a href="<%=cp %>/bMovieTheater.see">서울</a></li>
 <li><a href="">경기/인천</a></li>
 <li><a href="">충청/대전</a></li>
 <li><a href="">전라/광주</a></li>
