@@ -12,12 +12,18 @@ PUBLIC " - //mybatis.org//DTD Config 3.0//EN"
 		<typeAlias alias="movieModel" type="movie.movie.MovieModel" />
 		<typeAlias alias="moviebannerModel" type="movie.movie.MovieBannerModel" />
 		<typeAlias alias="movieintromodel" type="movie.movie.MovieIntroModel" />
+		
+		<typeAlias alias="adminMovieModel" type="movie.admin.AdminMovieModel"/>
+		
+		<typeAlias alias="timetableDetailModel" type="movie.reserve.TimetableDetailModel"/>
 	</typeAliases>
 	
 	<mappers>
 	
 		<!-- notice -->
 		<mapper resource="config/mybatis/movie_SQL.xml"/>
+		<mapper resource="config/mybatis/admin_SQL.xml"/>
+		<!-- <mapper resource="config/mybatis/reserve_SQL.xml"/> -->
 	</mappers>
 	
 	

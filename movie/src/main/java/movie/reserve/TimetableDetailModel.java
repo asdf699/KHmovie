@@ -1,75 +1,75 @@
 package movie.reserve;
 
 public class TimetableDetailModel {
-	int time_detail_no;
-	int time_no;
-	int adult_amt;
-	int child_amt;
-	int total_seat;
-	int reserved_seat;
-	String time_name;
-	String show_date;
-	String start_time;
-	String end_time;
+	int timetable_detail_no;
+	int timetable_detail_time_no;
+	int timetable_detail_adult_amt;
+	int timetable_detail_child_amt;
+	int timetable_detail_total_seat;
+	int timetable_detail_reserved_seat;
+	String timetable_detail_time_name;
+	String timetable_detail_show_date;
+	String timetable_detail_start_time;
+	String timetable_detail_end_time;
 	
-	public int getTime_detail_no() {
-		return time_detail_no;
+	public int getTimetable_detail_no() {
+		return timetable_detail_no;
 	}
-	public void setTime_detail_no(int time_detail_no) {
-		this.time_detail_no = time_detail_no;
+	public void setTimetable_detail_no(int timetable_detail_no) {
+		this.timetable_detail_no = timetable_detail_no;
 	}
-	public int getTime_no() {
-		return time_no;
+	public int getTimetable_detail_time_no() {
+		return timetable_detail_time_no;
 	}
-	public void setTime_no(int time_no) {
-		this.time_no = time_no;
+	public void setTimetable_detail_time_no(int timetable_detail_time_no) {
+		this.timetable_detail_time_no = timetable_detail_time_no;
 	}
-	public int getAdult_amt() {
-		return adult_amt;
+	public int getTimetable_detail_adult_amt() {
+		return timetable_detail_adult_amt;
 	}
-	public void setAdult_amt(int adult_amt) {
-		this.adult_amt = adult_amt;
+	public void setTimetable_detail_adult_amt(int timetable_detail_adult_amt) {
+		this.timetable_detail_adult_amt = timetable_detail_adult_amt;
 	}
-	public int getChild_amt() {
-		return child_amt;
+	public int getTimetable_detail_child_amt() {
+		return timetable_detail_child_amt;
 	}
-	public void setChild_amt(int child_amt) {
-		this.child_amt = child_amt;
+	public void setTimetable_detail_child_amt(int timetable_detail_child_amt) {
+		this.timetable_detail_child_amt = timetable_detail_child_amt;
 	}
-	public int getTotal_seat() {
-		return total_seat;
+	public int getTimetable_detail_total_seat() {
+		return timetable_detail_total_seat;
 	}
-	public void setTotal_seat(int total_seat) {
-		this.total_seat = total_seat;
+	public void setTimetable_detail_total_seat(int timetable_detail_total_seat) {
+		this.timetable_detail_total_seat = timetable_detail_total_seat;
 	}
-	public int getReserved_seat() {
-		return reserved_seat;
+	public int getTimetable_detail_reserved_seat() {
+		return timetable_detail_reserved_seat;
 	}
-	public void setReserved_seat(int reserved_seat) {
-		this.reserved_seat = reserved_seat;
+	public void setTimetable_detail_reserved_seat(int timetable_detail_reserved_seat) {
+		this.timetable_detail_reserved_seat = timetable_detail_reserved_seat;
 	}
-	public String getTime_name() {
-		return time_name;
+	public String getTimetable_detail_time_name() {
+		return timetable_detail_time_name;
 	}
-	public void setTime_name(String time_name) {
-		this.time_name = time_name;
+	public void setTimetable_detail_time_name(String timetable_detail_time_name) {
+		this.timetable_detail_time_name = timetable_detail_time_name;
 	}
-	public String getShow_date() {
-		return show_date;
+	public String getTimetable_detail_show_date() {
+		return timetable_detail_show_date;
 	}
-	public void setShow_date(String show_date) {
-		this.show_date = show_date;
+	public void setTimetable_detail_show_date(String timetable_detail_show_date) {
+		this.timetable_detail_show_date = timetable_detail_show_date;
 	}
-	public String getStart_time() {
-		return start_time;
+	public String getTimetable_detail_start_time() {
+		return timetable_detail_start_time;
 	}
-	public void setStart_time(String start_time) {
-		this.start_time = start_time;
+	public void setTimetable_detail_start_time(String timetable_detail_start_time) {
+		this.timetable_detail_start_time = timetable_detail_start_time;
 	}
-	public String getEnd_time() {
-		return end_time;
+	public String getTimetable_detail_end_time() {
+		return timetable_detail_end_time;
 	}
-	public void setEnd_time(String end_time) {
-		this.end_time = end_time;
+	public void setTimetable_detail_end_time(String timetable_detail_end_time) {
+		this.timetable_detail_end_time = timetable_detail_end_time;
 	}
 }

@@ -33,21 +33,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="movie_intro" column="movie_intro" />
 	</resultMap>
 
-	<resultMap  id="admintimeListRes" type="AdminTimeTableModel" >
-		<result property="time_no" column="time_no"/>
-		<result property="movie_no" column="movie_no" />
-		<result property="movie_name" column="movie_name" />
-		<result property="start_date" column="start_date" />
-		<result property="end_date" column="end_date"/>
-		<result property="room_name" column="room_name" />
-		<result property="show_date" column="show_date"/>
-		<result property="start_time" column="start_time"/>
-		<result property="end_time" column="end_time"/>
-		<result property="reserved_seat" column="reserved_seat" />
-		<result property="total_seat" column="total_seat" />
-		<result property="adult_amt" column="adult_amt" /> 
-		<result property="child_amt" column="child_amt "/>  
-	</resultMap>
+<!-- 	<resultMap  id="admintimeListRes" type="AdminTimeTableModel" >
+		<result property="timetable_time_no" column="timetable_time_no"/>
+		<result property="timetable_movie_no" column="timetable_movie_no" />
+		<result property="timetable_movie_name" column="timetable_movie_name" />
+		<result property="timetable_start_date" column="timetable_start_date" />
+		<result property="timetable_end_date" column="timetable_end_date"/>
+		<result property="timetable_room_name" column="timetable_room_name" />
+		<result property="timetable_show_date" column="timetable_show_date"/>
+		<result property="timetable_start_time" column="timetable_start_time"/>
+		<result property="timetable_end_time" column="timetable_end_time"/>
+		<result property="timetable_reserved_seat" column="timetable_reserved_seat" />
+		<result property="timetable_total_seat" column="timetable_total_seat" />
+		<result property="timetable_adult_amt" column="timetable_adult_amt" /> 
+		<result property="timetable_child_amt" column="timetable_child_amt "/>  
+	</resultMap> -->
 	
 	
 	<!-- 영화이름,번호 리스트 뽑아오기 -->
@@ -57,7 +57,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 		<!-- timeTable 리스트 -->
-	<select id="timeTable_List" resultMap="admintimeListRes">
+<!-- 	<select id="timeTable_List" resultMap="admintimeListRes">
 		select tm.time_no
      		 , tm.movie_no
      		 , m.movie_name
@@ -77,8 +77,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		     and tm.room_no = r.room_no
 		     and tm.time_no = td.time_no
 		     order by tm.time_no desc
-	</select>
-
+	</select> -->
+	
+	
+	<insert id="timeDetailInsert" parameterType="timetableDetailModel" useGeneratedKeys="true" keyProperty="time_no">
+		<selectKey keyProperty="time_no" resultType="int" order="BEFORE">
+			select TIMETABLE_MASTER_NO_SEQ.currval from dual
+		</selectKey>
+		insert into TIMETABLE_DETAIL (time_detail_no, time_no, time_name, show_date, start_time, end_time, adult_amt, child_amt, total_seat, reserved_seat)
+		values (TIMETABLE_DETAIL_NO_SEQ.nextval, #{time_no}, #{time_name}, #{show_date}, #{start_time}, #{end_time}, #{adult_amt}, #{child_amt}, '20', '0')
+	</insert>
+	
 	<delete id="timeDetailDelete" parameterType="String">
 		delete from TIMETABLE_DETAIL 
 		where time_detail_no = #{time_detail_no}

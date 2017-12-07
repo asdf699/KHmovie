@@ -1,7 +1,10 @@
 package movie.admin;
 
+import java.io.File;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -17,8 +20,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
+
 import movie.movie.MovieModel;
 import movie.movie.MovieService;
+import movie.reserve.ReserveService;
+
+import movie.reserve.TimetableDetailModel;
 
 @Controller
 @RequestMapping("/admin")
@@ -27,9 +34,10 @@ public class AdminController {
 	
 	@Resource 
 	private MovieService movieService;
-	
+	@Resource
 	private AdminService adminService;
-	
+	@Resource
+	private ReserveService reserveService;
 	@ModelAttribute("movieModel")
 	public MovieModel movieModel() {
 		return new MovieModel();
@@ -120,33 +128,53 @@ public class AdminController {
 	}*/
 	
 	// 스케쥴 리스트 -미완
-	@RequestMapping(value = "/timeTableList.see", method = RequestMethod.GET)
+	@RequestMapping(value = "/timeTableList.see")
 	public ModelAndView timeTableList(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView();
 		
-		List<AdminMovieModel> selectMovie_name = adminService.selectmovie_name();
-		List<AdminTimeTableModel> timetable_list = adminService.timetable_list();
-		mv.addObject("namelist", selectMovie_name);
-		mv.addObject("timetablelist", timetable_list);
+		List<AdminMovieModel> selectmovie_name = adminService.selectmovie_name();
+		/*List<AdminTimeTableModel> timetable_list = adminService.timetable_list();*/
+		
+		mv.addObject("selectmovie_name", selectmovie_name);
+		/*mv.addObject("timetablelist", timetable_list);*/
+		
 		mv.setViewName("TimeTableList");
 		return mv;
 	}
 	
-/*	// 스케쥴 등록 -미완
+	// 스케쥴 등록 -미완
 		@RequestMapping(value = "/timeTableWrite.see", method = RequestMethod.POST)
 		public String timeTableWrite(HttpServletRequest request) throws ParseException{
-			
-		int movie_no = Integer.parseInt(request.getParameter("movie_no"));
-		int room_no = Integer.parseInt(request.getParameter("room_no"));
-		start_date = new SimpleDateFormat("yyyyMMdd").parse(request.getParameter("start_date"));
-		end_date = new SimpleDateFormat("yyyyMMdd").parse(request.getParameter("end_date"));
 		
+		// 모델등록
+		TimetableDetailModel timetablemodel = new TimetableDetailModel();		
 		
+		// 날짜변환
+		Date Start_date;
+		Date end_date;
+		
+		//detail 파라미터
+		String timetable_detail_time_name = request.getParameter("movie_no");
+		String timetable_detail_show_date = request.getParameter("show_date");
+		String timetable_detail_start_time = request.getParameter("start_time");
+		String timetable_detail_end_time = request.getParameter("end_time");
+		int timetable_detail_adult_amt = Integer.parseInt(request.getParameter("timetable_detail_adult_amt"));
+		int timetable_detail_child_amt = Integer.parseInt(request.getParameter("timetable_detail_child_amt"));
+		
+		//timetable Model
+		timetablemodel.setTimetable_detail_time_name(timetable_detail_time_name);
+		timetablemodel.setTimetable_detail_show_date(timetable_detail_show_date);
+		timetablemodel.setTimetable_detail_start_time(timetable_detail_start_time);
+		timetablemodel.setTimetable_detail_end_time(timetable_detail_end_time);
+		timetablemodel.setTimetable_detail_adult_amt(timetable_detail_adult_amt);
+		timetablemodel.setTimetable_detail_child_amt(timetable_detail_child_amt);
+		
+		adminService.timeDetailInsert(timetablemodel);
 		return "redirect:timeTableList.mt";	
-	}*/
+	}
 		
 	// 스케쥴 삭제 - 테스트해봐야함
-	@RequestMapping(value = "/timeTableDelete.see", method = RequestMethod.GET)
+/*	@RequestMapping(value = "/timeTableDelete.see", method = RequestMethod.GET)
 	public String timeTableDelete(HttpServletRequest request){
 			
 		int time_no = Integer.parseInt(request.getParameter("time_no"));
@@ -155,5 +183,5 @@ public class AdminController {
 		adminService.timeDetailDelete(time_detail_no);
 			
 		return "redirect:timeTableList.see";
-	}
+	}*/
 }

@@ -7,9 +7,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/admin.css?ver=22235" />
-<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/admin1.css?ver=23252" />
-	
+<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/admin.css?ver=222335" />
+<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/admin1.css?ver=3232252" />
+<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/jquery-ui.css?ver=13" />
+<script src="<%= cp %>/resources/js/jquery-1.11.3.min.js"></script>
+<script src="<%= cp %>/resources/js/jquery-ui.js?ver=132"></script>
 
 <title></title>
 </head>

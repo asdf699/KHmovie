@@ -3,7 +3,7 @@
 
 <div class="ft_ct">
 	<div class="inner">
-		<h1>MovieTicket</h1>
+		<h1>MovieSee</h1>
 		<div class="ft_list">
 			<ul>
 				<li><a href="<%=cp %>/notice/noticeList.mt">공지사항</a></li>

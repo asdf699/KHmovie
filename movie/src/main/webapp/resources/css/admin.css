@@ -13,9 +13,9 @@
 #header .logo h1{text-align:center;}
 #header .logo a{display:block;color:#ee1c25;font-size:36px;}
 
-#header_admin{position:relative;top:0;left:0;width:100%;height:70px;background:#414750;}
+#header_admin{position:relative;top:0;left:0;width:100%;height:70px;background:#ffffff;}
 #header_admin .logo{display:inline-block;padding:30px 20px;}
-#header_admin .logo a{display:block;font-size:32px;color:#fff;}
+#header_admin .logo a{display:block;font-size:32px;color:#f00;}
 
 /* util */
 #header .util_menu{height:30px;line-height:20px;background:#efebdb;overflow:hidden;}
@@ -30,7 +30,7 @@
 #header_admin .util_menu{position:absolute;top:10px;right:0;}
 #header_admin .util_menu ul:after{display:block;content:"";clear:both;}
 #header_admin .util_menu .inner li{float:left;}
-#header_admin .util_menu .inner li a{display:block;padding:5px 10px;color:#fff;}
+#header_admin .util_menu .inner li a{display:block;padding:5px 10px;color:#f00;}
 #header_admin .util_menu .inner li a:hover,
 #header_admin .util_menu .inner li a:focus{text-decoration:underline;}
 
@@ -44,7 +44,7 @@
 
 /* footer
 -------------------------------------------------------------- */
-#footer{padding:20px 0;background:#f5f5f5;margin-top:30px;}
+#footer{padding:20px 0;background:#ffffff;margin-top:30px;}
 #footer .ft_ct{width:1000px;margin:auto;}
 #footer .ft_ct .inner:after{display:block;content:"";clear:both;}
 #footer .ft_ct .inner h1{float:left;font-size:24px;}
@@ -410,7 +410,7 @@ table .contents_img img{max-width:100%;}
 .admin_grp .admin_list{position:absolute;top:0;left:0;width:200px;}
 .admin_grp .admin_list li{border-bottom:1px solid #f0f0f0;}
 .admin_grp .admin_list li a{display:block;height:35px;line-height:33px;font-size:14px;color:translate;padding-left:10px;}
-.admin_grp .admin_list li.on a{background:#414750;color:#fff;}
+.admin_grp .admin_list li.on a{background:#ffffff;color:#f00;}
 .admin_grp .admin_ct{float:left;width:100%;}
 
 

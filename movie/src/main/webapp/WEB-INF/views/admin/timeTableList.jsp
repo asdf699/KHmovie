@@ -29,9 +29,11 @@
 		})
 	})
 </script>
-
-
-<div class="admin_grp">
+<html>
+<head>
+<title></title></head>
+<body>
+ <div class="admin_grp">
 	<div class="admin_list">
 		<ul>
 			<li><a href="<%=cp%>/admin/movieList.mt">상영작</a></li>
@@ -77,18 +79,18 @@
 						<tr>
 							<td>
 								<select class="slct" id="movieSelection" name="movie_no">
-									<c:forEach var="movie" items="${timeMovie}">
-									<option value="${movie.movie_no}">${movie.movie_name}</option>
+									<c:forEach var="selectmovie_name" items="${selectmovie_name}">
+									<option value="${selectmovie_name.movie_no}">${selectmovie_name.movie_name}</option>
 									</c:forEach>
 								</select>
 							</td>
-							<td>
+							<%-- <td>
 								<select class="slct" id="roomSelection" name="room_no">
 									<c:forEach var="room" items="${timeRoom}">
 									<option value="${room.room_no}">${room.room_name} 총 좌석수 : 20</option>
 									</c:forEach>
 								</select>
-							</td>
+							</td> --%>
 							<td><input type="text" class="txt" name="start_date" id="start_date"/></td>
 							<td><input type="text" class="txt" name="end_date" id="end_date"/></td>
 							<td><input type="text" class="txt" name="show_date" id="show_date"/></td>
@@ -169,7 +171,7 @@
 						<th scope="col">삭제유무</th>
 					</tr>
 				</thead>
-				<tbody>
+				<%-- <tbody>
 					<c:forEach var="time" items="${timeList}">
 					<tr>
 						<td>${time.time_no}</td>
@@ -196,13 +198,14 @@
 						<td colspan="13" class="tac">등록된 스케쥴이 없습니다.</td>
 					</tr>
 					</c:if>
-				</tbody>
+				</tbody> --%>
 			</table>
 		</div>
 		
 		<!-- paging -->
-		<div class="paging">
+<%-- 		<div class="paging">
 			${pagingHtml}
-		</div>
+		</div> --%>
 	</div>
-</div>
+</div> 
+</body></html>
