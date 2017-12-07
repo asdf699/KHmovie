@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="admin">
+
+	<!-- 영화 -->
+	<resultMap id="adminModelRes" type="AdminMovieModel">
+		<result property="movie_no" column="movie_no" />
+		<result property="movie_name" column="movie_name" />
+		<result property="movie_director" column="movie_director" />
+		<result property="movie_director_picture" column="movie_director_picture" />
+		<result property="movie_actor" column="movie_actor" />
+		<result property="movie_actor1" column="movie_actor1" />
+		<result property="movie_actor2" column="movie_actor2" />
+		<result property="movie_actor_picture" column="movie_actor_picture" />
+		<result property="movie_actor_picture1" column="movie_actor_picture1" />
+		<result property="movie_actor_picture2" column="movie_actor_picture2" />
+		<result property="movie_company" column="movie_company" />
+		<result property="movie_story" column="movie_story" />
+		<result property="movie_poster" column="movie_poster" />
+		<result property="movie_stillcut" column="movie_stillcut" />
+		<result property="movie_stillcut1" column="movie_stillcut1" />
+		<result property="movie_stillcut2" column="movie_stillcut2" />
+		<result property="movie_stillcut3" column="movie_stillcut3" />
+		<result property="movie_stillcut4" column="movie_stillcut4" />
+		<result property="movie_genre" column="movie_genre" />
+		<result property="movie_age" column="movie_age" />
+		<result property="movie_date" column="movie_date" />
+		<result property="movie_regdate" column="movie_regdate" />
+		<result property="movie_type" column="movie_type" />
+		<result property="movie_intro" column="movie_intro" />
+	</resultMap>
+
+	<resultMap  id="admintimeListRes" type="AdminTimeTableModel" >
+		<result property="time_no" column="time_no"/>
+		<result property="movie_no" column="movie_no" />
+		<result property="movie_name" column="movie_name" />
+		<result property="start_date" column="start_date" />
+		<result property="end_date" column="end_date"/>
+		<result property="room_name" column="room_name" />
+		<result property="show_date" column="show_date"/>
+		<result property="start_time" column="start_time"/>
+		<result property="end_time" column="end_time"/>
+		<result property="reserved_seat" column="reserved_seat" />
+		<result property="total_seat" column="total_seat" />
+		<result property="adult_amt" column="adult_amt" /> 
+		<result property="child_amt" column="child_amt "/>  
+	</resultMap>
+	
+	
+	<!-- 영화이름,번호 리스트 뽑아오기 -->
+	<select id="selectMovie_name" resultMap="adminModelRes">
+		select movie_name , movie_no from MOVIE 
+		order by movie_no desc
+	</select>
+
+		<!-- timeTable 리스트 -->
+	<select id="timeTable_List" resultMap="admintimeListRes">
+		select tm.time_no
+     		 , tm.movie_no
+     		 , m.movie_name
+		     , tm.start_date
+		     , tm.end_date
+		     , r.room_name
+         , td.time_detail_no
+		     , td.show_date
+		     , td.start_time
+		     , td.end_time
+		     , td.reserved_seat
+		     , td.total_seat
+		     , td.adult_amt
+		     , td.child_amt
+		     from movie m, timetable_detail td, timetable_master tm, room r
+		     where m.movie_no = tm.movie_no 
+		     and tm.room_no = r.room_no
+		     and tm.time_no = td.time_no
+		     order by tm.time_no desc
+	</select>
+
+	<delete id="timeDetailDelete" parameterType="String">
+		delete from TIMETABLE_DETAIL 
+		where time_detail_no = #{time_detail_no}
+	</delete>
+	
+</mapper>

@@ -86,30 +86,14 @@
 	<definition name="MovieWrite" extends="admin">
 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/movieWrite.jsp" />
 	</definition>
-   
-	<!-- 상영작 리스트 -->
-    <definition name="MovieList" extends="main">
-		<put-attribute name="main_body" value="/WEB-INF/views/movie/BmovieTheater.jsp" />
-    </definition>
-
-	<!-- 상영작 상세보기-->
-	<definition name="MovieView" extends="main">
-		<put-attribute name="main_body" value="/WEB-INF/views/movie/BmovieTheater.jsp" />
-	</definition>
-    
-    <!-- 상영작 리스트 -->
-	<definition name="MovieWrite" extends="main">
-		<put-attribute name="main_body" value="/WEB-INF/views/movie/BmovieTheater.jsp" />
-	</definition>
-    
+	
     <!-- 상영작 수정폼 -->
-	<definition name="AdminMovieUpdate" extends="main">
-		<put-attribute name="main_body" value="/WEB-INF/views/movie/BmovieTheater.jsp" />
-    </definition>   
+	<definition name="AdminMovieUpdate" extends="admin">
+		<put-attribute name="admin_body" value="/WEB-INF/views/admin/movieUpdate.jsp" />
+    </definition>      
     
-    <!-- 영화 상영타임 리스트 -->
-	<definition name="TimeTableList" extends="main">
-		<put-attribute name="main_body" value="/WEB-INF/views/movie/BmovieTheater.jsp" />
-    </definition>
-        
+    <definition name="TimeTableList" extends="admin">
+		<put-attribute name="admin_body" value="/WEB-INF/views/admin/timeTableList.jsp" />
+    </definition>  
+                
 </tiles-definitions>

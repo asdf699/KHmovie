@@ -1,31 +1,55 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<% String cp = request.getContextPath(); %>
+<%
+	String cp = request.getContextPath();
+%>
 
-<div class="movie_list">
+<div class="admin_grp">
+	<div class="admin_list">
+		<ul>
+			<li class="on"><a href="<%=cp%>/admin/movieList.mt">상영작</a></li>
+			<li><a href="<%=cp%>/admin/timeTableList.see">시간표관리</a></li>
+			<li><a href="<%=cp%>/admin/adminMagazineList.mt">매거진</a></li>
+			<li><a href="<%=cp%>/admin/adminEventList.mt">이벤트</a></li>
+			<li><a href="<%=cp%>/admin/adminNoticeList.mt">공지사항</a></li>
+			<li><a href="<%=cp %>/admin/adminQnaList.mt">Q&amp;A</a></li>
+			<li><a href="<%=cp%>/admin/memberList.mt">회원정보</a></li>
+		</ul>
+	</div>
+	<div class="admin_ct">
+		<div class="movie_list">
 			<h3 class="sub_tit">상영작</h3>
 			<ul>
-				<c:forEach var="movielist" items="${movielist}" varStatus="stat">
-				<c:url var="viewURL" value="/movieView.see">
+			<c:forEach var="movielist" items="${movielist }" varStatus="stat">
+				<c:url var="viewURL" value="/admin/movieView.mt">
 					<c:param name="movie_no" value="${movielist.movie_no }" />
+					<%-- <c:param name="currentPage" value="${currentPage }" /> --%>
 				</c:url>
-				<c:url var="reserveURL" value="/movieTicketing.see">
-				<c:param name="movie_no" value="${movielist.movie_no}"/>
-				</c:url>
-				
-				<img src="<%= cp %>/resources/upload/movie/main_movie/${movielist.movie_poster}" > 
+				<li><a href="${viewURL }" class="list"> 
+				<img src="<%= cp %>/resources/upload/movie/main_movie/${movielist.movie_poster}" alt="영화포스터" /> 
+				<span class="detail">상세보기</span>
+				</a> <span class="btn btnC_02 btnF_01"> <input type="button"
+						value="예매하기" onclick="javascript:location.href='<%=cp%>/reserve/reserveMain.mt'"/>
+				</span></li>
 			</c:forEach>
 			</ul>
 		</div><!-- // movie_list -->
+			<div class="btn_type_03">
+				<a href="<%=cp%>/admin/movieWrite.see" class="btn btnC_03 btnP_04">
+					<span>글쓰기</span>
+				</a>
+			</div>
 		
-		<div class="w3-container">
-			<a href="/admin/movieWrite.see" button class="w3-button w3-red">
-				<span>글쓰기</span>
-			</a>
+		<!-- paging 
+		<div class="paging">
+			<a href="#none" class="page prv">&lt;</a> <strong>1</strong> <a
+				href="#none" class="page">2</a> <a href="#none" class="page">3</a> <a
+				href="#none" class="page">4</a> <a href="#none" class="page">5</a> <a
+				href="#none" class="page next">&gt;</a>
+		</div>  paging -->
+		<div class="paging">
+			${pagingHtml}
 		</div>
-			
-		<!-- paging -->
-		<!-- // paging -->
-		
+	</div>
+</div>

@@ -30,6 +30,11 @@ public class AdminController {
 	
 	private AdminService adminService;
 	
+	@ModelAttribute("movieModel")
+	public MovieModel movieModel() {
+		return new MovieModel();
+	}
+	
 	Logger log = Logger.getLogger(this.getClass());
 	
 	// 상영작 리스트
@@ -61,8 +66,8 @@ public class AdminController {
 		return mv;
 	}
 	
-	// 상영작 글쓰기 폼get - jsp 제작필요
-	@RequestMapping(value="/movieWrite.see", method = RequestMethod.GET)
+	// 상영작 글쓰기 폼get - jsp폼 수정필요
+	@RequestMapping(value="/movieWrite.see")
 	public ModelAndView movieWrite(HttpServletRequest request) {
 
 		ModelAndView mv = new ModelAndView();
@@ -91,7 +96,7 @@ public class AdminController {
 		return "redirect:movieList.see";
 	}
 	
-	// 상영작 수정폼get - jsp 제작필요
+	// 상영작 수정폼get - jsp폼 수정필요
 	@RequestMapping(value = "/movieUpdate.see", method = RequestMethod.GET)
 	public ModelAndView movieUpdate(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView();
@@ -118,7 +123,11 @@ public class AdminController {
 	@RequestMapping(value = "/timeTableList.see", method = RequestMethod.GET)
 	public ModelAndView timeTableList(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView();
-	
+		
+		List<AdminMovieModel> selectMovie_name = adminService.selectmovie_name();
+		List<AdminTimeTableModel> timetable_list = adminService.timetable_list();
+		mv.addObject("namelist", selectMovie_name);
+		mv.addObject("timetablelist", timetable_list);
 		mv.setViewName("TimeTableList");
 		return mv;
 	}
