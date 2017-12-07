@@ -18,23 +18,29 @@
 		</ul>
 	</div>
 	<div class="admin_ct">
-		<div class="movie_list">
-			<h3 class="sub_tit">상영작</h3>
-			<ul>
-			<c:forEach var="movielist" items="${movielist }" varStatus="stat">
-				<c:url var="viewURL" value="/admin/movieView.mt">
-					<c:param name="movie_no" value="${movielist.movie_no }" />
-					<%-- <c:param name="currentPage" value="${currentPage }" /> --%>
-				</c:url>
-				<li><a href="${viewURL }" class="list"> 
-				<img src="<%= cp %>/resources/upload/movie/main_movie/${movielist.movie_poster}" alt="영화포스터" /> 
-				<span class="detail">상세보기</span>
-				</a> <span class="btn btnC_02 btnF_01"> <input type="button"
-						value="예매하기" onclick="javascript:location.href='<%=cp%>/reserve/reserveMain.mt'"/>
-				</span></li>
-			</c:forEach>
-			</ul>
-		</div><!-- // movie_list -->
+		<div class="slidePoster">
+<div class="slide">
+<ul style="left:0px;">
+<c:forEach var="movielist" items="${movielist}" varStatus="stat" >
+<c:url var="viewURL" value="/movieView.see">
+	<c:param name="movie_no" value="${movielist.movie_no }"/>
+</c:url>
+<c:url var="reserveURL" value="/movieTicketing.see">
+	<c:param name="movie_no" value="${movielist.movie_no}"/>
+</c:url>
+<li class="">
+<a href="javascript:void(0)";>
+<img src="<%= cp %>/resources/upload/movie/main_movie/${movielist.movie_poster}">
+</a>
+<div class="layer_hover">
+<a href="${reserveURL}" onclick="goToTiketing()" class="btn_reserve">예매하기</a>
+<a href="${viewURL}" class="btn_View">상세보기</a>
+
+</div>
+</li>
+</c:forEach>
+</ul>
+</div><!-- // movie_list -->
 			<div class="btn_type_03">
 				<a href="<%=cp%>/admin/movieWrite.see" class="btn btnC_03 btnP_04">
 					<span>글쓰기</span>

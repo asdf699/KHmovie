@@ -10,5 +10,6 @@ public interface AdminDAO {
 	
 	public List<AdminMovieModel> selectmovie_name();
 	
-	public List<AdminTimeTableModel> timetable_list();
+	public boolean movieWrite(MovieModel movieModel);
+	
 }

@@ -68,7 +68,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 무비 셀렉 -->
 	<select id="selectMovie_ALL" resultMap="movieRes">
-		select * from movie order by DBMS_RANDOM.RANDOM
+		select * from movie order by movie_no DESC<!-- order by DBMS_RANDOM.RANDOM -->
 	</select>
 	
 	<!-- 상세보기 -->
@@ -79,6 +79,64 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectView" resultMap="movieRes">
 		select * from MOVIE where movie_no like '1'
 	</select>
+	
+		<!-- 상영할 영화 등록하기 -->
+	<insert id="movieWrite" parameterType="movieModel">
+		insert into movie
+		(
+			movie_no,
+			movie_name,
+			movie_director,
+			movie_director_picture,
+			movie_actor,
+			movie_actor1,
+			movie_actor2,
+			movie_actor_picture,
+			movie_actor_picture1,
+			movie_actor_picture2,
+			movie_company,
+			movie_story,
+			movie_poster,
+			movie_stillcut,
+			movie_stillcut1,
+			movie_stillcut2,
+			movie_stillcut3,
+			movie_stillcut4,
+			movie_genre,
+			movie_age,
+			movie_date,
+			movie_regdate,
+			movie_type,
+			movie_intro
+		)
+		values
+		(
+			movie_NO_SEQ.nextval,
+			#{movie_name},
+			#{movie_director},
+			#{movie_director_picture,jdbcType=VARCHAR},
+			#{movie_actor},
+			#{movie_actor1},
+			#{movie_actor2},
+			#{movie_actor_picture,jdbcType=VARCHAR},
+			#{movie_actor_picture1,jdbcType=VARCHAR},
+			#{movie_actor_picture2,jdbcType=VARCHAR},
+			#{movie_company},
+			#{movie_story},
+			#{movie_poster,jdbcType=VARCHAR},
+			#{movie_stillcut,jdbcType=VARCHAR},
+			#{movie_stillcut1,jdbcType=VARCHAR},
+			#{movie_stillcut2,jdbcType=VARCHAR},
+			#{movie_stillcut3,jdbcType=VARCHAR},
+			#{movie_stillcut4,jdbcType=VARCHAR},
+			#{movie_genre},
+			#{movie_age},
+			#{movie_date},
+			sysdate,
+			#{movie_type},
+			#{movie_intro}
+		)
+	</insert>
 	
 	<!-- 영화 삭제하기 -->
 	<delete id="movieDelete" parameterType="int">

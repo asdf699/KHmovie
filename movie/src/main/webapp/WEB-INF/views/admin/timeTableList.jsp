@@ -47,7 +47,7 @@
 	</div>
 	<div class="admin_ct">
 		<h3 class="sub_tit">시간표 등록</h3>
-		<form action="timeTableWrite.mt" method="post" name="schedule">
+		<form action="timeTableWrite.see" method="post" name="schedule">
 			<div class="tbl_type_02">
 				<table>
 					<caption>시간표 등록</caption>
@@ -65,7 +65,6 @@
 					<thead>
 						<tr>
 							<th scope="col">영화목록</th>
-							<th scope="col">상영관</th>
 							<th scope="col">개봉일</th>
 							<th scope="col">종료일</th>
 							<th scope="col">상영일</th>
@@ -113,13 +112,13 @@
 								</select>
 							</td>
 							<td>
-								<select name="adult_amt" class="slct">
+								<select name="timetable_detail_adult_amt" class="slct">
 									<option value="10000">10000원</option>
 									<option value="12000">12000원</option>
 								</select>
 							</td>
 							<td>
-								<select name="child_amt" class="slct">
+								<select name="timetable_detail_child_amt" class="slct">
 									<option value="7000">7000원</option>
 									<option value="9000">9000원</option>
 								</select>

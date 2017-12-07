@@ -197,7 +197,7 @@
 </li>
 </c:forEach>
 </ul>
-
+</div>
 <%-- <ul style="left:1080px;">
 <c:forEach var="list" items="${list}" varStatus="stat" >
 <c:url var="viewURL" value="/movieView.see">
@@ -217,7 +217,7 @@
 </c:forEach>
 </ul> --%>
 
-</div>
+
 
 <div class="btnSt">
 	<a href="#n" class="prev" style="display: none;">이전</a>

@@ -7,6 +7,8 @@ import javax.annotation.Resource;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Service;
 
+import movie.movie.MovieModel;
+
 @Service
 public class MovieService implements MovieDAO{
 
@@ -28,6 +30,18 @@ public class MovieService implements MovieDAO{
 		// TODO Auto-generated method stub
 		return sqlSessionTemplate.selectList("movie.selectMovie_One",movie_no);
 	}
+	//영화 등록하기
+	public boolean movieWrite(MovieModel movieModel) {
+		// TODO Auto-generated method stub
+		sqlSessionTemplate.insert("movie.movieWrite", movieModel);
+		return true;
+	}
+	//영화이미지 난수생성
+	public int getMagazine_NO_SEQ() {
+		// TODO Auto-generated method stub
+		return sqlSessionTemplate.selectOne("movie.getMovie_NO_SEQ");
+	}
+	
 	//영화 삭제하기
 	public boolean movieDelete(int movie_no) {
 		// TODO Auto-generated method stub

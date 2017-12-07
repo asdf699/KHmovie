@@ -5,7 +5,6 @@ import javax.annotation.Resource;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Service;
 
-import movie.reserve.TimetableDetailModel;
 
 import movie.admin.AdminMovieModel;
 
@@ -26,13 +25,19 @@ public class AdminService implements AdminDAO{
 	public List<AdminMovieModel> selectmovie_name() {
 		return sqlSessionTemplate.selectList("admin.selectMovie_name");
 	}
-	//
-	public List<AdminTimeTableModel> timetable_list() {
-		return sqlSessionTemplate.selectList("admin.timeTable_List");
-		}
 	
-	public boolean timeDetailInsert(TimetableDetailModel detailModel) {
-		sqlSessionTemplate.insert("admin.timeDetailInsert", detailModel);
+	public boolean movieWrite(MovieModel movieModel) {
+		// TODO Auto-generated method stub
+		sqlSessionTemplate.insert("movie.movieWrite", movieModel);
 		return true;
 	}
+	//
+	/*public List<AdminTimeTableModel> timetable_list() {
+		return sqlSessionTemplate.selectList("admin.timeTable_List");
+		}*/
+	
+/*	public boolean timeDetailInsert(ReserveModel detailModel) {
+		sqlSessionTemplate.insert("admin.timeDetailInsert", detailModel);
+		return true;
+	}*/
 }

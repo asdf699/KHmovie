@@ -80,17 +80,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select> -->
 	
 	
-	<insert id="timeDetailInsert" parameterType="timetableDetailModel" useGeneratedKeys="true" keyProperty="time_no">
+<!-- 	<insert id="timeDetailInsert" parameterType="timetableDetailModel" useGeneratedKeys="true" keyProperty="time_no">
 		<selectKey keyProperty="time_no" resultType="int" order="BEFORE">
 			select TIMETABLE_MASTER_NO_SEQ.currval from dual
 		</selectKey>
-		insert into TIMETABLE_DETAIL (time_detail_no, time_no, time_name, show_date, start_time, end_time, adult_amt, child_amt, total_seat, reserved_seat)
-		values (TIMETABLE_DETAIL_NO_SEQ.nextval, #{time_no}, #{time_name}, #{show_date}, #{start_time}, #{end_time}, #{adult_amt}, #{child_amt}, '20', '0')
+		insert into TIMETABLE_DETAIL (timetable_detail_no, timetable_detail_time_no, time_name, timetable_detail_show_date, timetable_detail_start_time, timetable_detail_end_time, timetable_detail_adult_amt, timetable_detail_child_amt)
+		values (TIMETABLE_DETAIL_NO_SEQ.nextval, #{timetable_detail_time_no}, #{timetable_detail_time_name}, #{timetable_detail_show_date}, #{timetable_detail_start_time}, #{timetable_detail_end_time}, #{timetable_detail_adult_amt}, #{timetable_detail_child_amt})
 	</insert>
 	
 	<delete id="timeDetailDelete" parameterType="String">
 		delete from TIMETABLE_DETAIL 
 		where time_detail_no = #{time_detail_no}
-	</delete>
+	</delete> -->
 	
 </mapper>
