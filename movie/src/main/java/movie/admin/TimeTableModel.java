@@ -88,4 +88,6 @@ public class TimeTableModel {
 	public void setTimetable_child_amt(int timetable_child_amt) {
 		this.timetable_child_amt = timetable_child_amt;
 	}
+	
+	
 }

@@ -112,13 +112,13 @@
 								</select>
 							</td>
 							<td>
-								<select name="timetable_detail_adult_amt" class="slct">
+								<select name="adult_amt" class="slct">
 									<option value="10000">10000원</option>
 									<option value="12000">12000원</option>
 								</select>
 							</td>
 							<td>
-								<select name="timetable_detail_child_amt" class="slct">
+								<select name="child_amt" class="slct">
 									<option value="7000">7000원</option>
 									<option value="9000">9000원</option>
 								</select>
@@ -161,8 +161,6 @@
 						<th scope="col">개봉일</th>
 						<th scope="col">종료일</th>
 						<th scope="col">상영일</th>
-						<th scope="col">상영관</th>
-						<th scope="col">좌석수</th>
 						<th scope="col">시작시간</th>
 						<th scope="col">종료시간</th>
 						<th scope="col">대인금액</th>
@@ -170,34 +168,32 @@
 						<th scope="col">삭제유무</th>
 					</tr>
 				</thead>
-				<%-- <tbody>
-					<c:forEach var="time" items="${timeList}">
+				<tbody>
+					<c:forEach var="timetable_list" items="${timetable_list}">
 					<tr>
-						<td>${time.time_no}</td>
-						<td>${time.movie_no}</td>
-						<td>${time.movie_name}</td>
-						<td><fmt:formatDate value="${time.start_date}" pattern="yyyyMMdd" /></td>
-						<td><fmt:formatDate value="${time.end_date}" pattern="yyyyMMdd" /></td>
-						<td>${time.show_date}</td>
-						<td>${time.room_name}</td>
-						<td>${time.reserved_seat} &#47; ${time.total_seat}</td>
-						<td>${time.start_time}</td>
-						<td>${time.end_time}</td>
-						<td>${time.adult_amt}</td>
-						<td>${time.child_amt}</td>
-						<td class="schedule_delete">
-							<a href="timeTableDelete.mt?time_no=${time.time_no}&time_detail_no=${time.time_detail_no}" class="btn btnC_04 btnP_03">
+						<td>${timetable_list.timetable_no}</td>
+						<td>${timetable_list.timetable_movie_no}</td>
+						<td>${timetable_list.timetable_movie_name}</td>
+						<td><fmt:formatDate value="${timetable_list.timetable_start_date}" pattern="yyyyMMdd" /></td>
+						<td><fmt:formatDate value="${timetable_list.timetable_end_date}" pattern="yyyyMMdd" /></td>
+						<td><fmt:formatDate value="${timetable_list.timetable_show_date}" pattern="yyyyMMdd" /></td>
+						<td>${timetable_list.timetable_start_time}</td>
+						<td>${timetable_list.timetable_end_time}</td>
+						<td>${timetable_list.timetable_adult_amt}</td>
+						<td>${timetable_list.timetable_child_amt}</td>
+ 						<td class="schedule_delete">
+							<a href="timeTableDelete.see?timetable_no=${timetable_list.timetable_no}" class="btn btnC_04 btnP_03">
 								<span>삭제</span>
 							</a>
 						</td>
 					</tr>
 					</c:forEach>
-					<c:if test="${fn:length(timeList) le 0}">
+					<c:if test="${fn:length(timetable_list) le 0}">
 					<tr>
 						<td colspan="13" class="tac">등록된 스케쥴이 없습니다.</td>
 					</tr>
 					</c:if>
-				</tbody> --%>
+				</tbody>
 			</table>
 		</div>
 		

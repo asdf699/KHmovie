@@ -33,64 +33,76 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="movie_intro" column="movie_intro" />
 	</resultMap>
 
-<!-- 	<resultMap  id="admintimeListRes" type="AdminTimeTableModel" >
-		<result property="timetable_time_no" column="timetable_time_no"/>
+ 	<resultMap  id="TimetalbeRes" type="TimeTableModel" >
+		<result property="timetable_no" column="timetable_time_no"/>
 		<result property="timetable_movie_no" column="timetable_movie_no" />
 		<result property="timetable_movie_name" column="timetable_movie_name" />
 		<result property="timetable_start_date" column="timetable_start_date" />
 		<result property="timetable_end_date" column="timetable_end_date"/>
-		<result property="timetable_room_name" column="timetable_room_name" />
-		<result property="timetable_show_date" column="timetable_show_date"/>
+		<result property="timetable_show_date" column="timetable_show_date" />
+		<result property="timetable_reserved_seat" column="timetable_reserved_seat"/>
+		<result property="timetable_total_seat" column="timetable_total_seat"/>
 		<result property="timetable_start_time" column="timetable_start_time"/>
-		<result property="timetable_end_time" column="timetable_end_time"/>
-		<result property="timetable_reserved_seat" column="timetable_reserved_seat" />
-		<result property="timetable_total_seat" column="timetable_total_seat" />
-		<result property="timetable_adult_amt" column="timetable_adult_amt" /> 
-		<result property="timetable_child_amt" column="timetable_child_amt "/>  
-	</resultMap> -->
+		<result property="timetable_end_time" column="timetable_end_time" />
+		<result property="timetable_adult_amt" column="timetable_adult_amt" />
+		<result property="timetable_child_amt" column="timetable_child_amt" /> 
+	</resultMap> 
 	
 	
 	<!-- 영화이름,번호 리스트 뽑아오기 -->
 	<select id="selectMovie_name" resultMap="adminModelRes">
 		select movie_name , movie_no from MOVIE 
-		order by movie_no desc
+		order by movie_no DESC
 	</select>
 
-		<!-- timeTable 리스트 -->
-<!-- 	<select id="timeTable_List" resultMap="admintimeListRes">
-		select tm.time_no
-     		 , tm.movie_no
-     		 , m.movie_name
-		     , tm.start_date
-		     , tm.end_date
-		     , r.room_name
-         , td.time_detail_no
-		     , td.show_date
-		     , td.start_time
-		     , td.end_time
-		     , td.reserved_seat
-		     , td.total_seat
-		     , td.adult_amt
-		     , td.child_amt
-		     from movie m, timetable_detail td, timetable_master tm, room r
-		     where m.movie_no = tm.movie_no 
-		     and tm.room_no = r.room_no
-		     and tm.time_no = td.time_no
-		     order by tm.time_no desc
-	</select> -->
 	
-	
-<!-- 	<insert id="timeDetailInsert" parameterType="timetableDetailModel" useGeneratedKeys="true" keyProperty="time_no">
-		<selectKey keyProperty="time_no" resultType="int" order="BEFORE">
-			select TIMETABLE_MASTER_NO_SEQ.currval from dual
-		</selectKey>
-		insert into TIMETABLE_DETAIL (timetable_detail_no, timetable_detail_time_no, time_name, timetable_detail_show_date, timetable_detail_start_time, timetable_detail_end_time, timetable_detail_adult_amt, timetable_detail_child_amt)
-		values (TIMETABLE_DETAIL_NO_SEQ.nextval, #{timetable_detail_time_no}, #{timetable_detail_time_name}, #{timetable_detail_show_date}, #{timetable_detail_start_time}, #{timetable_detail_end_time}, #{timetable_detail_adult_amt}, #{timetable_detail_child_amt})
+	<insert id="timetableInsert" parameterType="TimeTableModel">
+		insert into TIMETABLE 
+		(
+			timetable_no,
+			timetable_movie_no,
+			timetable_movie_name,
+			timetable_start_date,
+			timetable_end_date,
+			timetable_show_date,
+			timetable_reserved_seat,
+			timetable_total_seat,
+			timetable_start_time,
+			timetable_end_time,
+			timetable_adult_amt,
+			timetable_child_amt
+		)
+		values 
+		(
+			TIMETABLE_NO_SEQ.nextval, 
+			#{timetable_movie_no}, 
+			#{timetable_movie_name,jdbcType=VARCHAR}, 
+			#{timetable_start_date}, 
+			#{timetable_end_date}, 
+			#{timetable_show_date},
+			#{timetable_reserved_seat,jdbcType=INTEGER}, 
+			#{timetable_total_seat,jdbcType=INTEGER},
+			#{timetable_start_time},
+			#{timetable_end_time},
+			#{timetable_adult_amt},
+			#{timetable_child_amt}
+		)
+			
 	</insert>
+	
+	<!-- 시간표 조회 -->
+	<select id="timetableSelect" resultMap="TimetalbeRes">
+		select * from timetable order by timetable_no DESC
+	</select>
 	
 	<delete id="timeDetailDelete" parameterType="String">
 		delete from TIMETABLE_DETAIL 
 		where time_detail_no = #{time_detail_no}
-	</delete> -->
+	</delete>
 	
+	<!-- 시간표 삭제 -->
+	<delete id="timetableDelete" parameterType="String">
+		delete from timetable
+		where timetable_no = #{timetable_no}
+	</delete>
 </mapper>

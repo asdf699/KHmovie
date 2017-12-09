@@ -13,6 +13,7 @@ PUBLIC " - //mybatis.org//DTD Config 3.0//EN"
 		<typeAlias alias="moviebannerModel" type="movie.movie.MovieBannerModel" />
 		<typeAlias alias="movieintromodel" type="movie.movie.MovieIntroModel" />
 		
+		<typeAlias alias="timeTableModel" type="movie.admin.TimeTableModel"/>
 		<typeAlias alias="adminMovieModel" type="movie.admin.AdminMovieModel"/>
 		
 	</typeAliases>
@@ -22,7 +23,6 @@ PUBLIC " - //mybatis.org//DTD Config 3.0//EN"
 		<!-- notice -->
 		<mapper resource="config/mybatis/movie_SQL.xml"/>
 		<mapper resource="config/mybatis/admin_SQL.xml"/>
-		<!-- <mapper resource="config/mybatis/reserve_SQL.xml"/> -->
 	</mappers>
 	
 	

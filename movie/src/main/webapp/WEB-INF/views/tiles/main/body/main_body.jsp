@@ -15,7 +15,7 @@
 <div class="gnb">
 <ul>
 <li>
-<a href="<%=cp %>/movieTicketing.see" title="예매">예매</a>
+<a href="<%=cp %>/reserve/movieTicketing.see" title="예매">예매</a>
 <div class="depth">
 </div>
 <ul>

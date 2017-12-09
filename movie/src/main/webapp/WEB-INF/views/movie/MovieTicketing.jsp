@@ -229,7 +229,9 @@
     </div>
 </div>
 <!-- //Movie select end -->
-<!-- Movie time inner -->
+
+
+<!-- <!-- Movie time inner -->
 <div class="time_inner">
     <div class="time_stop">
         <h3 class="sub_tit02"><span class="Lang-LBL0020">상영시간</span><span class="sub_etc Lang-LBL0021">예고편 상영 등으로 시작이 10여분 정도 차이 날 수 있습니다.</span></h3>
@@ -259,7 +261,7 @@
 <span class="noData Lang-LBL0028">상영시간이 조회되지 않았습니다.</span>
         </div>
     </div>
-</div>
+</div> 
 <!-- //Movie time inner -->
         </div>
 </body>

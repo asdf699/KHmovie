@@ -23,7 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
-import movie.admin.*;
+import movie.admin.TimeTableModel;
 import movie.movie.MovieModel;
 import movie.movie.MovieService;
 
@@ -74,7 +74,7 @@ public class AdminController {
 		return mv;
 	}
 	
-	// 상영작 글쓰기 폼get - jsp폼 수정필요
+	// 상영작 글쓰기 폼get
 	@RequestMapping(value="/movieWrite.see")
 	public ModelAndView movieWrite(HttpServletRequest request) {
 
@@ -85,7 +85,7 @@ public class AdminController {
 		return mv;
 	}
 	
-	// 상영작 글쓰기post  -전체적 수정필요 - MovieModel DB사용
+	// 상영작 글쓰기 post
 	@RequestMapping(value = "/movieWrite.see", method = RequestMethod.POST)
 	public ModelAndView movieWrite2(@ModelAttribute("movieModel") MovieModel movieModel, BindingResult result, HttpServletRequest request, MultipartHttpServletRequest multipartHttpServletRequest) throws IOException{
 
@@ -106,228 +106,6 @@ public class AdminController {
         	}else{
         		movieModel.setMovie_poster("NULL");		
         	}
-		/*int seqName = movieService.getMagazine_NO_SEQ();
-		
-		if (!multipartHttpServletRequest.getFile("movie_director_picture").getOriginalFilename().equals("")) {
-	         MultipartFile multipartFile0 = multipartHttpServletRequest.getFile("movie_director_picture");
-	         String file_name0 = "director_" + seqName;
-	         String file_ext0 = multipartFile0.getOriginalFilename()
-	               .substring(multipartFile0.getOriginalFilename().lastIndexOf('.') + 1);
-	         if (file_ext0 != "") {
-	            String full_name = file_name0 + "." + file_ext0;
-	            File file = new File(filePath + full_name);
-
-	            if (!file.exists()) {
-	               file.mkdirs();
-	            }
-	            try {
-	               multipartFile0.transferTo(file);
-	            } catch (Exception e) {
-	            }
-	            movieModel.setMovie_director_picture(full_name);
-	         }
-	      } else {
-	         movieModel.setMovie_director_picture("사진없음");
-	      }
-		
-		if (!multipartHttpServletRequest.getFile("movie_actor_picture").getOriginalFilename().equals("")) {
-	         MultipartFile multipartFile0 = multipartHttpServletRequest.getFile("movie_actor_picture");
-	         String file_name0 = "actor_" + seqName;
-	         String file_ext0 = multipartFile0.getOriginalFilename()
-	               .substring(multipartFile0.getOriginalFilename().lastIndexOf('.') + 1);
-	         if (file_ext0 != "") {
-	            String full_name = file_name0 + "." + file_ext0;
-	            File file = new File(filePath + full_name);
-
-	            if (!file.exists()) {
-	               file.mkdirs();
-	            }
-	            try {
-	               multipartFile0.transferTo(file);
-	            } catch (Exception e) {
-	            }
-	            movieModel.setMovie_director_picture(full_name);
-	         }
-	      } else {
-	         movieModel.setMovie_director_picture("사진없음");
-	      }
-		
-		if (!multipartHttpServletRequest.getFile("movie_actor_picture1").getOriginalFilename().equals("")) {
-	         MultipartFile multipartFile0 = multipartHttpServletRequest.getFile("movie_actor_picture1");
-	         String file_name0 = "actor_" + seqName;
-	         String file_ext0 = multipartFile0.getOriginalFilename()
-	               .substring(multipartFile0.getOriginalFilename().lastIndexOf('.') + 1);
-	         if (file_ext0 != "") {
-	            String full_name = file_name0 + "." + file_ext0;
-	            File file = new File(filePath + full_name);
-
-	            if (!file.exists()) {
-	               file.mkdirs();
-	            }
-	            try {
-	               multipartFile0.transferTo(file);
-	            } catch (Exception e) {
-	            }
-	            movieModel.setMovie_director_picture(full_name);
-	         }
-	      } else {
-	         movieModel.setMovie_director_picture("사진없음");
-	      }
-		
-		if (!multipartHttpServletRequest.getFile("movie_actor_picture2").getOriginalFilename().equals("")) {
-	         MultipartFile multipartFile0 = multipartHttpServletRequest.getFile("movie_actor_picture2");
-	         String file_name0 = "actor_" + seqName;
-	         String file_ext0 = multipartFile0.getOriginalFilename()
-	               .substring(multipartFile0.getOriginalFilename().lastIndexOf('.') + 1);
-	         if (file_ext0 != "") {
-	            String full_name = file_name0 + "." + file_ext0;
-	            File file = new File(filePath + full_name);
-
-	            if (!file.exists()) {
-	               file.mkdirs();
-	            }
-	            try {
-	               multipartFile0.transferTo(file);
-	            } catch (Exception e) {
-	            }
-	            movieModel.setMovie_director_picture(full_name);
-	         }
-	      } else {
-	         movieModel.setMovie_director_picture("사진없음");
-	      }
-		
-		if (!multipartHttpServletRequest.getFile("movie_poster").getOriginalFilename().equals("")) {
-	         MultipartFile multipartFile0 = multipartHttpServletRequest.getFile("movie_poster");
-	         String file_name0 = "poster_" + seqName;
-	         String file_ext0 = multipartFile0.getOriginalFilename()
-	               .substring(multipartFile0.getOriginalFilename().lastIndexOf('.') + 1);
-	         if (file_ext0 != "") {
-	            String full_name = file_name0 + "." + file_ext0;
-	            File file = new File(filePath + full_name);
-
-	            if (!file.exists()) {
-	               file.mkdirs();
-	            }
-	            try {
-	               multipartFile0.transferTo(file);
-	            } catch (Exception e) {
-	            }
-	            movieModel.setMovie_director_picture(full_name);
-	         }
-	      } else {
-	         movieModel.setMovie_director_picture("사진없음");
-	      }
-		
-		if (!multipartHttpServletRequest.getFile("movie_stillcut").getOriginalFilename().equals("")) {
-	         MultipartFile multipartFile0 = multipartHttpServletRequest.getFile("movie_stillcut");
-	         String file_name0 = "stillcut_" + seqName;
-	         String file_ext0 = multipartFile0.getOriginalFilename()
-	               .substring(multipartFile0.getOriginalFilename().lastIndexOf('.') + 1);
-	         if (file_ext0 != "") {
-	            String full_name = file_name0 + "." + file_ext0;
-	            File file = new File(filePath + full_name);
-
-	            if (!file.exists()) {
-	               file.mkdirs();
-	            }
-	            try {
-	               multipartFile0.transferTo(file);
-	            } catch (Exception e) {
-	            }
-	            movieModel.setMovie_director_picture(full_name);
-	         }
-	      } else {
-	         movieModel.setMovie_director_picture("사진없음");
-	      }
-		
-		if (!multipartHttpServletRequest.getFile("movie_stillcut1").getOriginalFilename().equals("")) {
-	         MultipartFile multipartFile0 = multipartHttpServletRequest.getFile("movie_stillcut1");
-	         String file_name0 = "stillcut_" + seqName;
-	         String file_ext0 = multipartFile0.getOriginalFilename()
-	               .substring(multipartFile0.getOriginalFilename().lastIndexOf('.') + 1);
-	         if (file_ext0 != "") {
-	            String full_name = file_name0 + "." + file_ext0;
-	            File file = new File(filePath + full_name);
-
-	            if (!file.exists()) {
-	               file.mkdirs();
-	            }
-	            try {
-	               multipartFile0.transferTo(file);
-	            } catch (Exception e) {
-	            }
-	            movieModel.setMovie_director_picture(full_name);
-	         }
-	      } else {
-	         movieModel.setMovie_director_picture("사진없음");
-	      }
-		
-		if (!multipartHttpServletRequest.getFile("movie_stillcut2").getOriginalFilename().equals("")) {
-	         MultipartFile multipartFile0 = multipartHttpServletRequest.getFile("movie_stillcut2");
-	         String file_name0 = "stillcut_" + seqName;
-	         String file_ext0 = multipartFile0.getOriginalFilename()
-	               .substring(multipartFile0.getOriginalFilename().lastIndexOf('.') + 1);
-	         if (file_ext0 != "") {
-	            String full_name = file_name0 + "." + file_ext0;
-	            File file = new File(filePath + full_name);
-
-	            if (!file.exists()) {
-	               file.mkdirs();
-	            }
-	            try {
-	               multipartFile0.transferTo(file);
-	            } catch (Exception e) {
-	            }
-	            movieModel.setMovie_director_picture(full_name);
-	         }
-	      } else {
-	         movieModel.setMovie_director_picture("사진없음");
-	      }
-		
-		if (!multipartHttpServletRequest.getFile("movie_stillcut3").getOriginalFilename().equals("")) {
-	         MultipartFile multipartFile0 = multipartHttpServletRequest.getFile("movie_stillcut3");
-	         String file_name0 = "stillcut_" + seqName;
-	         String file_ext0 = multipartFile0.getOriginalFilename()
-	               .substring(multipartFile0.getOriginalFilename().lastIndexOf('.') + 1);
-	         if (file_ext0 != "") {
-	            String full_name = file_name0 + "." + file_ext0;
-	            File file = new File(filePath + full_name);
-
-	            if (!file.exists()) {
-	               file.mkdirs();
-	            }
-	            try {
-	               multipartFile0.transferTo(file);
-	            } catch (Exception e) {
-	            }
-	            movieModel.setMovie_director_picture(full_name);
-	         }
-	      } else {
-	         movieModel.setMovie_director_picture("사진없음");
-	      }
-		
-		if (!multipartHttpServletRequest.getFile("movie_stillcut4").getOriginalFilename().equals("")) {
-	         MultipartFile multipartFile0 = multipartHttpServletRequest.getFile("movie_stillcut4");
-	         String file_name0 = "stillcut_" + seqName;
-	         String file_ext0 = multipartFile0.getOriginalFilename()
-	               .substring(multipartFile0.getOriginalFilename().lastIndexOf('.') + 1);
-	         if (file_ext0 != "") {
-	            String full_name = file_name0 + "." + file_ext0;
-	            File file = new File(filePath + full_name);
-
-	            if (!file.exists()) {
-	               file.mkdirs();
-	            }
-	            try {
-	               multipartFile0.transferTo(file);
-	            } catch (Exception e) {
-	            }
-	            movieModel.setMovie_director_picture(full_name);
-	         }
-	      } else {
-	         movieModel.setMovie_director_picture("사진없음");
-	      }*/
-		
 		movieService.movieWrite(movieModel); 
 		
 		mv.setViewName("redirect:/admin/movieList.see");
@@ -359,71 +137,71 @@ public class AdminController {
 		return mv;
 	}
 	
-/*	//상영작 수정post - 전체적 수정필요 - MovieModel DB사용
-	@RequestMapping(value = "/movieUpdate.see", method = RequestMethod.POST)
-	public String movieUpdate2(@ModelAttribute("movieModel") MovieModel movieModel, BindingResult result,
-			MultipartHttpServletRequest multipartHttpServletRequest, MultipartHttpServletRequest request) {
-	
-	movieService.movieUpdate(movieModel);
+	// 스케쥴 등록 -미완
+			@RequestMapping(value = "/timeTableWrite.see", method = RequestMethod.POST)
+			public String timeTableWrite(HttpServletRequest request) throws ParseException{
+			
+			// 모델등록
+			TimeTableModel timetablemodel = new TimeTableModel();		
+			// 날짜변환
+			Date timetable_start_date;
+			Date timetable_end_date;
+			Date timetable_show_date;
+			
+			timetable_start_date = new SimpleDateFormat("yyyyMMdd").parse(request.getParameter("start_date"));
+			timetable_end_date = new SimpleDateFormat("yyyyMMdd").parse(request.getParameter("end_date"));
+			timetable_show_date = new SimpleDateFormat("yyyyMMdd").parse(request.getParameter("show_date"));
+			
+			//detail 파라미터
+			int timetable_movie_no = Integer.parseInt(request.getParameter("movie_no"));
+			String timetable_start_time = request.getParameter("start_time");
+			String timetable_end_time = request.getParameter("end_time");
+			int timetable_adult_amt = Integer.parseInt(request.getParameter("adult_amt"));
+			int timetable_child_amt = Integer.parseInt(request.getParameter("child_amt"));
+			
+			// 번호 이름 가져오기
+			
+			//timetable Model
+			timetablemodel.setTimetable_movie_no(timetable_movie_no);
+			timetablemodel.setTimetable_start_date(timetable_start_date);
+			timetablemodel.setTimetable_end_date(timetable_end_date);
+			timetablemodel.setTimetable_show_date(timetable_show_date);
+			timetablemodel.setTimetable_start_time(timetable_start_time);
+			timetablemodel.setTimetable_end_time(timetable_end_time);
+			timetablemodel.setTimetable_adult_amt(timetable_adult_amt);
+			timetablemodel.setTimetable_child_amt(timetable_child_amt);
+			
+			
+			adminService.timeDetailInsert(timetablemodel);
+			
+			return "redirect:timeTableList.see";	
+		}
 
-		return "redirect:movieList.see";
-	}*/
 	
 	// 스케쥴 리스트 -미완
-	@RequestMapping(value = "/timeTableList.see")
+	@RequestMapping(value = "/timeTableList.see", method = RequestMethod.GET)
 	public ModelAndView timeTableList(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView();
 		
+		List<TimeTableModel> timetable_list = adminService.timetable_list();
 		List<AdminMovieModel> selectmovie_name = adminService.selectmovie_name();
-		/*List<AdminTimeTableModel> timetable_list = adminService.timetable_list();*/
 		
+		mv.addObject("timetable_list", timetable_list);
 		mv.addObject("selectmovie_name", selectmovie_name);
-		/*mv.addObject("timetablelist", timetable_list);*/
-		
 		mv.setViewName("TimeTableList");
 		return mv;
 	}
 	
-/*	// 스케쥴 등록 -미완
-		@RequestMapping(value = "/timeTableWrite.see", method = RequestMethod.POST)
-		public String timeTableWrite(HttpServletRequest request) throws ParseException{
-		
-		// 모델등록
-		ReserveModel timetablemodel = new ReserveModel();		
-		
-		// 날짜변환
-		Date Start_date;
-		Date end_date;
-		
-		//detail 파라미터
-		String timetable_detail_time_name = request.getParameter("movie_no");
-		String timetable_detail_show_date = request.getParameter("show_date");
-		String timetable_detail_start_time = request.getParameter("start_time");
-		String timetable_detail_end_time = request.getParameter("end_time");
-		int timetable_detail_adult_amt = Integer.parseInt(request.getParameter("timetable_detail_adult_amt"));
-		int timetable_detail_child_amt = Integer.parseInt(request.getParameter("timetable_detail_child_amt"));
-		
-		//timetable Model
-		timetablemodel.setTimetable_detail_time_name(timetable_detail_time_name);
-		timetablemodel.setTimetable_detail_show_date(timetable_detail_show_date);
-		timetablemodel.setTimetable_detail_start_time(timetable_detail_start_time);
-		timetablemodel.setTimetable_detail_end_time(timetable_detail_end_time);
-		timetablemodel.setTimetable_detail_adult_amt(timetable_detail_adult_amt);
-		timetablemodel.setTimetable_detail_child_amt(timetable_detail_child_amt);
-		
-		adminService.timeDetailInsert(timetablemodel);
-		return "redirect:timeTableWrite.see";	
-	}*/
+	
 		
 	// 스케쥴 삭제 - 테스트해봐야함
-/*	@RequestMapping(value = "/timeTableDelete.see", method = RequestMethod.GET)
+	@RequestMapping(value = "/timeTableDelete.see", method = RequestMethod.GET)
 	public String timeTableDelete(HttpServletRequest request){
 			
-		int time_no = Integer.parseInt(request.getParameter("time_no"));
-		int time_detail_no = Integer.parseInt(request.getParameter("time_detail_no"));
+		int timetable_no = Integer.parseInt(request.getParameter("timetable_no"));
 			
-		adminService.timeDetailDelete(time_detail_no);
+		adminService.timetableDelete(timetable_no);
 			
 		return "redirect:timeTableList.see";
-	}*/
+	}
 }

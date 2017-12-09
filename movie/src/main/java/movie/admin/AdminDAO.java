@@ -12,4 +12,7 @@ public interface AdminDAO {
 	
 	public boolean movieWrite(MovieModel movieModel);
 	
+	public List<TimeTableModel> timetable_list();
+	
+	public boolean timetableDelete(int timetable_no);
 }

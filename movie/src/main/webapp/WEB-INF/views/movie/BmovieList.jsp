@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <% String cp = request.getContextPath(); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -90,6 +91,11 @@
 	<a href=''>
 	<img src="<%= cp %>/resources/upload/movie/main_movie/${moviearteList.movie_poster}"></a>
 </span>
+	<c:if test="${fn:length(moviearteList) le 0}">
+		<tr>
+		<td colspan="13" class="tac">등록된 스케쥴이 없습니다.</td>
+		</tr>
+	</c:if>
 </div>
 
 

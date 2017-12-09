@@ -22,6 +22,5 @@ public interface MovieDAO {
 	
 	public boolean movieDelete(int no);
 	
-	public int getMagazine_NO_SEQ();
 	
 }

@@ -36,11 +36,6 @@ public class MovieService implements MovieDAO{
 		sqlSessionTemplate.insert("movie.movieWrite", movieModel);
 		return true;
 	}
-	//영화이미지 난수생성
-	public int getMagazine_NO_SEQ() {
-		// TODO Auto-generated method stub
-		return sqlSessionTemplate.selectOne("movie.getMovie_NO_SEQ");
-	}
 	
 	//영화 삭제하기
 	public boolean movieDelete(int movie_no) {
