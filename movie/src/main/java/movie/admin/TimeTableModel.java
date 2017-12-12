@@ -2,12 +2,15 @@ package movie.admin;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class TimeTableModel {
 	int timetable_no;
 	int timetable_movie_no;
 	String timetable_movie_name;
 	Date timetable_start_date;
 	Date timetable_end_date;
+	@DateTimeFormat(pattern="yyyyMMdd")
 	Date timetable_show_date;
 	int timetable_reserved_seat;
 	int timetable_total_seat;

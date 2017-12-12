@@ -44,7 +44,7 @@ public class AdminController {
 	
 	Logger log = Logger.getLogger(this.getClass());
 	
-	private String uploadPath = "C:\\Users\\Jong\\git\\1207\\movie\\src\\main\\webapp\\resources\\upload\\movie\\main_movie\\";
+	private String uploadPath = "C:\\Users\\Jong\\Desktop\\1209 a11h\\movie\\src\\main\\webapp\\resources\\upload\\movie\\main_movie\\";
 	// 상영작 리스트
 	@RequestMapping(value="/movieList.see", method = RequestMethod.GET)
 	public ModelAndView movieList(HttpServletRequest request) {
@@ -137,7 +137,7 @@ public class AdminController {
 		return mv;
 	}
 	
-	// 스케쥴 등록 -미완
+	// 스케쥴 등록 
 			@RequestMapping(value = "/timeTableWrite.see", method = RequestMethod.POST)
 			public String timeTableWrite(HttpServletRequest request) throws ParseException{
 			
@@ -178,7 +178,7 @@ public class AdminController {
 		}
 
 	
-	// 스케쥴 리스트 -미완
+	// 스케쥴 리스트
 	@RequestMapping(value = "/timeTableList.see", method = RequestMethod.GET)
 	public ModelAndView timeTableList(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView();

@@ -26,7 +26,7 @@
    
 	<!-- Movie 부분 -->
 	<definition name="movieTicketing" extends="main">
-		<put-attribute name="main_body" value="/WEB-INF/views/movie/MovieTicketing.jsp" />
+		<put-attribute name="main_body" value="/WEB-INF/views/reserve/MovieTicketing.jsp" />
 	</definition>
    
 	<definition name="movieTicketing1" extends="main">

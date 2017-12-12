@@ -16,6 +16,8 @@ PUBLIC " - //mybatis.org//DTD Config 3.0//EN"
 		<typeAlias alias="timeTableModel" type="movie.admin.TimeTableModel"/>
 		<typeAlias alias="adminMovieModel" type="movie.admin.AdminMovieModel"/>
 		
+		<typeAlias alias="reserveModel" type="movie.reserve.ReserveModel"/>
+		
 	</typeAliases>
 	
 	<mappers>
@@ -23,6 +25,7 @@ PUBLIC " - //mybatis.org//DTD Config 3.0//EN"
 		<!-- notice -->
 		<mapper resource="config/mybatis/movie_SQL.xml"/>
 		<mapper resource="config/mybatis/admin_SQL.xml"/>
+		<mapper resource="config/mybatis/reserve_SQL.xml"/>
 	</mappers>
 	
 	

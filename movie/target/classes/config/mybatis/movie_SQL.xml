@@ -130,7 +130,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			#{movie_stillcut3,jdbcType=VARCHAR},
 			#{movie_stillcut4,jdbcType=VARCHAR},
 			#{movie_genre},
-			#{movie_age},
+			#{movie_age,jdbcType=VARCHAR},
 			#{movie_date},
 			sysdate,
 			#{movie_type},
