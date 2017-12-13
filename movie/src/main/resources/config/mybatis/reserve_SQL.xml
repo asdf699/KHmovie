@@ -10,7 +10,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="timetable_movie_name" column="timetable_movie_name" />
 		<result property="timetable_show_date" column="timetable_show_date" />
 		<result property="timetable_start_time" column="timetable_start_time" />
-	</resultMap> -->
+	</resultMap>  -->
 	
 		<resultMap id="movieRes" type="MovieModel">
 		<result property="movie_no" column="movie_no" />
@@ -63,7 +63,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 시간표 검색 -->
  	<select id="timesearch" resultMap="timetableRes">
 		select * from timetable where 
-		timetable_movie_no = #{timetable_movie_no} and
+		timetable_no = #{timetable_no} and
+		<!-- timetable_show_date = #{timetable_show_date} and -->
 		timetable_start_time = #{timetable_start_time}
 	</select> 
 	

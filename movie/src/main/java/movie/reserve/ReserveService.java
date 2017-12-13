@@ -17,8 +17,8 @@ public class ReserveService implements ReserveDAO{
 	@Resource
 	private SqlSessionTemplate sqlSessionTemplate;
 	
-	public List<TimeTableModel> timesearch(TimeTableModel timetableModel) {
-		return sqlSessionTemplate.selectList("reserve.timesearch", timetableModel);
+	public List<TimeTableModel> timesearch(TimeTableModel timetablemodel) {
+		return sqlSessionTemplate.selectList("reserve.timesearch", timetablemodel);
 	}
 
 	public List<MovieModel> selectMovie_name() {

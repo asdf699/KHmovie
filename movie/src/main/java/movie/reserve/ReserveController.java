@@ -34,37 +34,38 @@ public class ReserveController {
 	
 	
 		// 스케쥴 등록 
-	@RequestMapping(value = "/movieTicketing.see"/*, method = RequestMethod.GET*/)
+	@RequestMapping(value = "/movieTicketing.see", method = RequestMethod.POST)
 	public ModelAndView timeTableWrite(HttpServletRequest request) throws ParseException{
 		
 		ModelAndView mv = new ModelAndView();
 		// 모델등록
-		/*TimeTableModel timetablemodel = new TimeTableModel();	
+		TimeTableModel timetablemodel = new TimeTableModel();	
 		
 		// 날짜변환
 		Date timetable_show_date;
 		
-		timetable_show_date = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("show_date"));
-		
+		/*timetable_show_date = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("show_date"));*/
+		/*System.out.println(timetable_show_date);*/
 		
 		//detail 파라미터
 		int timetable_movie_no = Integer.parseInt(request.getParameter("movie_no"));
 		String timetable_start_time = request.getParameter("start_time");
-		
+		System.out.println(timetable_movie_no);
+		System.out.println(timetable_start_time);
 		// 번호 이름 가져오기
 		
 		//timetable Model
 		timetablemodel.setTimetable_movie_no(timetable_movie_no);
-		timetablemodel.setTimetable_show_date(timetable_show_date);
+		/*timetablemodel.setTimetable_show_date(timetable_show_date);*/
 		timetablemodel.setTimetable_start_time(timetable_start_time);
 		
-		List<TimeTableModel> timetablelist = reserveService.timesearch(timetablemodel);*/
+		List<TimeTableModel> timetablelist = reserveService.timesearch(timetablemodel);
 		List<TimeTableModel> timetable_list = reserveService.timetable_list(); // 번호-이름 선택
-		List<TimeTableModel> timetableSelect = reserveService.timetableSelect(); //시간표 조회
-		
+		/*List<TimeTableModel> timetableSelect = reserveService.timetableSelect(); //시간표 조회
+		*/
 		mv.addObject("timetable_list", timetable_list);
-		/*mv.addObject("timetablelist", timetablelist);*/
-		mv.addObject("timetableSelect", timetableSelect);
+		mv.addObject("timetablelist", timetablelist);
+		/*mv.addObject("timetableSelect", timetableSelect);*/
 		mv.setViewName("movieTicketing");
 		return mv;
 	}

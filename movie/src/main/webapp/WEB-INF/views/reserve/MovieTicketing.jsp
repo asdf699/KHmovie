@@ -97,7 +97,9 @@
 								<select class="slct" id="movieSelection" name="movie_no">
 									<c:forEach var="selectmovie_name" items="${timetable_list}">
 									<option value="${selectmovie_name.movie_no}">${selectmovie_name.movie_name}</option>
+									
 									</c:forEach>
+									
 								</select>
 							</td>
 							<%-- <td>
@@ -162,8 +164,10 @@
 						<th scope="col">삭제유무</th>
 					</tr>
 				</thead>
+				<c:if test="${not empty timetablelist}">
+				
 				<tbody>
-					<c:forEach var="timetableSelect" items="${timetableSelect}">
+					<c:forEach var="timetableSelect" items="${timetablelist}">
 					<tr>
 						<td>${timetableSelect.timetable_no}</td>
 						<td>${timetableSelect.timetable_movie_no}</td>
@@ -182,6 +186,9 @@
 						</td>
 					</tr>
 					</c:forEach>
+					</c:if>
+					
+					ㅇㅇㅇ
 <%--  					<c:if test="${fn:length(timetable_list) le 0}">
 					<tr>
 						<td colspan="13" class="tac">등록된 스케쥴이 없습니다.</td>

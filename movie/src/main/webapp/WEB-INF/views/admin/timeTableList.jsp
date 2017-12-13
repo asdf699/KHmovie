@@ -91,7 +91,7 @@
 								</select>
 							</td> --%>
 							<td><input type="text" class="txt" name="start_date" id="start_date"/></td>
-							<td><input type="text" class="txt" name="end_date" id="end_date"/></td>
+							<td><input typse="text" class="txt" name="end_date" id="end_date"/></td>
 							<td><input type="text" class="txt" name="show_date" id="show_date"/></td>
 							<td>
 								<select name="start_time" class="slct">
