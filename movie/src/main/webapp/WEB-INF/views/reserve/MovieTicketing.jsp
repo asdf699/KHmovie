@@ -133,29 +133,54 @@
 			<table>
 				<caption>시간표 목록</caption>
 				<colgroup>
-					<col style="width:20%" />
-					<col style="width:20%" />
-					<col style="width:20%" />
+					<col style="width:5%" />
+					<col style="width:8%" />
+					<col style="width:16%" />
+					<col style="width:8%" />
+					<col style="width:8%" />
+					<col style="width:8%" />
+					<col style="width:7%" />
+					<col style="width:8%" />
+					<col style="width:8%" />
+					<col style="width:8%" />
+					<col style="width:8%" />
+					<col style="width:8%" />
+					<col style="width:8%" />
 				</colgroup>
 				<thead>
 					<tr>
+						<th scope="col">번호</th>
+						<th scope="col">영화번호</th>
 						<th scope="col">영화명</th>
+						<th scope="col">개봉일</th>
+						<th scope="col">종료일</th>
 						<th scope="col">상영일</th>
 						<th scope="col">시작시간</th>
+						<th scope="col">종료시간</th>
+						<th scope="col">대인금액</th>
+						<th scope="col">소인금액</th>
+						<th scope="col">삭제유무</th>
 					</tr>
 				</thead>
 				<tbody>
- 					<c:forEach var="timetablelist" items="${timetableSelect}">
- 					<tr>
-						<td>${timetablelist.timetable_movie_name}</td>
-						<td><fmt:formatDate value="${timetablelist.timetable_show_date}" pattern="yyyyMMdd" /></td>
-						<td>${timetablelist.timetable_start_time}</td>
+					<c:forEach var="timetableSelect" items="${timetableSelect}">
+					<tr>
+						<td>${timetableSelect.timetable_no}</td>
+						<td>${timetableSelect.timetable_movie_no}</td>
+						<td>${timetableSelect.timetable_movie_name}</td>
+						<td><fmt:formatDate value="${timetableSelect.timetable_start_date}" pattern="yyyyMMdd" /></td>
+						<td><fmt:formatDate value="${timetableSelect.timetable_end_date}" pattern="yyyyMMdd" /></td>
+						<td><fmt:formatDate value="${timetableSelect.timetable_show_date}" pattern="yyyyMMdd" /></td>
+						<td>${timetableSelect.timetable_start_time}</td>
+						<td>${timetableSelect.timetable_end_time}</td>
+						<td>${timetableSelect.timetable_adult_amt}</td>
+						<td>${timetableSelect.timetable_child_amt}</td>
  						<td class="schedule_delete">
-							<a href="timeTableDelete.see?timetable_no=${timetablelist.timetable_no}" class="btn btnC_04 btnP_03">
+							<a href="timeTableDelete.see?timetable_no=${timetableSelect.timetable_no}" class="btn btnC_04 btnP_03">
 								<span>삭제</span>
 							</a>
 						</td>
-					</tr> 
+					</tr>
 					</c:forEach>
 <%--  					<c:if test="${fn:length(timetable_list) le 0}">
 					<tr>

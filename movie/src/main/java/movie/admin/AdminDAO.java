@@ -15,4 +15,6 @@ public interface AdminDAO {
 	public List<TimeTableModel> timetable_list();
 	
 	public boolean timetableDelete(int timetable_no);
+	
+	public boolean movieUpdate(MovieModel movieModel);
 }

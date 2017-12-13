@@ -32,13 +32,6 @@ public class MovieController{
 	
 		int no = Integer.parseInt(request.getParameter("movie_no"));
 		
-		/*if (request.getParameter("currentPage") == null || request.getParameter("currentPage").trim().isEmpty()
-				|| request.getParameter("currentPage").equals("0")) {
-			currentPage = 1;
-		}
-		else {
-			currentPage = Integer.parseInt(request.getParameter("currentPage"));
-		}*/
 		List<MovieModel> list_no = movieService.movieList_one(no);
 		MovieBannerModel bannerselect = movieService.banner_select();
 		

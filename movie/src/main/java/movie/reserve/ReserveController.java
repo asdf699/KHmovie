@@ -39,7 +39,7 @@ public class ReserveController {
 		
 		ModelAndView mv = new ModelAndView();
 		// 모델등록
-		TimeTableModel timetablemodel = new TimeTableModel();	
+		/*TimeTableModel timetablemodel = new TimeTableModel();	
 		
 		// 날짜변환
 		Date timetable_show_date;
@@ -58,7 +58,7 @@ public class ReserveController {
 		timetablemodel.setTimetable_show_date(timetable_show_date);
 		timetablemodel.setTimetable_start_time(timetable_start_time);
 		
-/*		List<TimeTableModel> timetablelist = reserveService.timesearch(timetablemodel);*/
+		List<TimeTableModel> timetablelist = reserveService.timesearch(timetablemodel);*/
 		List<TimeTableModel> timetable_list = reserveService.timetable_list(); // 번호-이름 선택
 		List<TimeTableModel> timetableSelect = reserveService.timetableSelect(); //시간표 조회
 		
@@ -69,6 +69,10 @@ public class ReserveController {
 		return mv;
 	}
 }
+
+	
+
+
 /*
 
 // 스케쥴 리스트

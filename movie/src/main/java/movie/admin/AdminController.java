@@ -1,6 +1,7 @@
 package movie.admin;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.ParseException;
@@ -44,7 +45,8 @@ public class AdminController {
 	
 	Logger log = Logger.getLogger(this.getClass());
 	
-	private String uploadPath = "C:\\Users\\Jong\\Desktop\\1209 a11h\\movie\\src\\main\\webapp\\resources\\upload\\movie\\main_movie\\";
+	/*private String uploadPath = "C:\\Users\\Jong\\Desktop\\1209 a11h\\movie\\src\\main\\webapp\\resources\\upload\\movie\\main_movie\\";*/
+	private String uploadPath = "C:\\Users\\Jong\\git\\KHmovie\\movie\\src\\main\\webapp\\resources\\upload\\movie\\main_movie\\";
 	// 상영작 리스트
 	@RequestMapping(value="/movieList.see", method = RequestMethod.GET)
 	public ModelAndView movieList(HttpServletRequest request) {
@@ -97,15 +99,106 @@ public class AdminController {
 	         e.printStackTrace();
 	      }
 		
-    	MultipartFile multipartFile = multipartHttpServletRequest.getFile("movie_poster");
-    	String filename = multipartFile.getOriginalFilename();
-        	if (filename != ""){ 
-        		movieModel.setMovie_poster(System.currentTimeMillis()+"_"+multipartFile.getOriginalFilename());					    
-			    String savimagename = System.currentTimeMillis()+"_"+multipartFile.getOriginalFilename();				    
-		        FileCopyUtils.copy(multipartFile.getInputStream(), new FileOutputStream(uploadPath+"/"+savimagename));			            	        
-        	}else{
-        		movieModel.setMovie_poster("NULL");		
-        	}
+   	MultipartFile multipartFile = multipartHttpServletRequest.getFile("movie_poster");
+   	String filename = multipartFile.getOriginalFilename();
+   	if (filename != ""){ 
+   		movieModel.setMovie_poster(System.currentTimeMillis()+"_"+multipartFile.getOriginalFilename());					    
+		    String savimagename = System.currentTimeMillis()+"_"+multipartFile.getOriginalFilename();				    
+	        FileCopyUtils.copy(multipartFile.getInputStream(), new FileOutputStream(uploadPath+"/"+savimagename));			            	        
+   	}else{
+   		movieModel.setMovie_poster("NULL");		
+   	}
+   	
+   	MultipartFile multipartFile1 = multipartHttpServletRequest.getFile("movie_stillcut");
+   	String filename1 = multipartFile1.getOriginalFilename();
+   	if (filename1 != ""){ 
+   		movieModel.setMovie_stillcut(System.currentTimeMillis()+"_"+multipartFile1.getOriginalFilename());					    
+		    String savimagename1 = System.currentTimeMillis()+"_"+multipartFile1.getOriginalFilename();				    
+	        FileCopyUtils.copy(multipartFile1.getInputStream(), new FileOutputStream(uploadPath+"/"+savimagename1));			            	        
+   	}else{
+   		movieModel.setMovie_stillcut("NULL");		
+   	}
+   	
+   	MultipartFile multipartFile2 = multipartHttpServletRequest.getFile("movie_stillcut1");
+   	String filename2 = multipartFile.getOriginalFilename();
+   	if (filename2 != ""){ 
+   		movieModel.setMovie_stillcut1(System.currentTimeMillis()+"_"+multipartFile2.getOriginalFilename());					    
+		    String savimagename2 = System.currentTimeMillis()+"_"+multipartFile2.getOriginalFilename();				    
+	        FileCopyUtils.copy(multipartFile2.getInputStream(), new FileOutputStream(uploadPath+"/"+savimagename2));			            	        
+   	}else{
+   		movieModel.setMovie_stillcut1("NULL");		
+   	}
+   	
+   	MultipartFile multipartFile3 = multipartHttpServletRequest.getFile("movie_stillcut2");
+   	String filename3 = multipartFile3.getOriginalFilename();
+   	if (filename3 != ""){ 
+   		movieModel.setMovie_stillcut2(System.currentTimeMillis()+"_"+multipartFile3.getOriginalFilename());					    
+		    String savimagename3 = System.currentTimeMillis()+"_"+multipartFile3.getOriginalFilename();				    
+	        FileCopyUtils.copy(multipartFile3.getInputStream(), new FileOutputStream(uploadPath+"/"+savimagename3));			            	        
+   	}else{
+   		movieModel.setMovie_stillcut2("NULL");		
+   	}
+   	
+   	MultipartFile multipartFile4 = multipartHttpServletRequest.getFile("movie_stillcut3");
+   	String filename4 = multipartFile4.getOriginalFilename();
+   	if (filename4 != ""){ 
+   		movieModel.setMovie_stillcut3(System.currentTimeMillis()+"_"+multipartFile4.getOriginalFilename());					    
+		    String savimagename4 = System.currentTimeMillis()+"_"+multipartFile4.getOriginalFilename();				    
+	        FileCopyUtils.copy(multipartFile4.getInputStream(), new FileOutputStream(uploadPath+"/"+savimagename4));			            	        
+   	}else{
+   		movieModel.setMovie_stillcut3("NULL");		
+   	}
+   	
+   	MultipartFile multipartFile5 = multipartHttpServletRequest.getFile("movie_stillcut4");
+   	String filename5 = multipartFile5.getOriginalFilename();
+   	if (filename5 != ""){ 
+   		movieModel.setMovie_stillcut4(System.currentTimeMillis()+"_"+multipartFile5.getOriginalFilename());					    
+		    String savimagename5 = System.currentTimeMillis()+"_"+multipartFile5.getOriginalFilename();				    
+	        FileCopyUtils.copy(multipartFile5.getInputStream(), new FileOutputStream(uploadPath+"/"+savimagename5));			            	        
+   	}else{
+   		movieModel.setMovie_stillcut4("NULL");		
+   	}
+   	
+   	MultipartFile multipartFile6 = multipartHttpServletRequest.getFile("movie_director_picture");
+   	String filename6 = multipartFile6.getOriginalFilename();
+   	if (filename6 != ""){ 
+   		movieModel.setMovie_director_picture(System.currentTimeMillis()+"_"+multipartFile6.getOriginalFilename());					    
+		    String savimagename6 = System.currentTimeMillis()+"_"+multipartFile6.getOriginalFilename();				    
+	        FileCopyUtils.copy(multipartFile6.getInputStream(), new FileOutputStream(uploadPath+"/"+savimagename6));			            	        
+   	}else{
+   		movieModel.setMovie_director_picture("NULL");		
+   	}
+   	
+   	MultipartFile multipartFile7 = multipartHttpServletRequest.getFile("movie_actor_picture");
+   	String filename7 = multipartFile7.getOriginalFilename();
+   	if (filename7 != ""){ 
+   		movieModel.setMovie_actor_picture(System.currentTimeMillis()+"_"+multipartFile7.getOriginalFilename());					    
+		    String savimagename7 = System.currentTimeMillis()+"_"+multipartFile7.getOriginalFilename();				    
+	        FileCopyUtils.copy(multipartFile7.getInputStream(), new FileOutputStream(uploadPath+"/"+savimagename7));			            	        
+   	}else{
+   		movieModel.setMovie_actor_picture("NULL");		
+   	}
+   	
+   	MultipartFile multipartFile8 = multipartHttpServletRequest.getFile("movie_actor_picture1");
+   	String filename8 = multipartFile8.getOriginalFilename();
+   	if (filename8 != ""){ 
+   		movieModel.setMovie_actor_picture1(System.currentTimeMillis()+"_"+multipartFile8.getOriginalFilename());					    
+		    String savimagename8 = System.currentTimeMillis()+"_"+multipartFile8.getOriginalFilename();				    
+	        FileCopyUtils.copy(multipartFile8.getInputStream(), new FileOutputStream(uploadPath+"/"+savimagename8));			            	        
+   	}else{
+   		movieModel.setMovie_actor_picture1("NULL");		
+   	}
+   	
+   	MultipartFile multipartFile9 = multipartHttpServletRequest.getFile("movie_actor_picture2");
+   	String filename9 = multipartFile9.getOriginalFilename();
+   	if (filename9 != ""){ 
+   		movieModel.setMovie_actor_picture2(System.currentTimeMillis()+"_"+multipartFile9.getOriginalFilename());					    
+		    String savimagename9 = System.currentTimeMillis()+"_"+multipartFile9.getOriginalFilename();				    
+	        FileCopyUtils.copy(multipartFile9.getInputStream(), new FileOutputStream(uploadPath+"/"+savimagename9));			            	        
+   	}else{
+   		movieModel.setMovie_actor_picture2("NULL");		
+   	}
+       	
 		movieService.movieWrite(movieModel); 
 		
 		mv.setViewName("redirect:/admin/movieList.see");
@@ -130,13 +223,229 @@ public class AdminController {
 		ModelAndView mv = new ModelAndView();
 		int movie_no = Integer.parseInt(request.getParameter("movie_no"));
 
-		List<MovieModel> list = movieService.movieList_one(movie_no);
+		List<MovieModel> movielist = movieService.movieList_one(movie_no);
 
-		mv.addObject("list", list);
+		mv.addObject("movielist", movielist);
 		mv.setViewName("AdminMovieUpdate");
 		return mv;
 	}
 	
+	//상영작 수정post - 완료
+		@RequestMapping(value = "/movieUpdate.see", method = RequestMethod.POST)
+		public String movieUpdate2(@ModelAttribute("movieModel") MovieModel movieModel, BindingResult result,
+				MultipartHttpServletRequest multipartHttpServletRequest, MultipartHttpServletRequest request) {
+		
+			try {
+		         movieModel.setMovie_date(new SimpleDateFormat("yyyyMMdd").parse(request.getParameter("movie_date")));
+		      } catch (ParseException e) {
+		         e.printStackTrace();
+		      }
+			
+			if (multipartHttpServletRequest.getFile("movie_poster") != null){
+		        	MultipartFile multipartFile = multipartHttpServletRequest.getFile("movie_poster");
+		        	String filename = multipartFile.getOriginalFilename();
+			        	if (filename != ""){ 
+			        		movieModel.setMovie_poster(System.currentTimeMillis()+"_"+multipartFile.getOriginalFilename());					    
+						    String savimagename = System.currentTimeMillis()+"_"+multipartFile.getOriginalFilename();				    
+					        try {
+								FileCopyUtils.copy(multipartFile.getInputStream(), new FileOutputStream(uploadPath+"/"+savimagename));
+							} catch (FileNotFoundException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							} catch (IOException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}			            	        
+			        	}
+		        }else{
+		        	movieModel.setMovie_poster(multipartHttpServletRequest.getParameter("movie_poster"));
+		        }
+			
+			if (multipartHttpServletRequest.getFile("movie_stillcut") != null){
+	        	MultipartFile multipartFile1 = multipartHttpServletRequest.getFile("movie_stillcut");
+	        	String filename1 = multipartFile1.getOriginalFilename();
+		        	if (filename1 != ""){ 
+		        		movieModel.setMovie_stillcut(System.currentTimeMillis()+"_"+multipartFile1.getOriginalFilename());					    
+					    String savimagename = System.currentTimeMillis()+"_"+multipartFile1.getOriginalFilename();				    
+				        try {
+							FileCopyUtils.copy(multipartFile1.getInputStream(), new FileOutputStream(uploadPath+"/"+savimagename));
+						} catch (FileNotFoundException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}			            	        
+		        	}
+	        }else{
+	        	movieModel.setMovie_stillcut(multipartHttpServletRequest.getParameter("movie_stillcut"));
+	        }
+			
+			if (multipartHttpServletRequest.getFile("movie_stillcut1") != null){
+	        	MultipartFile multipartFile2 = multipartHttpServletRequest.getFile("movie_stillcut1");
+	        	String filename2 = multipartFile2.getOriginalFilename();
+		        	if (filename2 != ""){ 
+		        		movieModel.setMovie_stillcut1(System.currentTimeMillis()+"_"+multipartFile2.getOriginalFilename());					    
+					    String savimagename = System.currentTimeMillis()+"_"+multipartFile2.getOriginalFilename();				    
+				        try {
+							FileCopyUtils.copy(multipartFile2.getInputStream(), new FileOutputStream(uploadPath+"/"+savimagename));
+						} catch (FileNotFoundException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}			            	        
+		        	}
+	        }else{
+	        	movieModel.setMovie_stillcut1(multipartHttpServletRequest.getParameter("movie_stillcut1"));
+	        }
+			
+			if (multipartHttpServletRequest.getFile("movie_stillcut2") != null){
+	        	MultipartFile multipartFile3 = multipartHttpServletRequest.getFile("movie_stillcut2");
+	        	String filename3 = multipartFile3.getOriginalFilename();
+		        	if (filename3 != ""){ 
+		        		movieModel.setMovie_stillcut2(System.currentTimeMillis()+"_"+multipartFile3.getOriginalFilename());					    
+					    String savimagename = System.currentTimeMillis()+"_"+multipartFile3.getOriginalFilename();				    
+				        try {
+							FileCopyUtils.copy(multipartFile3.getInputStream(), new FileOutputStream(uploadPath+"/"+savimagename));
+						} catch (FileNotFoundException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}			            	        
+		        	}
+	        }else{
+	        	movieModel.setMovie_stillcut2(multipartHttpServletRequest.getParameter("movie_stillcut2"));
+	        }
+			
+			if (multipartHttpServletRequest.getFile("movie_stillcut3") != null){
+	        	MultipartFile multipartFile4 = multipartHttpServletRequest.getFile("movie_stillcut3");
+	        	String filename4 = multipartFile4.getOriginalFilename();
+		        	if (filename4 != ""){ 
+		        		movieModel.setMovie_stillcut3(System.currentTimeMillis()+"_"+multipartFile4.getOriginalFilename());					    
+					    String savimagename = System.currentTimeMillis()+"_"+multipartFile4.getOriginalFilename();				    
+				        try {
+							FileCopyUtils.copy(multipartFile4.getInputStream(), new FileOutputStream(uploadPath+"/"+savimagename));
+						} catch (FileNotFoundException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}			            	        
+		        	}
+	        }else{
+	        	movieModel.setMovie_stillcut3(multipartHttpServletRequest.getParameter("movie_stillcut3"));
+	        }
+			
+			if (multipartHttpServletRequest.getFile("movie_stillcut4") != null){
+	        	MultipartFile multipartFile5 = multipartHttpServletRequest.getFile("movie_stillcut4");
+	        	String filename5 = multipartFile5.getOriginalFilename();
+		        	if (filename5 != ""){ 
+		        		movieModel.setMovie_stillcut4(System.currentTimeMillis()+"_"+multipartFile5.getOriginalFilename());					    
+					    String savimagename = System.currentTimeMillis()+"_"+multipartFile5.getOriginalFilename();				    
+				        try {
+							FileCopyUtils.copy(multipartFile5.getInputStream(), new FileOutputStream(uploadPath+"/"+savimagename));
+						} catch (FileNotFoundException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}			            	        
+		        	}
+	        }else{
+	        	movieModel.setMovie_stillcut4(multipartHttpServletRequest.getParameter("movie_stillcut4"));
+	        }
+			
+			if (multipartHttpServletRequest.getFile("movie_director_picture") != null){
+	        	MultipartFile multipartFile6 = multipartHttpServletRequest.getFile("movie_director_picture");
+	        	String filename6 = multipartFile6.getOriginalFilename();
+		        	if (filename6 != ""){ 
+		        		movieModel.setMovie_director_picture(System.currentTimeMillis()+"_"+multipartFile6.getOriginalFilename());					    
+					    String savimagename = System.currentTimeMillis()+"_"+multipartFile6.getOriginalFilename();				    
+				        try {
+							FileCopyUtils.copy(multipartFile6.getInputStream(), new FileOutputStream(uploadPath+"/"+savimagename));
+						} catch (FileNotFoundException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}			            	        
+		        	}
+	        }else{
+	        	movieModel.setMovie_director_picture(multipartHttpServletRequest.getParameter("movie_director_picture"));
+	        }
+			
+			if (multipartHttpServletRequest.getFile("movie_actor_picture") != null){
+	        	MultipartFile multipartFile7 = multipartHttpServletRequest.getFile("movie_actor_picture");
+	        	String filename7 = multipartFile7.getOriginalFilename();
+		        	if (filename7 != ""){ 
+		        		movieModel.setMovie_actor_picture(System.currentTimeMillis()+"_"+multipartFile7.getOriginalFilename());					    
+					    String savimagename = System.currentTimeMillis()+"_"+multipartFile7.getOriginalFilename();				    
+				        try {
+							FileCopyUtils.copy(multipartFile7.getInputStream(), new FileOutputStream(uploadPath+"/"+savimagename));
+						} catch (FileNotFoundException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}			            	        
+		        	}
+	        }else{
+	        	movieModel.setMovie_actor_picture(multipartHttpServletRequest.getParameter("movie_actor_picture"));
+	        }
+			
+			if (multipartHttpServletRequest.getFile("movie_actor_picture1") != null){
+	        	MultipartFile multipartFile8 = multipartHttpServletRequest.getFile("movie_actor_picture1");
+	        	String filename8 = multipartFile8.getOriginalFilename();
+		        	if (filename8 != ""){ 
+		        		movieModel.setMovie_actor_picture1(System.currentTimeMillis()+"_"+multipartFile8.getOriginalFilename());					    
+					    String savimagename = System.currentTimeMillis()+"_"+multipartFile8.getOriginalFilename();				    
+				        try {
+							FileCopyUtils.copy(multipartFile8.getInputStream(), new FileOutputStream(uploadPath+"/"+savimagename));
+						} catch (FileNotFoundException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}			            	        
+		        	}
+	        }else{
+	        	movieModel.setMovie_actor_picture1(multipartHttpServletRequest.getParameter("movie_actor_picture1"));
+	        }
+			
+			if (multipartHttpServletRequest.getFile("movie_actor_picture2") != null){
+	        	MultipartFile multipartFile9 = multipartHttpServletRequest.getFile("movie_actor_picture2");
+	        	String filename9 = multipartFile9.getOriginalFilename();
+		        	if (filename9 != ""){ 
+		        		movieModel.setMovie_actor_picture2(System.currentTimeMillis()+"_"+multipartFile9.getOriginalFilename());					    
+					    String savimagename = System.currentTimeMillis()+"_"+multipartFile9.getOriginalFilename();				    
+				        try {
+							FileCopyUtils.copy(multipartFile9.getInputStream(), new FileOutputStream(uploadPath+"/"+savimagename));
+						} catch (FileNotFoundException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}			            	        
+		        	}
+	        }else{
+	        	movieModel.setMovie_actor_picture2(multipartHttpServletRequest.getParameter("movie_actor_picture2"));
+	        }
+			
+			
+			movieService.movieUpdate(movieModel);
+
+			return "redirect:movieList.see";
+		}
 	// 스케쥴 등록 
 			@RequestMapping(value = "/timeTableWrite.see", method = RequestMethod.POST)
 			public String timeTableWrite(HttpServletRequest request) throws ParseException{

@@ -31,6 +31,12 @@ public class AdminService implements AdminDAO{
 		return true;
 	}
 	
+	public boolean movieUpdate(MovieModel movieModel) {
+		// TODO Auto-generated method stub
+		sqlSessionTemplate.update("movie.movieUpdate",movieModel);
+		return true;
+	}
+	
 	//시간표 등록
 	public boolean timeDetailInsert(TimeTableModel timetablemodel) {
 		sqlSessionTemplate.insert("admin.timetableInsert", timetablemodel);

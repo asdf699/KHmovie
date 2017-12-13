@@ -5,6 +5,12 @@
 	String cp = request.getContextPath();
 %>
 
+<script type="text/javascript">
+	function del_check() {
+		return (confirm("삭제 하겠습니까?"))
+	}
+</script>
+
 <div class="admin_grp">
 	<div class="admin_list">
 		<ul>
@@ -25,15 +31,33 @@
 <c:url var="viewURL" value="/movieView.see">
 	<c:param name="movie_no" value="${movielist.movie_no }"/>
 </c:url>
-<c:url var="reserveURL" value="/movieTicketing.see">
+<%-- <c:url var="reserveURL" value="/movieTicketing.see">
 	<c:param name="movie_no" value="${movielist.movie_no}"/>
+</c:url> --%>
+<c:url var="deleteURL" value="/admin/movieDelete.see" >
+	<c:param name="movie_no" value="${movielist.movie_no}" />							
+</c:url>	
+<c:url var="ModifyURL" value="/admin/movieUpdate.see" >
+	<c:param name="movie_no" value="${movielist.movie_no}" />							
 </c:url>
+
 <li class="">
 <a href="javascript:void(0)";>
 <img src="<%= cp %>/resources/upload/movie/main_movie/${movielist.movie_poster}">
 </a>
+<%-- <div class="explan">
+	<p>
+	<strong>감독</strong> : ${movielist.movie_director}
+	</p>
+	<p>
+	<strong>개봉</strong> : <fmt:formatDate value="${movielist.movie_date }" pattern="yyyy.MM.dd"></fmt:formatDate>
+	</p>
+	</div> --%>
 <div class="layer_hover">
-<a href="${reserveURL}" onclick="goToTiketing()" class="btn_reserve">예매하기</a>
+
+<a href="${ModifyURL}" class="btn_View">수정하기</a>
+<a href="${deleteURL}" class="btn_View" onclick="return del_check()">삭제하기</a>
+<%-- <a href="${reserveURL}" onclick="goToTiketing()" class="btn_reserve">예매하기</a> --%>
 <a href="${viewURL}" class="btn_View">상세보기</a>
 
 </div>
@@ -58,4 +82,5 @@
 			${pagingHtml}
 		</div>
 	</div>
+</div>
 </div>

@@ -144,6 +144,34 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		movie_no = #{movie_no}
 	</delete>
 	
+	<!-- 영화 수정하기 -->
+	<update id="movieUpdate" parameterType="movieModel">
+		update MOVIE set 
+		MOVIE_NAME=#{movie_name,jdbcType=VARCHAR},
+		MOVIE_DIRECTOR=#{movie_director,jdbcType=VARCHAR},
+		MOVIE_DIRECTOR_PICTURE=#{movie_director_picture,jdbcType=VARCHAR},
+		MOVIE_ACTOR=#{movie_actor,jdbcType=VARCHAR},
+		MOVIE_ACTOR1=#{movie_actor1,jdbcType=VARCHAR},
+		MOVIE_ACTOR2=#{movie_actor2,jdbcType=VARCHAR},
+		MOVIE_ACTOR_PICTURE=#{movie_actor_picture,jdbcType=VARCHAR},
+		MOVIE_ACTOR_PICTURE1=#{movie_actor_picture1,jdbcType=VARCHAR},
+		MOVIE_ACTOR_PICTURE2=#{movie_actor_picture2,jdbcType=VARCHAR},
+		MOVIE_COMPANY=#{movie_company,jdbcType=VARCHAR},
+		MOVIE_STORY=#{movie_story,jdbcType=VARCHAR},
+		MOVIE_DATE=#{movie_date,jdbcType=VARCHAR},
+		MOVIE_POSTER=#{movie_poster,jdbcType=VARCHAR},
+		MOVIE_STILLCUT=#{movie_stillcut,jdbcType=VARCHAR},
+		MOVIE_STILLCUT1=#{movie_stillcut1,jdbcType=VARCHAR},
+		MOVIE_STILLCUT2=#{movie_stillcut2,jdbcType=VARCHAR},
+		MOVIE_STILLCUT3=#{movie_stillcut3,jdbcType=VARCHAR},
+		MOVIE_STILLCUT4=#{movie_stillcut4,jdbcType=VARCHAR},
+		MOVIE_GENRE=#{movie_genre,jdbcType=VARCHAR},
+		MOVIE_AGE=#{movie_age,jdbcType=VARCHAR},
+		MOVIE_TYPE=#{movie_type,jdbcType=VARCHAR},
+		MOVIE_INTRO=#{movie_intro,jdbcType=VARCHAR}
+		where MOVIE_NO = #{movie_no,jdbcType=VARCHAR}
+	</update>
+	
 	<!-- 영화 intro 분류-->
 	
 	<select id="selectMovie_Boxoffice" resultMap="movieRes">
