@@ -63,13 +63,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 시간표 검색 -->
  	<select id="timesearch" resultMap="timetableRes">
 		select * from timetable where 
-		timetable_no = #{timetable_no} and
-		<!-- timetable_show_date = #{timetable_show_date} and -->
+		timetable_movie_no = #{timetable_movie_no} and
+		<!-- timetable_show_date = #{timetable_show_date} and  -->
 		timetable_start_time = #{timetable_start_time}
 	</select> 
 	
 		<!-- 시간표 조회 -->
 	<select id="timetableSelect" resultMap="timetableRes">
 		select * from timetable order by timetable_no DESC
+	</select>
+	
+		<select id="reserve_seat" resultMap="timetableRes">
+		select * from timetable
+		where timetable_no = #{timetable_no}
 	</select>
 </mapper>

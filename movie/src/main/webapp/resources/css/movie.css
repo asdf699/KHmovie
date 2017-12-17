@@ -1694,7 +1694,7 @@
 .movie_clist.curr_list .list_text dd {padding:0 15px; font-size:13px; color:#777}
 .movie_clist.curr_list .list_text dd .list_score {float:left; margin-left:7px}
 
-.movie_clist.curr_list .layer_hover {width:228px; height:335px; padding:114px 20px 0; background-image:url('/LCHS/Image/Bg/bg_mask06_2.png')}
+.movie_clist.curr_list .layer_hover {width:228px; height:335px; padding:114px 20px 0; background-image:url('/movie/resources/upload/movie/main_bg/bg_mainMask1.png')}
 .movie_clist.curr_list .layer_hover [class^="btn_"] {font-size:15px; }
 .screen_cwrap .movie_clist.curr_list [class^=day_] {}
 .curr_list .ad {width:178px; height:262px;}
@@ -3693,7 +3693,7 @@
 
 .personSelect {padding:20px 0 10px; border-bottom:1px solid #ccc;  box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;} 
 .personSelect:after {content:''; display:block; clear:both;}
-.personSelect > li {float:left; display:inline-block; margin-bottom:10px; font-size:14px; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;line-height: 30px;}
+.personSelect > li { display:inline-block; margin-bottom:10px; font-size:14px; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;line-height: 30px;}
 .personSelect li label {float:left; display:inline-block; min-width:72px; margin-right:20px; font-weight:bold; font-size:14px; color:#231f20;  box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box}
 
 

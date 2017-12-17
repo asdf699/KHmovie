@@ -16,22 +16,6 @@
 		$('#show_date').datepicker();
 	})
 	
-	$(function(){
-		var schedule_btn = $(".schedule_delete");
-		
-		schedule_btn.each(function(){
-			var btn = $(this).children('.btn');
-			
-			btn.on('click',function(){
-				var check = confirm("삭제하시겠습니까?");	
-				if(check){
-					return true;
-				}else{
-					return false;
-				}
-			})
-		})
-	})
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
@@ -75,7 +59,7 @@
 <div class="cont_ticket_Area">
 	<div class="admin_ct">
 		<h3 class="sub_tit">시간표 등록</h3>
-		<form action="<%= cp %>/reserve/movieTicketing.see" method="post" name="schedule">
+		<form action="movieTicketing.see" method="post" name="schedule">
 			<div class="tbl_type_02">
 				<table>
 					<caption>시간표 등록</caption>
@@ -124,7 +108,7 @@
 				</table>
 			</div>
 			<div class="btn_type_03">
-				<span class="btn btnC_04 btnP_04" >
+				<span class="btn btnC_04 btnP_04">
 					<input type="submit" value="검색"/>
 				</span>
 			</div>
@@ -179,16 +163,22 @@
 						<td>${timetableSelect.timetable_end_time}</td>
 						<td>${timetableSelect.timetable_adult_amt}</td>
 						<td>${timetableSelect.timetable_child_amt}</td>
- 						<td class="schedule_delete">
-							<a href="timeTableDelete.see?timetable_no=${timetableSelect.timetable_no}" class="btn btnC_04 btnP_03">
-								<span>삭제</span>
+ 						<c:url var="viewURL" value="/reserve/movieTicketing1.see">
+ 							<c:param name="timetable_no" value="${timetableSelect.timetable_no}"/>
+ 							<%-- <c:param name="timetable_movie_name" value="${timetableSelect.timetable_movie_name}"/>
+ 							<c:param name="timetable_show_date" value="${timetableSelect.timetable_show_date}"/>
+ 							<c:param name="timetable_show_date" value="${timetableSelect.timetable_show_date}"/>
+ 							<c:param name="timetable_start_time" value="${timetableSelect.timetable_start_time}"/> --%>
+ 						</c:url>
+ 						<td class="">
+							<a href="${viewURL}" class="btn btnC_04 btnP_03">
+								<span>예매</span>
 							</a>
 						</td>
 					</tr>
 					</c:forEach>
-					</c:if>
+					</c:if> 
 					
-					ㅇㅇㅇ
 <%--  					<c:if test="${fn:length(timetable_list) le 0}">
 					<tr>
 						<td colspan="13" class="tac">등록된 스케쥴이 없습니다.</td>

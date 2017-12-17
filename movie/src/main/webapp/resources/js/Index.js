@@ -18,3 +18,18 @@ $(document).ready(function(){
 		$(this).parent().addClass("active");
 	});
 });
+
+$(function(){
+	$('.curr_list li').mouseenter(function () {
+	            //console.log($(this).index());
+	            $(this).addClass('hover');
+	        }).mouseleave(function () {
+	            $(this).removeClass('hover');
+	        });
+
+	        $('..curr_list li > a').focusin(function () {
+	            $(this).parent().addClass('hover').siblings().removeClass('hover');
+	        });
+	});
+
+	

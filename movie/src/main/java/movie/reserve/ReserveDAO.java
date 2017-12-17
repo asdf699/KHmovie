@@ -14,4 +14,6 @@ public interface ReserveDAO {
 	public List<TimeTableModel> timetable_list();
 	
 	public List<TimeTableModel> timetableSelect();
+	
+	public List<TimeTableModel> reserve_seat(int no);
 }

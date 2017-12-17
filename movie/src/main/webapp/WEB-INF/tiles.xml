@@ -30,7 +30,7 @@
 	</definition>
    
 	<definition name="movieTicketing1" extends="main">
-		<put-attribute name="main_body" value="/WEB-INF/views/movie/MovieTicketing1.jsp" />
+		<put-attribute name="main_body" value="/WEB-INF/views/reserve/MovieTicketing1.jsp" />
 	</definition>
    
 	<!-- 예매 진행부분 -->

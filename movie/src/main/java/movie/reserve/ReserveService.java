@@ -36,4 +36,9 @@ public class ReserveService implements ReserveDAO{
 		return sqlSessionTemplate.selectList("reserve.timetableSelect");
 		// TODO Auto-generated method stub	
 	}
+	
+	public List<TimeTableModel> reserve_seat(int timetable_no) {
+		return sqlSessionTemplate.selectList("reserve.reserve_seat", timetable_no);
+		// TODO Auto-generated method stub	
+	}
 }

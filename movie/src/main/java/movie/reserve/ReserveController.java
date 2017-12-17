@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
+
 import movie.admin.TimeTableModel;
+import movie.movie.MovieBannerModel;
 import movie.movie.MovieService;
 import movie.reserve.ReserveService;
 
@@ -26,6 +28,8 @@ import movie.reserve.ReserveService;
 @RequestMapping("/reserve")
 public class ReserveController {
 
+	private String start_time;
+	
 	@Resource 
 	private MovieService movieService;
 	
@@ -34,7 +38,7 @@ public class ReserveController {
 	
 	
 		// 스케쥴 등록 
-	@RequestMapping(value = "/movieTicketing.see", method = RequestMethod.POST)
+	@RequestMapping(value = "/movieTicketing.see", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView timeTableWrite(HttpServletRequest request) throws ParseException{
 		
 		ModelAndView mv = new ModelAndView();
@@ -42,16 +46,15 @@ public class ReserveController {
 		TimeTableModel timetablemodel = new TimeTableModel();	
 		
 		// 날짜변환
-		Date timetable_show_date;
 		
-		/*timetable_show_date = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("show_date"));*/
-		/*System.out.println(timetable_show_date);*/
+		start_time = request.getParameter("start_time");
+		System.out.println(start_time);
+		if (start_time != null) {
 		
 		//detail 파라미터
+		/*Date timetable_show_date = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("show_date"));*/
 		int timetable_movie_no = Integer.parseInt(request.getParameter("movie_no"));
 		String timetable_start_time = request.getParameter("start_time");
-		System.out.println(timetable_movie_no);
-		System.out.println(timetable_start_time);
 		// 번호 이름 가져오기
 		
 		//timetable Model
@@ -69,10 +72,33 @@ public class ReserveController {
 		mv.setViewName("movieTicketing");
 		return mv;
 	}
+		
+		List<TimeTableModel> timetable_list = reserveService.timetable_list(); // 번호-이름 선택
+		mv.addObject("timetable_list", timetable_list);
+		
+		mv.setViewName("movieTicketing");
+		return mv;
+	}
+
+	//주문2
+	@RequestMapping(value = "/movieTicketing1.see",method = RequestMethod.GET)
+	public ModelAndView movieTicketing1(HttpServletRequest request) throws ParseException{
+		
+		ModelAndView mv = new ModelAndView();
+
+		int timetable_no = Integer.parseInt(request.getParameter("timetable_no"));
+		
+		List<TimeTableModel> reserve_seat = reserveService.reserve_seat(timetable_no);
+		MovieBannerModel bannerselect = movieService.banner_select();
+		
+		mv.addObject("reserve_seat",reserve_seat); //예매정보
+		mv.addObject("bannerselect", bannerselect); //하단 배너
+		
+		mv.setViewName("movieTicketing1");
+		return mv;
+		
+	}
 }
-
-	
-
 
 /*
 

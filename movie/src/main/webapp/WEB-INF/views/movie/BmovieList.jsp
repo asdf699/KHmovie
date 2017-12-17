@@ -84,25 +84,30 @@
 	<ul class="curr_list movie_clist" id="arteMovieList">
 	
 <c:forEach var="moviearteList" items="${moviearteList}" varStatus="stat">
-
+<c:url var="viewURL" value="/movieView.see">
+	<c:param name="movie_no" value="${moviearteList.movie_no }"/>
+</c:url>
+<c:url var="reserveURL" value="/movieTicketing.see">
+	<c:param name="movie_no" value="${moviearteList.movie_no}"/>
+</c:url>
 <li>
 <div class="curr_box">
 <span class="img">
 	<a href=''>
 	<img src="<%= cp %>/resources/upload/movie/main_movie/${moviearteList.movie_poster}"></a>
 </span>
-	<c:if test="${fn:length(moviearteList) le 0}">
+<%-- 	<c:if test="${fn:length(moviearteList) le 0}">
 		<tr>
 		<td colspan="13" class="tac">등록된 스케쥴이 없습니다.</td>
 		</tr>
-	</c:if>
+	</c:if> --%>
 </div>
 
 
 	<!-- hover시 이미지 -->
 <div class="layer_hover">
-	<a href='javascript:goToTiketing("12154");' class="btn_reserve">예매하기</a>
-	<a href='javascript:goToMovie("12154");' class="btn_View">상세보기</a>
+<a href="${reserveURL}" onclick="goToTiketing()" class="btn_reserve">예매하기</a>
+<a href="${viewURL}" class="btn_View">상세보기</a>
 </div>
 <dl class="list_text">
 	<dt>
