@@ -22,7 +22,7 @@
                 <!-- 20170726 - 광고 주석 복원 -->
                 <!-- javascript에서 그림 변환시켜줌 -->
                                 <!-- <script type="text/javascript" src="http://nvapi.feeldmc.com/ad/p/in/v1_0/imp?slotid=stw_lottelotte_4"></script> -->
-                                <img src="<%= cp %>/resources/upload/movie/main_movie/${bannerselect.banner_footer}" style="width:980;height:180;border:0px">
+                                <img src="<%= cp %>/resources/upload/movie/main_banner/${bannerselect.banner_footer}" style="width:980;height:180;border:0px">
             </div>
         </div>
     </div>

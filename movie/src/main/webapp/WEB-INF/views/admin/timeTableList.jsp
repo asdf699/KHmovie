@@ -78,7 +78,7 @@
 					<tbody>
 						<tr>
 							<td>
-								<select class="slct" id="movieSelection" name="movie_no">
+								<select class="slct" id="movieSelection" name="movie_no, movie_name">
 									<c:forEach var="selectmovie_name" items="${selectmovie_name}">
 									<option value="${selectmovie_name.movie_no}">${selectmovie_name.movie_name}</option>
 									</c:forEach>

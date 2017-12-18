@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import movie.reserve.ReserveModel;
 import movie.admin.TimeTableModel;
 import movie.movie.MovieBannerModel;
 import movie.movie.MovieService;
@@ -26,7 +27,6 @@ public class ReserveController {
 	
 	@Resource
 	private ReserveService reserveService;
-	
 	
 		// 스케쥴 등록 
 	@RequestMapping(value = "/movieTicketing.see", method = {RequestMethod.GET, RequestMethod.POST})
@@ -95,6 +95,29 @@ public class ReserveController {
 		mv.setViewName("movieTicketing1");
 		return mv;
 		
+	}
+
+
+	@RequestMapping(value = "/movieTicketing2.see",method = RequestMethod.GET)
+	public ModelAndView movieTicketing2(HttpServletRequest request, TimeTableModel timetableModel) throws ParseException{
+	
+		ModelAndView mv = new ModelAndView();
+
+		int timetable_no = timetableModel.getTimetable_movie_no();
+		int adult_amt = timetableModel.getTimetable_adult_amt();
+		int child_amt = timetableModel.getTimetable_child_amt();
+		String id = request.getParameter("basket_member_id");
+		
+		if (id != null) {
+			timetableModel = reserveService.
+		}
+		MovieBannerModel bannerselect = movieService.banner_select();
+	
+		mv.addObject("bannerselect", bannerselect); //하단 배너
+	
+	mv.setViewName("movieTicketing2");
+	return mv;
+	
 	}
 }
 

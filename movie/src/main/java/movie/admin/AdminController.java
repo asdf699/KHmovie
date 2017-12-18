@@ -44,7 +44,7 @@ public class AdminController {
 	Logger log = Logger.getLogger(this.getClass());
 	
 	/*private String uploadPath = "C:\\Users\\Jong\\Desktop\\1209 a11h\\movie\\src\\main\\webapp\\resources\\upload\\movie\\main_movie\\";*/
-	private String uploadPath = "C:\\Users\\Jong\\git\\KHmovie\\movie\\src\\main\\webapp\\resources\\upload\\movie\\main_movie\\";
+	private String uploadPath = "C:\\Users\\jong\\git\\KHmovie1\\movie\\src\\main\\webapp\\resources\\upload\\movie\\main_banner\\";
 	// 상영작 리스트
 	@RequestMapping(value="/movieList.see", method = RequestMethod.GET)
 	public ModelAndView movieList(HttpServletRequest request) {
@@ -461,6 +461,7 @@ public class AdminController {
 			
 			//detail 파라미터
 			int timetable_movie_no = Integer.parseInt(request.getParameter("movie_no"));
+			String timetable_movie_name = request.getParameter("movie_name");
 			String timetable_start_time = request.getParameter("start_time");
 			String timetable_end_time = request.getParameter("end_time");
 			int timetable_adult_amt = Integer.parseInt(request.getParameter("adult_amt"));
@@ -470,6 +471,7 @@ public class AdminController {
 			
 			//timetable Model
 			timetablemodel.setTimetable_movie_no(timetable_movie_no);
+			timetablemodel.setTimetable_movie_name(timetable_movie_name);
 			timetablemodel.setTimetable_start_date(timetable_start_date);
 			timetablemodel.setTimetable_end_date(timetable_end_date);
 			timetablemodel.setTimetable_show_date(timetable_show_date);
@@ -537,7 +539,7 @@ public class AdminController {
 			return mv;
 		}
 
-	//d이벤트 & 배너 수정post 
+	//이벤트 & 배너 수정post 
 				@RequestMapping(value = "/bannerUpdate.see", method=RequestMethod.POST )
 				public ModelAndView bannerUpdate2(@ModelAttribute("MovieBannerModel") MovieBannerModel movieBannerModel, BindingResult result,
 						MultipartHttpServletRequest multipartHttpServletRequest, MultipartHttpServletRequest request) {

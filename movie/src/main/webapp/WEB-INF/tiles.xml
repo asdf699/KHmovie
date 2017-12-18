@@ -32,6 +32,11 @@
 	<definition name="movieTicketing1" extends="main">
 		<put-attribute name="main_body" value="/WEB-INF/views/reserve/MovieTicketing1.jsp" />
 	</definition>
+	
+	<definition name="movieTicketing2" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/reserve/MovieTicketing2.jsp" />
+	</definition>
+	
    
 	<!-- 예매 진행부분 -->
 	<!-- 영화 상세보기-->

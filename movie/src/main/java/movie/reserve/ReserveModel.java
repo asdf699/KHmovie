@@ -3,11 +3,24 @@ package movie.reserve;
 import java.util.Date;
 
 public class ReserveModel {
+	int reserve_no;
 	int reserve_movie_no;
 	String reserve_movie_name;
+	Date reserve_start_date;
+	Date reserve_end_date;
 	Date reserve_show_date;
 	String reserve_start_time;
+	String reserve_end_time;
+	int reserve_adult_cnt;
+	int reserve_child_cnt;
+	String reserve_member_id;
 	
+	public int getReserve_no() {
+		return reserve_no;
+	}
+	public void setReserve_no(int reserve_no) {
+		this.reserve_no = reserve_no;
+	}
 	public int getReserve_movie_no() {
 		return reserve_movie_no;
 	}
@@ -20,6 +33,18 @@ public class ReserveModel {
 	public void setReserve_movie_name(String reserve_movie_name) {
 		this.reserve_movie_name = reserve_movie_name;
 	}
+	public Date getReserve_start_date() {
+		return reserve_start_date;
+	}
+	public void setReserve_start_date(Date reserve_start_date) {
+		this.reserve_start_date = reserve_start_date;
+	}
+	public Date getReserve_end_date() {
+		return reserve_end_date;
+	}
+	public void setReserve_end_date(Date reserve_end_date) {
+		this.reserve_end_date = reserve_end_date;
+	}
 	public Date getReserve_show_date() {
 		return reserve_show_date;
 	}
@@ -31,5 +56,29 @@ public class ReserveModel {
 	}
 	public void setReserve_start_time(String reserve_start_time) {
 		this.reserve_start_time = reserve_start_time;
+	}
+	public String getReserve_end_time() {
+		return reserve_end_time;
+	}
+	public void setReserve_end_time(String reserve_end_time) {
+		this.reserve_end_time = reserve_end_time;
+	}
+	public int getReserve_adult_cnt() {
+		return reserve_adult_cnt;
+	}
+	public void setReserve_adult_cnt(int reserve_adult_cnt) {
+		this.reserve_adult_cnt = reserve_adult_cnt;
+	}
+	public int getReserve_child_cnt() {
+		return reserve_child_cnt;
+	}
+	public void setReserve_child_cnt(int reserve_child_cnt) {
+		this.reserve_child_cnt = reserve_child_cnt;
+	}
+	public String getReserve_member_id() {
+		return reserve_member_id;
+	}
+	public void setReserve_member_id(String reserve_member_id) {
+		this.reserve_member_id = reserve_member_id;
 	}
 }

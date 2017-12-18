@@ -45,7 +45,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="timetable_start_time" column="timetable_start_time"/>
 		<result property="timetable_end_time" column="timetable_end_time" />
 		<result property="timetable_adult_amt" column="timetable_adult_amt" />
-		<result property="timetable_child_amt" column="timetable_child_amt" /> 
+		<result property="timetable_child_amt" column="timetable_child_amt" />
 	</resultMap> 
 	
 	
@@ -85,7 +85,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			#{timetable_start_time},
 			#{timetable_end_time},
 			#{timetable_adult_amt},
-			#{timetable_child_amt}
+			#{timetable_child_amt},
 		)
 			
 	</insert>
