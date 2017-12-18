@@ -6,16 +6,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<script type="text/javascript">
-var reserve = function(){
-    
-    var num = "${TimeTableModel.timetable_no}";
-    var amount = "${ReserveModel.reserve_adult_cnt}";
-    var amount = "${ReserveModel.reserve_child_cnt}";
-    var id = "${session_member_id}";
-    location.href = '<%= cp%>/reserve/movieTicketing2.see?goods_num='+num+'&reserve_adult_amt='+adult_cnt+'&reserve_child_amt='+child_cnt+'&basket_member_id='+id;
-};
-</script>
+
 
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
@@ -82,7 +73,8 @@ var reserve = function(){
 					</ul>
 				</div>
 				<div class="selectbox">
-				<form:form action="" method="post">
+				<form name="reserveform" action="#" method="post">
+				<input type="hidden" name="timetable_no" value="${reserve_seat.timetable_no}"/>
 					<ul class="personSelect">
 					<label for="person0">성인</label>
 					<ul>
@@ -118,7 +110,7 @@ var reserve = function(){
 					
                     <p class="seat_txt2" style="">만 15세 미만의 고객님(영, 유아 포함)은 반드시 부모님 또는 성인 보호자의 동반하에 관람이 가능합니다.</p>
                     </ul>
-                    </form:form>
+                    </form>
 				</div>
 			  </div>
 			</div>
@@ -350,7 +342,7 @@ var reserve = function(){
             <div class="btn_wrap">
 				<div class="btn_inner">
 					<a href="<%= cp %>/reserve/movieTicketing.see" class="btn_prev Lang-LBL1024" title="이전단계">이전단계</a>
-					<a href="JavaScript:reserve()" class="btn_next Lang-LBL1025" title="다음단계">다음단계</a>
+					<a href="JavaScript:Reserve()" class="btn_next Lang-LBL1025" title="다음단계">다음단계</a>
 				</div>
 			</div>
 
@@ -360,7 +352,6 @@ var reserve = function(){
 				    <div class="total_slide">
 				    
 					    <ul>
-					    <c:forEach var="reserve_seat" items="${reserve_seat}">
 						    <li>
 							    <dl>
 							    
@@ -415,7 +406,6 @@ var reserve = function(){
 							    </dl>
 							    <strong class="total_sum fixSum"><span>0</span> <em class="Lang-LBL1037">원</em></strong>
 						    </li> -->
-						    </c:forEach>
 					    </ul>
 				    </div>
 		        </div>
@@ -428,5 +418,15 @@ var reserve = function(){
 </div>
 </div>
 </div>
+<script type="text/javascript">
+function Reserve()
+    {
+    var timetable_no = "${reserve_seat.timetable_no}";
+    var timetable_adult_cnt = document.reserveform.adult_cnt.value;
+    var timetable_child_cnt = document.reserveform.child_cnt.value;
+    /* var id = "${session_member_id}"; */
+    location.href = '<%= cp%>/reserve/movieTicketing2.see?timetable_no='+timetable_no+'&timetable_adult_cnt='+timetable_adult_cnt+'&timetable_child_cnt='+timetable_child_cnt;
+};
+</script>
 </body>
 </html>

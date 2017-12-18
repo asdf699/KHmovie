@@ -7,8 +7,7 @@ import javax.annotation.Resource;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Service;
 
-import movie.reserve.ReserveModel;
-import movie.admin.TimeTableModel;
+import movie.reserve.ReserveTimeTableModel;
 import movie.movie.MovieModel;
 
 @Service
@@ -17,7 +16,7 @@ public class ReserveService implements ReserveDAO{
 	@Resource
 	private SqlSessionTemplate sqlSessionTemplate;
 	
-	public List<TimeTableModel> timesearch(TimeTableModel timetablemodel) {
+	public List<ReserveTimeTableModel> timesearch(ReserveTimeTableModel timetablemodel) {
 		return sqlSessionTemplate.selectList("reserve.timesearch", timetablemodel);
 	}
 
@@ -27,18 +26,18 @@ public class ReserveService implements ReserveDAO{
 	}
 	
 	//시간표 조회
-	public List<TimeTableModel> timetable_list() {
+	public List<ReserveTimeTableModel> timetable_list() {
 		return sqlSessionTemplate.selectList("reserve.selectMovie_name");
 		// TODO Auto-generated method stub
 	}
 	
-	public List<TimeTableModel> timetableSelect() {
+	public List<ReserveTimeTableModel> timetableSelect() {
 		return sqlSessionTemplate.selectList("reserve.timetableSelect");
 		// TODO Auto-generated method stub	
 	}
 	
-	public List<TimeTableModel> reserve_seat(int timetable_no) {
-		return sqlSessionTemplate.selectList("reserve.reserve_seat", timetable_no);
+	public ReserveTimeTableModel reserve_seat(int timetable_no) {
+		return sqlSessionTemplate.selectOne("reserve.reserve_seat", timetable_no);
 		// TODO Auto-generated method stub	
 	}
 }

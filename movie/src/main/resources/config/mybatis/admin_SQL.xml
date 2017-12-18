@@ -33,7 +33,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="movie_intro" column="movie_intro" />
 	</resultMap>
 
- 	<resultMap  id="TimetalbeRes" type="TimeTableModel" >
+ 	<resultMap  id="adminTimeTableModelRes" type="AdminTimeTableModel" >
 		<result property="timetable_no" column="timetable_time_no"/>
 		<result property="timetable_movie_no" column="timetable_movie_no" />
 		<result property="timetable_movie_name" column="timetable_movie_name" />
@@ -56,7 +56,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	
-	<insert id="timetableInsert" parameterType="TimeTableModel">
+	<insert id="timetableInsert" parameterType="AdminTimeTableModel">
 		insert into TIMETABLE 
 		(
 			timetable_no,
@@ -91,7 +91,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	
 	<!-- 시간표 조회 -->
-	<select id="timetableSelect" resultMap="TimetalbeRes">
+	<select id="timetableSelect" resultMap="adminTimeTableModelRes">
 		select * from timetable order by timetable_no DESC
 	</select>
 	

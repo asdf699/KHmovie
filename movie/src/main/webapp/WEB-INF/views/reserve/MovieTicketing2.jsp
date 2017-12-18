@@ -82,7 +82,6 @@
                 <!-- 주문/결제 -->
                 <div class="orderCont">
                     <h2 class="order_tit Lang-LBL0037">주문/결제</h2>
-
                     <fieldset>
                         <legend>주문/결제</legend>
                         <!-- 주문정보 테이블 -->
@@ -97,7 +96,7 @@
                                     <td colspan="2">
                                         <dl class="mount">
                                             <dt class="Lang-LBL0039">총 주문금액</dt>
-                                            <dd class="sum"><em><strong>9,000</strong> <span class="Lang-LBL3037">원</span></em></dd>
+                                            <dd class="sum"><em><strong>${list.timetable_adult_amt * list.timetable_adult_cnt}원</strong> <span class="Lang-LBL3037">원</span></em></dd>
                                         </dl>
                                     </td>
                                 </tr>

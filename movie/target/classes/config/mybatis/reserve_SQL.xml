@@ -39,7 +39,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="movie_intro" column="movie_intro" />
 	</resultMap>
 	
-	 <resultMap  id="timetableRes" type="TimeTableModel" >
+	 <resultMap  id="reserveTimeTableModelRes" type="ReserveTimeTableModel" >
 		<result property="timetable_no" column="timetable_time_no"/>
 		<result property="timetable_movie_no" column="timetable_movie_no" />
 		<result property="timetable_movie_name" column="timetable_movie_name" />
@@ -51,7 +51,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="timetable_start_time" column="timetable_start_time"/>
 		<result property="timetable_end_time" column="timetable_end_time" />
 		<result property="timetable_adult_amt" column="timetable_adult_amt" />
-		<result property="timetable_child_amt" column="timetable_child_amt" /> 
+		<result property="timetable_child_amt" column="timetable_child_amt" />
+		<result property="timetable_adult_cnt" column="timetable_adult_cnt" />
+		<result property="timetable_child_cnt" column="timetable_child_cnt" /> 
 	</resultMap> 
 	
 	<!-- 이름 번호 불러오기 -->
@@ -61,7 +63,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<!-- 시간표 검색 -->
- 	<select id="timesearch" resultMap="timetableRes">
+ 	<select id="timesearch" resultMap="reserveTimeTableModelRes">
 		select * from timetable where 
 		timetable_movie_no = #{timetable_movie_no} and
 		<!-- timetable_show_date = #{timetable_show_date} and  -->
@@ -69,12 +71,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select> 
 	
 		<!-- 시간표 조회 -->
-	<select id="timetableSelect" resultMap="timetableRes">
+	<select id="timetableSelect" resultMap="reserveTimeTableModelRes">
 		select * from timetable order by timetable_no DESC
 	</select>
 	
-		<select id="reserve_seat" resultMap="timetableRes">
+	<select id="reserve_seat" resultMap="reserveTimeTableModelRes">
 		select * from timetable
 		where timetable_no = #{timetable_no}
+	</select>
+	
+	<!--  상세보기 -->
+	<select id="selectOne-timetable" parameterType="ReserveTimeTableModel" resultMap="reserveTimeTableModelRes">
+		select * from timetable where timetable_no = #{timetable_no}
 	</select>
 </mapper>

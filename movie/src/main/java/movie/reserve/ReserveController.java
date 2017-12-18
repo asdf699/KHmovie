@@ -11,8 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import movie.reserve.ReserveModel;
-import movie.admin.TimeTableModel;
+import movie.reserve.ReserveTimeTableModel;
 import movie.movie.MovieBannerModel;
 import movie.movie.MovieService;
 
@@ -28,13 +27,14 @@ public class ReserveController {
 	@Resource
 	private ReserveService reserveService;
 	
+	ReserveTimeTableModel reserveTimeTableModel = new ReserveTimeTableModel();
 		// 스케쥴 등록 
 	@RequestMapping(value = "/movieTicketing.see", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView timeTableWrite(HttpServletRequest request) throws ParseException{
 		
 		ModelAndView mv = new ModelAndView();
 		// 모델등록
-		TimeTableModel timetablemodel = new TimeTableModel();	
+		ReserveTimeTableModel timetablemodel = new ReserveTimeTableModel();	
 		
 		// 날짜변환
 		
@@ -53,8 +53,8 @@ public class ReserveController {
 		/*timetablemodel.setTimetable_show_date(timetable_show_date);*/
 		timetablemodel.setTimetable_start_time(timetable_start_time);
 		
-		List<TimeTableModel> timetablelist = reserveService.timesearch(timetablemodel);
-		List<TimeTableModel> timetable_list = reserveService.timetable_list(); // 번호-이름 선택
+		List<ReserveTimeTableModel> timetablelist = reserveService.timesearch(timetablemodel);
+		List<ReserveTimeTableModel> timetable_list = reserveService.timetable_list(); // 번호-이름 선택
 		/*List<TimeTableModel> timetableSelect = reserveService.timetableSelect(); //시간표 조회
 		*/
 		MovieBannerModel bannerselect = movieService.banner_select();
@@ -68,7 +68,7 @@ public class ReserveController {
 		return mv;
 	}
 		
-		List<TimeTableModel> timetable_list = reserveService.timetable_list(); // 번호-이름 선택
+		List<ReserveTimeTableModel> timetable_list = reserveService.timetable_list(); // 번호-이름 선택
 		MovieBannerModel bannerselect = movieService.banner_select();
 		
 		mv.addObject("timetable_list", timetable_list);
@@ -86,7 +86,7 @@ public class ReserveController {
 
 		int timetable_no = Integer.parseInt(request.getParameter("timetable_no"));
 		
-		List<TimeTableModel> reserve_seat = reserveService.reserve_seat(timetable_no);
+		ReserveTimeTableModel reserve_seat = reserveService.reserve_seat(timetable_no);
 		MovieBannerModel bannerselect = movieService.banner_select();
 		
 		mv.addObject("reserve_seat",reserve_seat); //예매정보
@@ -98,26 +98,37 @@ public class ReserveController {
 	}
 
 
-	@RequestMapping(value = "/movieTicketing2.see",method = RequestMethod.GET)
-	public ModelAndView movieTicketing2(HttpServletRequest request, TimeTableModel timetableModel) throws ParseException{
+	@RequestMapping(value = "/movieTicketing2.see")
+	public ModelAndView movieTicketing2(HttpServletRequest request, ReserveTimeTableModel reserveTimeTableModel) throws ParseException{
 	
 		ModelAndView mv = new ModelAndView();
 
-		int timetable_no = timetableModel.getTimetable_movie_no();
-		int adult_amt = timetableModel.getTimetable_adult_amt();
-		int child_amt = timetableModel.getTimetable_child_amt();
-		String id = request.getParameter("basket_member_id");
+		int timetable_no = reserveTimeTableModel.getTimetable_no();
+		int adult_cnt = reserveTimeTableModel.getTimetable_adult_cnt();
+		int child_cnt = reserveTimeTableModel.getTimetable_child_cnt();
+		/*String id = request.getParameter("basket_member_id");*/
 		
-		if (id != null) {
-			timetableModel = reserveService.
-		}
+/*		if(id != "") {*/
+		
+		reserveTimeTableModel = reserveService.reserve_seat(timetable_no);
+		/*memberModel = memberService.getMemeber(id);*/
+		reserveTimeTableModel.setTimetable_adult_cnt(adult_cnt);
+		reserveTimeTableModel.setTimetable_child_cnt(child_cnt);
+		
+		
 		MovieBannerModel bannerselect = movieService.banner_select();
-	
+
+		mv.addObject("reserveTimeTableModel",reserveTimeTableModel); // 영화 예매 숫자 및 타임테이블전체
 		mv.addObject("bannerselect", bannerselect); //하단 배너
 	
 	mv.setViewName("movieTicketing2");
 	return mv;
 	
+/*		}else {
+			mv.setViewName("/movieTicketing.see");
+			
+			return mv;
+		}*/
 	}
 }
 

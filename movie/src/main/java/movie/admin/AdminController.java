@@ -22,6 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
+import movie.reserve.ReserveTimeTableModel;
 import movie.movie.MovieBannerModel;
 import movie.movie.MovieModel;
 import movie.movie.MovieService;
@@ -449,7 +450,7 @@ public class AdminController {
 			public String timeTableWrite(HttpServletRequest request) throws ParseException{
 			
 			// 모델등록
-			TimeTableModel timetablemodel = new TimeTableModel();		
+			ReserveTimeTableModel timetablemodel = new ReserveTimeTableModel();		
 			// 날짜변환
 			Date timetable_start_date;
 			Date timetable_end_date;
@@ -492,7 +493,7 @@ public class AdminController {
 	public ModelAndView timeTableList(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView();
 		
-		List<TimeTableModel> timetable_list = adminService.timetable_list();
+		List<ReserveTimeTableModel> timetable_list = adminService.timetable_list();
 		List<AdminMovieModel> selectmovie_name = adminService.selectmovie_name();
 		
 		mv.addObject("timetable_list", timetable_list);

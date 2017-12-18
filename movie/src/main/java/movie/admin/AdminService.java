@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Service;
 
+import movie.reserve.ReserveTimeTableModel;
 import movie.movie.MovieBannerModel;
 import movie.movie.MovieModel;
 
@@ -39,13 +40,13 @@ public class AdminService implements AdminDAO{
 	}
 	
 	//시간표 등록
-	public boolean timeDetailInsert(TimeTableModel timetablemodel) {
+	public boolean timeDetailInsert(ReserveTimeTableModel timetablemodel) {
 		sqlSessionTemplate.insert("admin.timetableInsert", timetablemodel);
 		return true;
 	}
 	
 	//시간표 조회
-	public List<TimeTableModel> timetable_list() {
+	public List<ReserveTimeTableModel> timetable_list() {
 		return sqlSessionTemplate.selectList("admin.timetableSelect");
 		// TODO Auto-generated method stub
 		

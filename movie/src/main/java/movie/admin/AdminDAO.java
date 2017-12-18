@@ -2,6 +2,7 @@ package movie.admin;
 
 import java.util.List;
 
+import movie.reserve.ReserveTimeTableModel;
 import movie.movie.MovieBannerModel;
 import movie.movie.MovieModel;
 
@@ -13,7 +14,7 @@ public interface AdminDAO {
 	
 	public boolean movieWrite(MovieModel movieModel);
 	
-	public List<TimeTableModel> timetable_list();
+	public List<ReserveTimeTableModel> timetable_list();
 	
 	public boolean timetableDelete(int timetable_no);
 	
