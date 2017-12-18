@@ -22,5 +22,9 @@ public interface MovieDAO {
 	
 	public boolean movieDelete(int no);
 	
-	
+	public Object writecomment(MovieCommentModel movieCommentModel);
+
+	public List<MovieCommentModel> commentList(int movie_num);
+
+	public Object deletecomment(MovieCommentModel movieCommentModel);
 }

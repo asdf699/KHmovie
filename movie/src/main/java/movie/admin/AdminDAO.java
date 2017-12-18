@@ -2,6 +2,7 @@ package movie.admin;
 
 import java.util.List;
 
+import movie.movie.MovieBannerModel;
 import movie.movie.MovieModel;
 
 public interface AdminDAO {
@@ -17,4 +18,10 @@ public interface AdminDAO {
 	public boolean timetableDelete(int timetable_no);
 	
 	public boolean movieUpdate(MovieModel movieModel);
+	
+	public MovieBannerModel bannerList();
+
+	public MovieBannerModel bannerView();
+	
+	public boolean bannerUpdate(MovieBannerModel movieBannerModel); 
 }

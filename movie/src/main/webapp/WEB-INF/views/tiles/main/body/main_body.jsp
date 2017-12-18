@@ -261,13 +261,13 @@
 <ul class="fl">
 <li class="pbBn">
 <a href="javascript:void(0)">
-	<img src="<%= cp %>/resources/upload/movie/main_banner/${bannerselect.banner_left}">
+	<img src="<%= cp %>/resources/upload/movie/main_movie/${bannerselect.banner_left}">
 </a>
 </li>
 
 <li>
 <a href="javascript:void(0)">
-	<img src="<%= cp %>/resources/upload/movie/main_banner/${bannerselect.banner_left1}">
+	<img src="<%= cp %>/resources/upload/movie/main_movie/${bannerselect.banner_left1}">
 </a>
 </li>
 </ul> <!-- flbx까지 -->
@@ -275,19 +275,19 @@
 <ul class="fr">
 <li class="pbBn">
 <a href="javascript:void(0)">
-	<img src="<%= cp %>/resources/upload/movie/main_banner/${bannerselect.banner_center}">
+	<img src="<%= cp %>/resources/upload/movie/main_movie/${bannerselect.banner_center}">
 </a>
 </li>
 
 <li>
 <a href="javascript:void(0)">
-	<img src="<%= cp %>/resources/upload/movie/main_banner/${bannerselect.banner_center1}">
+	<img src="<%= cp %>/resources/upload/movie/main_movie/${bannerselect.banner_center1}">
 </a>
 </li>
 </ul>
 
 <a href="javascript:void(0);" class="pbBnT">
-	<img src="<%= cp %>/resources/upload/movie/main_banner/${bannerselect.banner_bottom}">
+	<img src="<%= cp %>/resources/upload/movie/main_movie/${bannerselect.banner_bottom}">
 </a>
 </div>
 
@@ -295,7 +295,7 @@
 
 <li class="pbBn">
 <a href="javascript:void(0)">
-<img src="<%= cp %>/resources/upload/movie/main_banner/${bannerselect.banner_right}">
+<img src="<%= cp %>/resources/upload/movie/main_movie/${bannerselect.banner_right}">
 </a>
 </li>
 
@@ -303,7 +303,7 @@
 
 
 <li>
-<img src="<%= cp %>/resources/upload/movie/main_banner/${bannerselect.banner_right1}">
+<img src="<%= cp %>/resources/upload/movie/main_movie/${bannerselect.banner_right1}">
 </li>
 
 </ul>

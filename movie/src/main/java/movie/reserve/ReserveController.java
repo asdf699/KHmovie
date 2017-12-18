@@ -1,28 +1,19 @@
 package movie.reserve;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.Date;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
-import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
-
 
 import movie.admin.TimeTableModel;
 import movie.movie.MovieBannerModel;
 import movie.movie.MovieService;
-import movie.reserve.ReserveService;
 
 @Controller
 @RequestMapping("/reserve")
@@ -66,15 +57,22 @@ public class ReserveController {
 		List<TimeTableModel> timetable_list = reserveService.timetable_list(); // 번호-이름 선택
 		/*List<TimeTableModel> timetableSelect = reserveService.timetableSelect(); //시간표 조회
 		*/
+		MovieBannerModel bannerselect = movieService.banner_select();
+		
 		mv.addObject("timetable_list", timetable_list);
 		mv.addObject("timetablelist", timetablelist);
+		mv.addObject("bannerselect", bannerselect);
 		/*mv.addObject("timetableSelect", timetableSelect);*/
+		
 		mv.setViewName("movieTicketing");
 		return mv;
 	}
 		
 		List<TimeTableModel> timetable_list = reserveService.timetable_list(); // 번호-이름 선택
+		MovieBannerModel bannerselect = movieService.banner_select();
+		
 		mv.addObject("timetable_list", timetable_list);
+		mv.addObject("bannerselect", bannerselect);
 		
 		mv.setViewName("movieTicketing");
 		return mv;

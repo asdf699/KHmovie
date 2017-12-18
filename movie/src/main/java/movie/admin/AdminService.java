@@ -1,12 +1,13 @@
 package movie.admin;
 
 import java.util.List;
+
 import javax.annotation.Resource;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Service;
 
-import movie.admin.AdminMovieModel;
-import movie.admin.TimeTableModel;
+import movie.movie.MovieBannerModel;
 import movie.movie.MovieModel;
 
 @Service
@@ -51,12 +52,27 @@ public class AdminService implements AdminDAO{
 	}
 	
 	//시간표 삭제
-	public boolean timetableDelete(int timetable_no) {
-		sqlSessionTemplate.delete("admin.timetableDelete", timetable_no);
-		return true;
+		public boolean timetableDelete(int timetable_no) {
+			sqlSessionTemplate.delete("admin.timetableDelete", timetable_no);
+			return true;
 	}
-/*	public boolean timeDetailInsert(ReserveModel detailModel) {
-		sqlSessionTemplate.insert("admin.timeDetailInsert", detailModel);
-		return true;
-	}*/
-}
+		
+	//이벤트 & 배너 조회
+		public MovieBannerModel bannerList() {
+			return sqlSessionTemplate.selectOne("movie.selectBanner");
+		}
+	/*	public boolean timeDetailInsert(ReserveModel detailModel) {
+			sqlSessionTemplate.insert("admin.timeDetailInsert", detailModel);
+			return true;
+		}*/
+		
+		
+		public MovieBannerModel bannerView() {
+			return sqlSessionTemplate.selectOne("movie.selectBanner");
+		}
+		
+		public boolean bannerUpdate(MovieBannerModel movieBannerModel) {
+			// TODO Auto-generated method stub
+			return false;
+		}
+	}

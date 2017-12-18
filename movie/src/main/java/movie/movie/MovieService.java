@@ -23,10 +23,25 @@ public class MovieService implements MovieDAO{
 		// TODO Auto-generated method stub
 		return sqlSessionTemplate.selectOne("movie.selectBanner");
 	}
+	
+	//배너 수정
+		public MovieBannerModel bannerView(){
+			return sqlSessionTemplate.selectOne("movie.selectBanner");
+	}
+	
+	//배너 업뎃
+	public boolean bannerUpdate(MovieBannerModel movieBannerModel) {
+		sqlSessionTemplate.update("movie.bannerUpdate",movieBannerModel);
+		return true;
+	}
 	//영화 상세보기
 	public List<MovieModel> movieList_one(int movie_no) {
 		// TODO Auto-generated method stub
 		return sqlSessionTemplate.selectList("movie.selectMovie_One",movie_no);
+	}
+	
+	public MovieModel movieView(int movie_no){
+		return sqlSessionTemplate.selectOne("movie.selectMovie_One",movie_no);
 	}
 	
 	//영화 수정
@@ -50,7 +65,23 @@ public class MovieService implements MovieDAO{
 		return true;
 	}
 	
-	
+	//댓글 작성
+	public Object writecomment(MovieCommentModel movieCommentModel) {
+		// TODO Auto-generated method stub
+		return sqlSessionTemplate.insert("movie.writecomment",movieCommentModel); 
+	}
+		
+	//댓글 리스트
+	public List<MovieCommentModel> commentList(int movie_num) {
+		// TODO Auto-generated method stub
+		return sqlSessionTemplate.selectList("movie.commentList",movie_num);
+	}
+		
+	//댓글 삭제
+	public Object deletecomment(MovieCommentModel movieCommentModel) {
+		return sqlSessionTemplate.delete("movie.deletecomment", movieCommentModel);
+	}
+		
 	// intro 이미지 선택
 	public MovieIntroModel movieintro_Select() {
 		return sqlSessionTemplate.selectOne("movie.selectIntro");

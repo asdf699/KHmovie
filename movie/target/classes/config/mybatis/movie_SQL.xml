@@ -59,7 +59,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="movie_intro_opera_content" column="movie_intro_opera_content" />
 	</resultMap>
 	
-	
+	<!-- 댓글 선택 -->
+	<resultMap type="movieCommentModel" id="MovieCommentRes">
+		<result property="comment_num" column="comment_num"/>
+		<result property="movie_num" column="movie_num"/>
+		<result property="cmter" column="cmter"/>
+		<result property="cmt_date" column="cmt_date"/>
+		<result property="commentt" column="commentt"/>
+		<result property="movie_point" column="movie_point"/>
+	</resultMap>
 <!-- 	<resultMap id="moviescore" type="MovieScoreModel">
 		<result property="movie_score_movie_no" column="movie_score_movie_no" />
 		<result property="movie_score_member_no" column="movie_score_member_no" />
@@ -172,6 +180,37 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where MOVIE_NO = #{movie_no,jdbcType=VARCHAR}
 	</update>
 	
+	<!-- 코멘트 전체 꺼내오기 -->
+	<select id="commentList" resultMap="MovieCommentRes" parameterType="movieCommentModel">
+		select * from view_comment
+				where movie_num = #{movie_num}
+			    order by comment_num desc
+	</select>
+	
+	<!-- 코멘트 삭제 -->
+	<delete id="deletecomment" parameterType="movieCommentModel">
+		delete from view_comment where comment_num=#{comment_num} 
+	</delete>
+	
+		<!-- 코멘트 작성 -->
+ 	<insert id="writecomment" parameterType="int">
+		insert into view_comment (comment_num,
+      					        movie_num,
+                         		cmter,                   		
+                         		cmt_date,
+                         		commentt,
+                         		movie_point
+                         )
+                values (
+                view_comment_SEQ.nextval,
+                	 	#{movie_num,jdbcType=VARCHAR},
+                	 	 0,              	 	
+                         sysdate,
+                        #{commentt,jdbcType=VARCHAR},
+                        #{movie_point,jdbcType=VARCHAR}
+                         )
+	</insert>
+	
 	<!-- 영화 intro 분류-->
 	
 	<select id="selectMovie_Boxoffice" resultMap="movieRes">
@@ -198,6 +237,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectBanner" resultMap="banner">
 		select * from banner
 	</select>
+	
+	<!-- 배너 수정 -->
+	<update id="bannerUpdate" parameterType="MovieBannerModel">
+	update banner set
+		banner_left = #{banner_left,jdbcType=VARCHAR},
+		banner_left1 = #{banner_left1,jdbcType=VARCHAR},
+		banner_center = #{banner_center,jdbcType=VARCHAR},
+		banner_center1 = #{banner_center1,jdbcType=VARCHAR},
+		banner_right = #{banner_right,jdbcType=VARCHAR},
+		banner_right1 = #{banner_right1,jdbcType=VARCHAR},
+		banner_bottom = #{banner_bottom,jdbcType=VARCHAR},
+		banner_footer = #{banner_footer,jdbcType=VARCHAR},
+		banner_footer1 = #{banner_footer1,jdbcType=VARCHAR}
+	</update>
 	
 	<!-- 영화탭 -->
 	<select id="selectIntro" resultMap="movieintro">

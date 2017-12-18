@@ -16,7 +16,7 @@
 
 	<ul>
 		<li>
-		<a href="http://www.lottecinema.co.kr/LCHS/Contents/ticketing/ticketing.aspx" title="예매">예매</a>
+		<a href="<%=cp %>/reserve/movieTicketing.see" title="예매">예매</a>
 		</li>
 
 		<li class="active">
@@ -96,7 +96,12 @@
 	<ul class="curr_list movie_clist" id="arteMovieList">
 	
 <c:forEach var="movieoperaList" items="${movieoperaList}" varStatus="stat">
-
+<c:url var="viewURL" value="/movieView.see">
+	<c:param name="movie_no" value="${movieoperaList.movie_no }"/>
+</c:url>
+<c:url var="reserveURL" value="/movieTicketing.see">
+	<c:param name="movie_no" value="${movieoperaList.movie_no}"/>
+</c:url>
 <li>
 <div class="curr_box">
 <span class="img">
@@ -108,8 +113,8 @@
 
 	<!-- hover시 이미지 -->
 <div class="layer_hover">
-	<a href='javascript:goToTiketing("12154");' class="btn_reserve">예매하기</a>
-	<a href='javascript:goToMovie("12154");' class="btn_View">상세보기</a>
+<a href="${reserveURL}" onclick="goToTiketing()" class="btn_reserve">예매하기</a>
+<a href="${viewURL}" class="btn_View">상세보기</a>
 </div>
 <dl class="list_text">
 	<dt>

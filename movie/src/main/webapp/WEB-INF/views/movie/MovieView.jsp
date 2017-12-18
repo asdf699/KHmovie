@@ -9,6 +9,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>영화 상세보기</title>
 </head>
+<script type="text/javascript">
+//코멘트 처리
+var onComment = function(){
+	var form = $('.commentForm')[0];
+	form.action = 'commentWrite.see'; 
+	form.submit();
+};
+</script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="<%= cp %>/w3.css">
@@ -75,7 +83,6 @@
 </ul>
 </div>
 </li>
-
 <li>
 <a href="http://www.lottecinema.co.kr/LCHS/Contents/Cinema-Mall/gift-shop.aspx" title="기프트샵">기프트샵</a>
 </li>
@@ -84,35 +91,35 @@
 </div>
 
 <div id="container" class="sub">
-<c:forEach var="list_no" items="${list_no}" varStatus="stat">
+<%-- <c:forEach var="movieModel" items="${movieModel}" varStatus="stat"> --%>
       <!-- content -->
 			<div id="content">
 				<div class="w3-content" style="max-width: 900px">
-					<img class="mySlides" src="<%= cp %>/resources/upload/movie/main_movie/${list_no.movie_stillcut}" style="width: 100%">
-					<img class="mySlides" src="<%= cp %>/resources/upload/movie/main_movie/${list_no.movie_stillcut1}" style="width: 100%">
-					<img class="mySlides" src="<%= cp %>/resources/upload/movie/main_movie/${list_no.movie_stillcut2}" style="width: 100%">
-					<img class="mySlides" src="<%= cp %>/resources/upload/movie/main_movie/${list_no.movie_stillcut3}" style="width: 100%">
-					<img class="mySlides" src="<%= cp %>/resources/upload/movie/main_movie/${list_no.movie_stillcut4}" style="width: 100%">
+					<img class="mySlides" src="<%= cp %>/resources/upload/movie/main_movie/${movieModel.movie_stillcut}" style="width: 100%">
+					<img class="mySlides" src="<%= cp %>/resources/upload/movie/main_movie/${movieModel.movie_stillcut1}" style="width: 100%">
+					<img class="mySlides" src="<%= cp %>/resources/upload/movie/main_movie/${movieModel.movie_stillcut2}" style="width: 100%">
+					<img class="mySlides" src="<%= cp %>/resources/upload/movie/main_movie/${movieModel.movie_stillcut3}" style="width: 100%">
+					<img class="mySlides" src="<%= cp %>/resources/upload/movie/main_movie/${movieModel.movie_stillcut4}" style="width: 100%">
 					
 					<div class="w3-row-padding w3-section">
 						<div class="w3-col s4">
-							<img class="demo w3-opacity w3-hover-opacity-off" src="<%= cp %>/resources/upload/movie/main_movie/${list_no.movie_stillcut}" style="width: 100%"
+							<img class="demo w3-opacity w3-hover-opacity-off" src="<%= cp %>/resources/upload/movie/main_movie/${movieModel.movie_stillcut}" style="width: 100%"
 								onclick="currentDiv(1)">
 						</div>
 						<div class="w3-col s4">
-							<img class="demo w3-opacity w3-hover-opacity-off" src="<%= cp %>/resources/upload/movie/main_movie/${list_no.movie_stillcut1}" style="width: 100%"
+							<img class="demo w3-opacity w3-hover-opacity-off" src="<%= cp %>/resources/upload/movie/main_movie/${movieModel.movie_stillcut1}" style="width: 100%"
 								onclick="currentDiv(2)">
 						</div>
 						<div class="w3-col s4">
-							<img class="demo w3-opacity w3-hover-opacity-off" src="<%= cp %>/resources/upload/movie/main_movie/${list_no.movie_stillcut2}" style="width: 100%"
+							<img class="demo w3-opacity w3-hover-opacity-off" src="<%= cp %>/resources/upload/movie/main_movie/${movieModel.movie_stillcut2}" style="width: 100%"
 								onclick="currentDiv(3)">
 						</div>
 						<div class="w3-col s4">
-							<img class="demo w3-opacity w3-hover-opacity-off" src="<%= cp %>/resources/upload/movie/main_movie/${list_no.movie_stillcut3}" style="width: 100%"
+							<img class="demo w3-opacity w3-hover-opacity-off" src="<%= cp %>/resources/upload/movie/main_movie/${movieModel.movie_stillcut3}" style="width: 100%"
 								onclick="currentDiv(4)">
 						</div>
 						<div class="w3-col s4">
-							<img class="demo w3-opacity w3-hover-opacity-off" src="<%= cp %>/resources/upload/movie/main_movie/${list_no.movie_stillcut4}" style="width: 100%"
+							<img class="demo w3-opacity w3-hover-opacity-off" src="<%= cp %>/resources/upload/movie/main_movie/${movieModel.movie_stillcut4}" style="width: 100%"
 								onclick="currentDiv(5)">
 						</div>
 					</div>
@@ -130,7 +137,7 @@
 							<div class="thumb">
 
 								<span class="img"><img
-									src="<%= cp %>/resources/upload/movie/main_movie/${list_no.movie_poster}"></span>
+									src="<%= cp %>/resources/upload/movie/main_movie/${movieModel.movie_poster}"></span>
 
 
 								<a href="javascript:void(0);" class="btn_reserve Lang-LBL0000">예매하기</a>
@@ -138,7 +145,7 @@
 							</div>
 							<div class="info_main">
 								<div class="info_data">
-									<h2 class="info_tit">${list_no.movie_name}</h2>
+									<h2 class="info_tit">${movieModel.movie_name}</h2>
 								</div>
 								<ul class="ranking_list">
 									<li><strong class="rate_tit Lang-LBL0000">예매율</strong> <span
@@ -150,16 +157,16 @@
 								</ul>
 								<dl class="info_spec" id="dSpec0">
 									<dt>등급</dt>
-									<dd id="dVClass">${list_no.movie_age}</dd>
+									<dd id="dVClass">${movieModel.movie_age}</dd>
 									<dt>개봉일</dt>
-									<dd id="dReleaseDate"><fmt:formatDate value="${list_no.movie_date }" pattern="yyyy.MM.dd"></fmt:formatDate></dd>
+									<dd id="dReleaseDate"><fmt:formatDate value="${movieModel.movie_date }" pattern="yyyy.MM.dd"></fmt:formatDate></dd>
 									
 									<dt>기본정보</dt>
-									<dd id="dBaseInfo">${list_no.movie_genre}</dd>
+									<dd id="dBaseInfo">${movieModel.movie_genre}</dd>
 								</dl>
 								<dl class="info_spec" id="dSpec1">
 									<dt>타입</dt>
-									<dd>${list_no.movie_type}</dd>
+									<dd>${movieModel.movie_type}</dd>
 								</dl>
 								<ul class="sns_list">
 
@@ -198,7 +205,7 @@
 						<div class="obj_section">
 							<h3 class="obj_tit Lang-LBL0000">시놉시스</h3>
 							<p class="obj_txt" id="pSynopsis">
-								<b>${list_no.movie_story}</b>
+								<b>${movieModel.movie_story}</b>
 							</p>
 						</div>
 
@@ -230,36 +237,36 @@
 									<li style="left: 0px;">
 										<div class="pic">
 											<span class="mask"></span> <img
-												src="<%= cp %>/resources/upload/movie/main_movie/${list_no.movie_director_picture}">
+												src="<%= cp %>/resources/upload/movie/main_movie/${movieModel.movie_director_picture}">
 										</div>
-										<p class="name">${list_no.movie_director}</p>
+										<p class="name">${movieModel.movie_director}</p>
 										<p class="role">감독</p>
 									</li>
 
 									<li style="left: 168px;">
 										<div class="pic">
 											<span class="mask"></span> <img
-												src="<%= cp %>/resources/upload/movie/main_movie/${list_no.movie_actor_picture}">
+												src="<%= cp %>/resources/upload/movie/main_movie/${movieModel.movie_actor_picture}">
 										</div>
-										<p class="name">${list_no.movie_actor}</p>
+										<p class="name">${movieModel.movie_actor}</p>
 										<p class="role">배우</p>
 									</li>
 
 									<li style="left: 336px;">
 										<div class="pic">
 											<span class="mask"></span> <img
-												src="<%= cp %>/resources/upload/movie/main_movie/${list_no.movie_actor_picture1}">
+												src="<%= cp %>/resources/upload/movie/main_movie/${movieModel.movie_actor_picture1}">
 										</div>
-										<p class="name">${list_no.movie_actor1}</p>
+										<p class="name">${movieModel.movie_actor1}</p>
 										<p class="role">배우</p>
 									</li>
 
 									<li style="left: 504px;">
 										<div class="pic">
 											<span class="mask"></span> <img
-												src="<%= cp %>/resources/upload/movie/main_movie/${list_no.movie_actor_picture2}">
+												src="<%= cp %>/resources/upload/movie/main_movie/${movieModel.movie_actor_picture2}">
 										</div>
-										<p class="name">${list_no.movie_actor2}</p>
+										<p class="name">${movieModel.movie_actor2}</p>
 										<p class="role">배우</p>
 									</li>
 
@@ -268,7 +275,7 @@
 											<span class="mask"></span> <img
 												src="<%= cp %>/resources/upload/movie/main_movie/img_non_actor.jpg">
 										</div>
-										<p class="name">${list_no.movie_company}</p>
+										<p class="name">${movieModel.movie_company}</p>
 										<p class="role">제작사</p>
 									</li>
 								</ul>
@@ -357,7 +364,6 @@
 
 				<!-- //event_fwrap -->
 			</div>
-		</c:forEach>
 </div>
 
 <script>

@@ -16,7 +16,7 @@
 
 	<ul>
 		<li>
-		<a href="http://www.lottecinema.co.kr/LCHS/Contents/ticketing/ticketing.aspx" title="예매">예매</a>
+		<a href="<%=cp %>/reserve/movieTicketing.see" title="예매">예매</a>
 		</li>
 
 		<li class="active">
@@ -82,17 +82,18 @@
             
 <!-- 내용 이미지 -->
 <div class="screen_cwrap">
-				<img src="<%= cp %>/resources/upload/movie/movie_intro/${movieintroselect.movie_intro_gcinema_content}" alt="대체 텍스트" longdesc="#message_gcinema">
-				<div id="message_gcinema" class="blind">
 
-				</div>
-</div>
-
-			
-			<!-- 하단 -->
-			<div class="intro_Wrap">
-            <ul class="curr_list movie_clist">
+<div class="tab_content on">
+<!-- 영화 LIST 출력 -->
+	<ul class="curr_list movie_clist" id="moviegcinemaList">
+	
 <c:forEach var="moviegcinemaList" items="${moviegcinemaList}" varStatus="stat">
+<c:url var="viewURL" value="/movieView.see">
+	<c:param name="movie_no" value="${moviegcinemaList.movie_no }"/>
+</c:url>
+<c:url var="reserveURL" value="/movieTicketing.see">
+	<c:param name="movie_no" value="${moviegcinemaList.movie_no}"/>
+</c:url>
 
 <li>
 <div class="curr_box">
@@ -105,8 +106,8 @@
 
 	<!-- hover시 이미지 -->
 <div class="layer_hover">
-	<a href='javascript:goToTiketing("12154");' class="btn_reserve">예매하기</a>
-	<a href='javascript:goToMovie("12154");' class="btn_View">상세보기</a>
+<a href="${reserveURL}" onclick="goToTiketing()" class="btn_reserve">예매하기</a>
+<a href="${viewURL}" class="btn_View">상세보기</a>
 </div>
 <dl class="list_text">
 	<dt>

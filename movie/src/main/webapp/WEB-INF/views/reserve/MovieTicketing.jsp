@@ -37,11 +37,11 @@
 </div>
 </li>
 <li>
-<a href="http://www.lottecinema.co.kr/LCHS/Contents/Movie/Movie-List.aspx" title="영화">영화</a>
+<a href="<%=cp %>/aMovieList.see" title="영화">영화</a>
 </li>
 
 <li>
-<a href="http://www.lottecinema.co.kr/LCHS/Contents/Cinema/charlotte-special-cinema.aspx?divisionCode=2&amp;screendivcd=300" title="영화관">영화관</a>
+<a href="<%=cp %>/aMovieTheater.see" title="영화관">영화관</a>
 </li>
 
 <li>

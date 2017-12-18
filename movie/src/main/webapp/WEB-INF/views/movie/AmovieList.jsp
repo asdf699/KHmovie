@@ -13,7 +13,7 @@
 <div class="gnb">
 <ul>
 <li>
-<a href="http://www.lottecinema.co.kr/LCHS/Contents/ticketing/ticketing.aspx" title="예매">예매</a>
+<a href="<%=cp %>/reserve/movieTicketing.see" title="예매">예매</a>
 <div class="depth">
 </div>
 <ul>
@@ -109,20 +109,35 @@
                     </ul>
                 </div>
                 <div class="tab_content on">
-                    <!-- 2016.05.03 장착법 -->
-                    <div class="blind"><h3 id="title_h3">현재상영작</h3></div>
-                    <div class="blind"><h4 id="title_h4">예매순</h4></div>
-                    <ul class="curr_list movie_clist" id="ulMovieList">
-                    <li class="">
-                    <div class="curr_box">
-                    <span class="num">1</span>
-                    <span class="img">
-                    <a href=""><img src="<%= cp %>/resources/upload/movie/main_movie/ggun.jpg" alt="꾼"></a></span>
-                    <span class="detail">상세보기</span>
-                    </div>
-                    <div class="layer_hover"><a href="javascript:void(0)" onclick="goToTiketing('11981');" class="btn_reserve">예매하기</a>
-                    <a href="javascript:void(0)" onclick="goToMovie('11981');" class="btn_View">상세보기</a>
-                    </div>
+                    <!-- 영화 LIST 출력 -->
+			<ul class="curr_list movie_clist" id="arteMovieList">
+		
+		<c:forEach var="movieboxofficeList" items="${movieboxofficeList}" varStatus="stat">
+		<c:url var="viewURL" value="/movieView.see">
+		<c:param name="movie_no" value="${movieboxofficeList.movie_no }"/>
+		</c:url>
+		<c:url var="reserveURL" value="/movieTicketing.see">
+			<c:param name="movie_no" value="${movieboxofficeList.movie_no}"/>
+		</c:url>
+<li>
+<div class="curr_box">
+<span class="img">
+	<a href=''>
+	<img src="<%= cp %>/resources/upload/movie/main_movie/${movieboxofficeList.movie_poster}"></a>
+</span>
+<%-- 	<c:if test="${fn:length(moviearteList) le 0}">
+		<tr>
+		<td colspan="13" class="tac">등록된 스케쥴이 없습니다.</td>
+		</tr>
+	</c:if> --%>
+</div>
+                    
+                    <!-- hover시 이미지 -->
+                    <div class="layer_hover">
+					<a href="${reserveURL}" onclick="goToTiketing()" class="btn_reserve">예매하기</a>
+					<a href="${viewURL}" class="btn_View">상세보기</a>
+					</div>
+					
                     <dl class="list_text">
                     <!-- 1012 고도화 작업에 따른 태그 변경 -->
                     <dt><a href="javascript:void(0);" onclick="goToMovie('11981');">
@@ -134,7 +149,7 @@
                     </dd>
                     </dl>
                     </li>
-                    
+                    </c:forEach>
                     </ul>
                     
                 </div>

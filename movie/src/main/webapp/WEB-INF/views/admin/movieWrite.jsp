@@ -11,8 +11,9 @@
 <div class="admin_grp">
    <div class="admin_list">
       <ul>
-         <li class="on"><a href="<%=cp%>/admin/movieList.mt">상영작</a></li>
-         <li><a href="<%=cp%>/admin/timeTableList.mt">시간표관리</a></li>
+         <li class="on"><a href="<%=cp%>/admin/movieList.see">상영작</a></li>
+         <li><a href="<%=cp%>/admin/timeTableList.see">시간표관리</a></li>
+         <li><a href="<%=cp%>/admin/bannerList.see">베너관리</a></li>
          <li><a href="<%=cp%>/admin/adminMagazineList.mt">매거진</a></li>
          <li><a href="<%=cp%>/admin/adminEventList.mt">이벤트</a></li>
          <li><a href="<%=cp%>/admin/adminNoticeList.mt">공지사항</a></li>
@@ -158,8 +159,15 @@
                      <tr>
                      <th scope="row">카테고리</th>
                      <td>
-                        <form:input type="text" class="txt w200" path="movie_intro" />
-                        <font color="red"><form:errors path="movie_intro"/></font>
+                        <%-- <form:input type="text" class="txt w200" path="movie_intro"/>
+                        <font color="red"><form:errors path="movie_intro"/></font> --%>
+                       <select id="intro_type" class="txt w200" name="movie_intro">
+                              <option value="boxoffice">Boxoffice</option>
+                              <option value="arte">ARTE</option>
+                              <option value="gcinema">Gcinema</option>
+                              <option value="chinamovie">Chinamovie</option>
+                              <option value="opera">Opera</option>
+                        </select> 
                      </td>
                   </tr>
                </tbody>

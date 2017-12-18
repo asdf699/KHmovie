@@ -12,7 +12,7 @@ PUBLIC " - //mybatis.org//DTD Config 3.0//EN"
 		<typeAlias alias="movieModel" type="movie.movie.MovieModel" />
 		<typeAlias alias="moviebannerModel" type="movie.movie.MovieBannerModel" />
 		<typeAlias alias="movieintromodel" type="movie.movie.MovieIntroModel" />
-		
+		<typeAlias alias="movieCommentModel" type="movie.movie.MovieCommentModel" />
 		<typeAlias alias="timeTableModel" type="movie.admin.TimeTableModel"/>
 		<typeAlias alias="adminMovieModel" type="movie.admin.AdminMovieModel"/>
 		

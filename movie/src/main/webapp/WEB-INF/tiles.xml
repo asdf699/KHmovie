@@ -92,6 +92,16 @@
 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/movieUpdate.jsp" />
     </definition>      
     
+       <!-- 현재 이벤트 & 배너 리스트 -->
+    <definition name="BannerList" extends="admin">
+		<put-attribute name="admin_body" value="/WEB-INF/views/admin/bannerList.jsp" />
+	</definition>
+	
+	<!-- 현재 이벤트 & 배너 수정폼 -->
+    <definition name="BannerUpdate" extends="admin">
+		<put-attribute name="admin_body" value="/WEB-INF/views/admin/bannerUpdate.jsp" />
+	</definition>
+	
     <definition name="TimeTableList" extends="admin">
 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/timeTableList.jsp" />
     </definition>  
