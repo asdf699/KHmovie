@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import movie.movie.MovieCommentModel;
+
 @Controller
 public class MovieController{
    
@@ -28,9 +30,11 @@ public class MovieController{
       /*List<MovieModel> list_no = movieService.movieList_one(movie_no);*/
       MovieBannerModel bannerselect = movieService.banner_select();
       MovieModel movieModel = movieService.movieView(movie_no);
+      MovieCommentModel movieCommentModel = movieService.scoresearch(movie_no);
       
       /*mv.addObject("currentPage", currentPage);*/
       
+      mv.addObject("movieCommentModel",movieCommentModel);
       mv.addObject("movieModel",movieModel);
       /*mv.addObject("list_no", list_no);*/
       mv.addObject("bannerselect", bannerselect);

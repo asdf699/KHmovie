@@ -201,7 +201,7 @@ var onComment = function(){
       </c:if>  --%>
                      <%-- <c:forEach var="commentlist" items="${commentlist}" varStatus="stat"> --%>
                            <li id="score"><strong class="score_member">관람평점</strong><span class="starscore">
-                           <span class="starinner" style="width: 0%;">평점</span></span><span class="num">0.0</span>
+                           <span class="starinner" style="width: 0%;">평점</span></span><span class="num">${movieCommentModel.movie_point}</span>
                            <span class="rate_txt">(누적관객 수 859,630명)</span></li>
                      <%-- </c:forEach> --%>
                         </ul>

@@ -84,6 +84,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from MOVIE where movie_no = #{movie_no}
 	</select>
 	
+	<select id="scoresearch" resultMap="MovieCommentRes" parameterType="int">
+		select * from view_comment where movie_num = #{movie_no}
+	</select>
+	
 	<select id="selectView" resultMap="movieRes">
 		select * from MOVIE where movie_no like '1'
 	</select>

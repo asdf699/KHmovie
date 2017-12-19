@@ -85,7 +85,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			#{timetable_start_time},
 			#{timetable_end_time},
 			#{timetable_adult_amt},
-			#{timetable_child_amt},
+			#{timetable_child_amt}
 		)
 			
 	</insert>

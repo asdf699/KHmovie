@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Service;
 
+import movie.movie.MovieCommentModel;
 @Service
 public class MovieService implements MovieDAO{
 
@@ -42,6 +43,10 @@ public class MovieService implements MovieDAO{
 	
 	public MovieModel movieView(int movie_no){
 		return sqlSessionTemplate.selectOne("movie.selectMovie_One",movie_no);
+	}
+	
+	public MovieCommentModel scoresearch(int movie_no){
+		return sqlSessionTemplate.selectOne("movie.scoresearch",movie_no);
 	}
 	
 	//영화 수정

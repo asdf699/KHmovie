@@ -27,4 +27,6 @@ public interface MovieDAO {
 	public List<MovieCommentModel> commentList(int movie_num);
 
 	public Object deletecomment(MovieCommentModel movieCommentModel);
+	
+	public MovieCommentModel scoresearch(int movie_no);
 }
