@@ -25,4 +25,5 @@ public interface AdminDAO {
 	public MovieBannerModel bannerView();
 	
 	public boolean bannerUpdate(MovieBannerModel movieBannerModel); 
+	
 }

@@ -50,7 +50,7 @@
                   <!-- 온라인광고 신규 2017-06 -->
                 
                     
-                    <div class="ad-banner wing_banner left_banner">
+<!--                     <div class="ad-banner wing_banner left_banner">
 						<div class="wrap_banner">
 							<script type="text/javascript" src="https://nvapi.feeldmc.com/ad/p/in/v1_0/imp?slotid=stw_lottelotte_22"></script><a href="https://nvapi.feeldmc.com:443/ad/p/in/v1_0/clk?slotid=stw_lottelotte_22&amp;adgroupid=adg_lottecinema_20171130_13&amp;adid=adi_lottecinema_20171130_13" target="_blank"><img src="https://caching2.lottecinema.co.kr/lotte_image/2017/hyundaicardM2/0816/hyundaicardM2_160300.jpg" style="width:160;height:300;border:0px" alt="현대카드 신규 발급 시 영화관람권 1~4장 제공"></a>
 						</div>
@@ -59,7 +59,7 @@
 						<div class="wrap_banner">
 							<script type="text/javascript" src="https://nvapi.feeldmc.com/ad/p/in/v1_0/imp?slotid=stw_lottelotte_22"></script><a href="https://nvapi.feeldmc.com:443/ad/p/in/v1_0/clk?slotid=stw_lottelotte_22&amp;adgroupid=adg_lottecinema_20171130_13&amp;adid=adi_lottecinema_20171130_13" target="_blank"><img src="https://caching2.lottecinema.co.kr/lotte_image/2017/hyundaicardM2/0816/hyundaicardM2_160300.jpg" style="width:160;height:300;border:0px" alt="현대카드 신규 발급 시 영화관람권 1~4장 제공"></a>
 						</div>
-					</div>
+					</div> -->
                     
 	<div class="orderPayment">
 
@@ -68,14 +68,18 @@
                     
                     <div class="ad-banner wing_banner left_banner">
 						<div class="wrap_banner">
-							<script type="text/javascript" src="https://nvapi.feeldmc.com/ad/p/in/v1_0/imp?slotid=stw_lottelotte_22"></script><a href="https://nvapi.feeldmc.com:443/ad/p/in/v1_0/clk?slotid=stw_lottelotte_22&amp;adgroupid=adg_lottecinema_20171130_13&amp;adid=adi_lottecinema_20171130_13" target="_blank"><img src="https://caching2.lottecinema.co.kr/lotte_image/2017/hyundaicardM2/0816/hyundaicardM2_160300.jpg" style="width:160;height:300;border:0px" alt="현대카드 신규 발급 시 영화관람권 1~4장 제공"></a>
+							<!-- <script type="text/javascript" src="https://nvapi.feeldmc.com/ad/p/in/v1_0/imp?slotid=stw_lottelotte_22"></script> -->
+							<a href="https://nvapi.feeldmc.com:443/ad/p/in/v1_0/clk?slotid=stw_lottelotte_22&amp;adgroupid=adg_lottecinema_20171130_13&amp;adid=adi_lottecinema_20171130_13" target="_blank"><img src="https://caching2.lottecinema.co.kr/lotte_image/2017/hyundaicardM2/0816/hyundaicardM2_160300.jpg" style="width:160;height:300;border:0px" alt="현대카드 신규 발급 시 영화관람권 1~4장 제공"></a>
 						</div>
 					</div>
 					<div class="ad-banner wing_banner right_banner">
 						<div class="wrap_banner">
-							<script type="text/javascript" src="https://nvapi.feeldmc.com/ad/p/in/v1_0/imp?slotid=stw_lottelotte_22"></script><a href="https://nvapi.feeldmc.com:443/ad/p/in/v1_0/clk?slotid=stw_lottelotte_22&amp;adgroupid=adg_lottecinema_20171130_13&amp;adid=adi_lottecinema_20171130_13" target="_blank"><img src="https://caching2.lottecinema.co.kr/lotte_image/2017/hyundaicardM2/0816/hyundaicardM2_160300.jpg" style="width:160;height:300;border:0px" alt="현대카드 신규 발급 시 영화관람권 1~4장 제공"></a>
+<!-- 							<script type="text/javascript" src="https://nvapi.feeldmc.com/ad/p/in/v1_0/imp?slotid=stw_lottelotte_22">
+							</script> -->
+							<a href="https://nvapi.feeldmc.com:443/ad/p/in/v1_0/clk?slotid=stw_lottelotte_22&amp;adgroupid=adg_lottecinema_20171130_13&amp;adid=adi_lottecinema_20171130_13" target="_blank">
+							<img src="https://caching2.lottecinema.co.kr/lotte_image/2017/hyundaicardM2/0816/hyundaicardM2_160300.jpg" style="width:160;height:300;border:0px" alt="현대카드 신규 발급 시 영화관람권 1~4장 제공"></a>
 						</div>
-					</div>
+					</div> 
                     
 
                     <!--// 온라인광고 신규 2017-06 -->
@@ -96,13 +100,35 @@
                                     <td colspan="2">
                                         <dl class="mount">
                                             <dt class="Lang-LBL0039">총 주문금액</dt>
-                                            <dd class="sum"><em><strong>${list.timetable_adult_amt * list.timetable_adult_cnt}원</strong> <span class="Lang-LBL3037">원</span></em></dd>
+                                            <dd class="sum"><em><strong><%-- ${reserveTimeTableModel.timetable_adult_amt} * ${reserveTimeTableModel.timetable_adult_cnt} + ${reserveTimeTableModel.timetable_child_amt} * ${reserveTimeTableModel.timetable_child_cnt}원</strong> <span class="Lang-LBL3037">원</span></em></dd> --%>
                                         </dl>
                                     </td>
                                 </tr>
                             </tfoot>
-                            <tbody><tr><td>   <span class="thumImg"><img src="http://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/201712/12048_104_1.jpg" alt="강철비"></span>   <div class="order_Lbox2">       <strong class="order_title">강철비(디지털)</strong>       <ul class="order_tList">           <li class="bg_none">               <em class="Lang-LBL0055">상영일</em> 2017-12-18 (월)           </li>           <li>               <em class="Lang-LBL1029">상영시간</em> 20:30 ~ 22:59           </li>           <li>               <em class="Lang-LBL1030">상영관</em> 강동 10관           </li>           <li>               <em class="Lang-LBL0038">관람인원</em> 성인1           </li>           <li>               <em class="Lang-LBL0033">좌석</em> J11           </li>       </ul>   </div></td><td class="sum"> <em><strong>9,000</strong> <span class="Lang-LBL3037">원</span></em></td></tr></tbody>
-                        </table>
+<tbody>
+<tr>
+	<td>
+		<span class="thumImg">
+		<img src="<%= cp %>/resources/upload/movie/main_movie/${movieModel.movie_poster}" alt="${movieModel.movie_name}"></span>
+		<div class="order_Lbox2">
+			<strong class="order_title">${movieModel.movie_name}</strong>
+			<ul class="order_tList">
+			<li class="bg_none">
+			<em class="Lang-LBL0055">상영일&nbsp;</em><fmt:formatDate value="${reserveTimeTableModel.timetable_show_date}" pattern="yyyy년 MM월 dd일" /></li>
+			<li><em class="Lang-LBL1029">상영시간&nbsp;</em>${reserveTimeTableModel.timetable_start_time}~${reserveTimeTableModel.timetable_end_time}</li>
+			<li><em class="Lang-LBL0038">관람인원&nbsp;</em>성인 : ${reserveTimeTableModel.timetable_adult_cnt}명 &nbsp; 학생 : ${reserveTimeTableModel.timetable_child_cnt}명</li>
+			</ul>
+		</div>
+	</td>
+	<td class="sum">
+	<em><strong>
+	<fmt:formatNumber value="${reserveTimeTableModel.timetable_adult_amt * reserveTimeTableModel.timetable_adult_cnt + reserveTimeTableModel.timetable_child_amt * reserveTimeTableModel.timetable_child_cnt}" pattern="\#,###.##"/>
+	
+	</strong><span class="Lang-LBL3037">원</span></em>
+	</td>
+</tr>
+</tbody>
+		</table>
                         <!-- //주문정보 테이블 -->
                     </fieldset>
                 </div>
@@ -198,7 +224,8 @@
                     <dl class="shop_mount">
                         <dt class="total_tit Lang-LBL0045">총 결제 금액</dt>
                         <dd class="price">
-                            <strong>9,000</strong> <span class="Lang-LBL3037">원</span>
+                            <strong><fmt:formatNumber value="${reserveTimeTableModel.timetable_adult_amt * reserveTimeTableModel.timetable_adult_cnt + reserveTimeTableModel.timetable_child_amt * reserveTimeTableModel.timetable_child_cnt}" pattern="\#,###.##"/></strong>
+                            <span class="Lang-LBL3037">원</span>
                         </dd>
                         <dd>
                             <a class="btn_purchase Lang-LBL0046" href="javascript:void(0);" title="레이어 열림">결제하기</a>

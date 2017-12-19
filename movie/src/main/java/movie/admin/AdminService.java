@@ -12,7 +12,7 @@ import movie.movie.MovieBannerModel;
 import movie.movie.MovieModel;
 
 @Service
-public class AdminService implements AdminDAO{
+public class AdminService implements AdminDAO{ 
 
 	@Resource
 	private SqlSessionTemplate sqlSessionTemplate;

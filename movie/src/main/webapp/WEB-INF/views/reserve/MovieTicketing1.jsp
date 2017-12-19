@@ -74,7 +74,6 @@
 				</div>
 				<div class="selectbox">
 				<form name="reserveform" action="#" method="post">
-				<input type="hidden" name="timetable_no" value="${reserve_seat.timetable_no}"/>
 					<ul class="personSelect">
 					<label for="person0">성인</label>
 					<ul>
@@ -110,7 +109,6 @@
 					
                     <p class="seat_txt2" style="">만 15세 미만의 고객님(영, 유아 포함)은 반드시 부모님 또는 성인 보호자의 동반하에 관람이 가능합니다.</p>
                     </ul>
-                    </form>
 				</div>
 			  </div>
 			</div>
@@ -421,11 +419,12 @@
 <script type="text/javascript">
 function Reserve()
     {
+	var timetable_movie_no = "${reserve_seat.timetable_movie_no}";
     var timetable_no = "${reserve_seat.timetable_no}";
     var timetable_adult_cnt = document.reserveform.adult_cnt.value;
     var timetable_child_cnt = document.reserveform.child_cnt.value;
     /* var id = "${session_member_id}"; */
-    location.href = '<%= cp%>/reserve/movieTicketing2.see?timetable_no='+timetable_no+'&timetable_adult_cnt='+timetable_adult_cnt+'&timetable_child_cnt='+timetable_child_cnt;
+    location.href = '<%= cp%>/reserve/movieTicketing2.see?timetable_movie_no='+timetable_movie_no+'&timetable_no='+timetable_no+'&timetable_adult_cnt='+timetable_adult_cnt+'&timetable_child_cnt='+timetable_child_cnt;
 };
 </script>
 </body>

@@ -35,6 +35,7 @@ public class ReserveTimeTableModel {
 	public String getTimetable_movie_name() {
 		return timetable_movie_name;
 	}
+
 	public void setTimetable_movie_name(String timetable_movie_name) {
 		this.timetable_movie_name = timetable_movie_name;
 	}

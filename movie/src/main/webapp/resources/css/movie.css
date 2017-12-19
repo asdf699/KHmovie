@@ -3592,7 +3592,7 @@
 
 /* 예매 Content Ticket*/
 .cont_ticket {width:100%; min-height:100px; background:#f9f6ec; margin-top:39px;}
-.cont_ticket_Area {width:980px; min-height:100px; margin:0 auto; padding-top:30px;}
+.cont_ticket_Area {width:980px; min-height:100px; margin:0 auto; padding-top:70px;}
 
 /* 예매 Calendar (달력 공통 ) */
 .calendar {position:relative; clear:both; width:980px; padding:0 0 0 0; color:#231f20;}

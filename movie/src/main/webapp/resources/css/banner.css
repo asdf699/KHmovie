@@ -4,7 +4,7 @@
 .wrap_banner .btn_close {width:13px; height:13px; background-image:url('../image/banner/banner-close.png'); position:absolute; font:0/0 a; top:15px; right:0;}
 
 /*예매하기*/
-.ad-banner.wing_banner {position:absolute; top:145px; width:160px; height:300px; }
+.ad-banner.wing_banner {position:fixed; top:250px; width:160px; height:300px; }
 .ad-banner.wing_banner.left_banner {left:50%; margin-left:-660px;}
 .ad-banner.wing_banner.right_banner {right:50%;margin-right:-660px;}
 

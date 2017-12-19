@@ -40,4 +40,9 @@ public class ReserveService implements ReserveDAO{
 		return sqlSessionTemplate.selectOne("reserve.reserve_seat", timetable_no);
 		// TODO Auto-generated method stub	
 	}
+	
+	public MovieModel selectMovie_no(int timetable_movie_no) {
+		return sqlSessionTemplate.selectOne("reserve.selectMovie_no", timetable_movie_no);
+		// TODO Auto-generated method stub	
+	}
 }

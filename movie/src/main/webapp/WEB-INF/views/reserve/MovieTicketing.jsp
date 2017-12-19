@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/movie.css?ver=292" />
 <link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/admin.css?ver=222335" />
 <link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/jquery-ui.css?ver=13" />
+<link rel="stylesheet" type="text/css" href="<%= cp %>/resources/css/default.css?ver=1123" />
 <script src="<%= cp %>/resources/js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="<%= cp %>/resources/js/jquery-ui.js?ver=12"></script>
 <script type="text/javascript">

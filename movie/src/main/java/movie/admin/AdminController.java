@@ -462,7 +462,6 @@ public class AdminController {
 			
 			//detail 파라미터
 			int timetable_movie_no = Integer.parseInt(request.getParameter("movie_no"));
-			String timetable_movie_name = request.getParameter("movie_name");
 			String timetable_start_time = request.getParameter("start_time");
 			String timetable_end_time = request.getParameter("end_time");
 			int timetable_adult_amt = Integer.parseInt(request.getParameter("adult_amt"));
@@ -472,7 +471,6 @@ public class AdminController {
 			
 			//timetable Model
 			timetablemodel.setTimetable_movie_no(timetable_movie_no);
-			timetablemodel.setTimetable_movie_name(timetable_movie_name);
 			timetablemodel.setTimetable_start_date(timetable_start_date);
 			timetablemodel.setTimetable_end_date(timetable_end_date);
 			timetablemodel.setTimetable_show_date(timetable_show_date);

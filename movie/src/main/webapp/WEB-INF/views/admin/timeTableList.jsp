@@ -78,10 +78,13 @@
 					<tbody>
 						<tr>
 							<td>
-								<select class="slct" id="movieSelection" name="movie_no, movie_name">
+								<select class="slct" id="movieSelection" name="movie_no">
+									
 									<c:forEach var="selectmovie_name" items="${selectmovie_name}">
+									
 									<option value="${selectmovie_name.movie_no}">${selectmovie_name.movie_name}</option>
-									</c:forEach>
+									
+								</c:forEach>
 								</select>
 							</td>
 							<%-- <td>
@@ -92,7 +95,7 @@
 								</select>
 							</td> --%>
 							<td><input type="text" class="txt" name="start_date" id="start_date"/></td>
-							<td><input typse="text" class="txt" name="end_date" id="end_date"/></td>
+							<td><input type="text" class="txt" name="end_date" id="end_date"/></td>
 							<td><input type="text" class="txt" name="show_date" id="show_date"/></td>
 							<td>
 								<select name="start_time" class="slct">

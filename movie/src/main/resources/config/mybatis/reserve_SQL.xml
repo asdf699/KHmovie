@@ -62,6 +62,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		order by movie_no DESC
 	</select>
 	
+	<select id="selectMovie_no" resultMap="movieRes">
+		select * from movie
+		where movie_no = #{movie_no}
+	</select>
 	<!-- 시간표 검색 -->
  	<select id="timesearch" resultMap="reserveTimeTableModelRes">
 		select * from timetable where 
