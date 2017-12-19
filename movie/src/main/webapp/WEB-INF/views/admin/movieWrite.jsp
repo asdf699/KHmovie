@@ -7,12 +7,39 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <title></title>
+<head>
+<script type="text/javascript">
+function validateForm() {
+    var x = document.forms["writeForm"]["movie_name"].value;
+    var x1 = document.forms["writeForm"]["movie_company"].value;
+    var x2 = document.forms["writeForm"]["movie_poster"].value;
+    var x3 = document.forms["writeForm"]["movie_date"].value;
+    
+    if (x == null || x == "") {
+        alert("영화이름을 입력해주세요");
+        return false;
+    }
+    else if (x1 == null || x1 == ""){
+       alert("제작사을 입력해주세요");
+       return false;
+    }
+    else if (x2 == null || x2 == ""){
+       alert("포스터를 선택해주세요");
+       return false;
+    }
+    else if (x3 == null || x3 == ""){
+       alert("개봉일을 입력해주세요");
+       return false;
+    }
+}
+</script>
+</head>
 <body>
 <div class="admin_grp">
    <div class="admin_list">
       <ul>
-         <li class="on"><a href="<%=cp%>/admin/movieList.see">상영작</a></li>
-         <li><a href="<%=cp%>/admin/timeTableList.see">시간표관리</a></li>
+         <li class="on"><a href="<%=cp%>/admin/movieList.mt">상영작</a></li>
+         <li><a href="<%=cp%>/admin/timeTableList.mt">시간표관리</a></li>
          <li><a href="<%=cp%>/admin/bannerList.see">베너관리</a></li>
          <li><a href="<%=cp%>/admin/adminMagazineList.mt">매거진</a></li>
          <li><a href="<%=cp%>/admin/adminEventList.mt">이벤트</a></li>
@@ -23,7 +50,7 @@
    </div>
    <div class="admin_ct">
       <h3 class="sub_tit">상영작 등록</h3>
-      <form:form action="" method="post" enctype="multipart/form-data" modelAttribute="movieModel">
+      <form:form commandName="movieModel" action="movieWrite.see" method="post" enctype="multipart/form-data" name="writeForm" onsubmit="return validateForm()">
          <div class="tbl_type_01">
             <table>
                <caption>번호,제목,글쓴이,날짜,조회를 나타내는 공지사항 표</caption>
@@ -96,7 +123,6 @@
                         <div class="textarea_grp">
                            <textarea name="movie_story"></textarea>
                         </div>
-                        <font color="red"><form:errors path="movie_story"/></font>
                      </td>
                   </tr>
                   <tr>

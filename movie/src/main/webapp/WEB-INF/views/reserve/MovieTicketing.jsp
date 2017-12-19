@@ -29,7 +29,7 @@
 <div class="depth">
 <ul>
 <li class="active">
-<a href="http://www.lottecinema.co.kr/LCHS/Contents/ticketing/ticketing.aspx" title="예매하기">예매하기</a></li>
+<a href="<%= cp %>/reserve/movieTicketing.see" title="예매하기">예매하기</a></li>
 <li>
 <a href="http://www.lottecinema.co.kr/LCHS/Contents/ticketing/movie-schedule.aspx" title="상영시간표">상영시간표</a></li>
 <li>
@@ -166,8 +166,8 @@
 						<td>${timetableSelect.timetable_child_amt}</td>
  						<c:url var="viewURL" value="/reserve/movieTicketing1.see">
  							<c:param name="timetable_no" value="${timetableSelect.timetable_no}"/>
- 							<%-- <c:param name="timetable_movie_name" value="${timetableSelect.timetable_movie_name}"/>
- 							<c:param name="timetable_show_date" value="${timetableSelect.timetable_show_date}"/>
+ 							<c:param name="timetable_movie_no" value="${timetableSelect.timetable_movie_no}"/>
+ 						<%--<c:param name="timetable_show_date" value="${timetableSelect.timetable_show_date}"/>
  							<c:param name="timetable_show_date" value="${timetableSelect.timetable_show_date}"/>
  							<c:param name="timetable_start_time" value="${timetableSelect.timetable_start_time}"/> --%>
  						</c:url>

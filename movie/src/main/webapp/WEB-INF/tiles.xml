@@ -50,6 +50,10 @@
 	<definition name="aMovieList" extends="main">
 		<put-attribute name="main_body" value="/WEB-INF/views/movie/AmovieList.jsp" />
 	</definition>
+	
+	<definition name="aaMovieList" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/movie/AAmovieList.jsp" />
+	</definition>
 		<!-- 아르떼 -->
 	<definition name="bMovieList" extends="main">
 		<put-attribute name="main_body" value="/WEB-INF/views/movie/BmovieList.jsp" />
@@ -77,7 +81,21 @@
 		<put-attribute name="main_body" value="/WEB-INF/views/movie/BmovieTheater.jsp" />
     </definition>
    
-   
+   <!-- Member Start -->
+	
+	<definition name="member" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/member/joinStep1.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="memberInfo" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/member/joinStep2.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="memberEnd" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/member/joinStep3.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Member End -->
    
    
    <!-- admin page-->

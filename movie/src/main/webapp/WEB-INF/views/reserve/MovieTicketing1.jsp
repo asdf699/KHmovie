@@ -15,11 +15,11 @@
 <div class="gnb">
 <ul>
 <li class="active">
-<a href="<%=cp %>/movieTicketing.see" title="예매">예매</a>
+<a href="<%=cp %>/reserve/movieTicketing.see" title="예매">예매</a>
 <div class="depth">
 <ul>
 <li class="active">
-<a href="http://www.lottecinema.co.kr/LCHS/Contents/ticketing/ticketing.aspx" title="예매하기">예매하기</a></li>
+<a href="<%= cp %>/reserve/movieTicketing.see" title="예매하기">예매하기</a></li>
 <li>
 <a href="http://www.lottecinema.co.kr/LCHS/Contents/ticketing/movie-schedule.aspx" title="상영시간표">상영시간표</a></li>
 <li>
@@ -28,11 +28,11 @@
 </div>
 </li>
 <li>
-<a href="http://www.lottecinema.co.kr/LCHS/Contents/Movie/Movie-List.aspx" title="영화">영화</a>
+<a href="<%=cp %>/aMovieList.see" title="영화">영화</a>
 </li>
 
 <li>
-<a href="http://www.lottecinema.co.kr/LCHS/Contents/Cinema/charlotte-special-cinema.aspx?divisionCode=2&amp;screendivcd=300" title="영화관">영화관</a>
+<a href="<%=cp %>/aMovieTheater.see" title="영화관">영화관</a>
 </li>
 
 <li>
@@ -356,7 +356,7 @@
 								    <dt class="total_tit Lang-LBL1026">영화</dt>
 								    <dd>
 									    <dl class="total_data">
-										    <dt><img src="https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/201711/12129_104_1.jpg" alt="기억의 밤"></dt>
+										    <dt><img src="<%= cp %>/resources/upload/movie/main_movie/${movieModel.movie_poster}" alt="기억의 밤"></dt>
 										    <dd>
 											    <strong class="movie_name">${reserve_seat.timetable_movie_name}</strong>
 											    <em class="movie_sort">2D</em>

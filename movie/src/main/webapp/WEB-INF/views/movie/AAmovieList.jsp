@@ -2,48 +2,12 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<jsp:useBean id="now" class="java.util.Date" />
 <% String cp = request.getContextPath(); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%-- <%@ page import="java.util.*, java.text.*"  %> --%>
-
-<%-- <%
-
- java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyyMMddHHmmss");
- String today = formatter.format(new java.util.Date());
-
- out.println(today);
-
-%> --%>
-
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>박스오피스</title>
-
-<!-- <script type="text/javascript">
-
-function Today() {
-   var today = new Date();
-   var dd = today.getDate();
-   var mm = today.getMonth()+1; //January is 0!
-   var yyyy = today.getFullYear();
-
-   if(dd<10) {
-    dd='0'+dd
-   } 
-
-   if(mm<10) {
-    mm='0'+mm
-   } 
-
-   today = yyyy+'/'+mm+'/'+dd;
-   document.write(today);
-}
-
-</script>
- -->
+<title>박스오피스(상영예정작)</title>
 </head>
 <body>
 <div class="gnb">
@@ -134,37 +98,35 @@ function Today() {
             
             
 <div class="screen_cwrap">
-
 <ul class="tab_st02">
-                    <li><a href="<%=cp %>/aMovieList.see" id="aNow" class="on">현재상영작</a></li><!--20170404 sunho javascript:void(0); 삭제 웹 접근성 # -->
-                    <li><a href="<%=cp %>/aaMovieList.see" id="aSoon">상영예정작</a></li><!--20170404 sunho javascript:void(0); 삭제 웹 접근성 # -->
+                    <li><a href="<%=cp %>/aMovieList.see" id="aNow">현재상영작</a></li><!--20170404 sunho javascript:void(0); 삭제 웹 접근성 # -->
+                    <li><a href="<%=cp %>/aaMovieList.see" id="aSoon"  class="on">상영예정작</a></li><!--20170404 sunho javascript:void(0); 삭제 웹 접근성 # -->
                 </ul>
 <div class="tab_content on">
 <!-- 영화 LIST 출력 -->
    <ul class="curr_list movie_clist" id="arteMovieList">
+   
+<c:forEach var="movieboxofficeList2" items="${movieboxofficeList2}" varStatus="stat">
 
-<%-- <form:form commandName="movieModel" action="" method="post" enctype="multipart/form-data"  onsubmit="return Today()"> --%>
-
-<c:forEach var="movieboxofficeList" items="${movieboxofficeList}" varStatus="stat">
+<jsp:useBean id="now" class="java.util.Date" />
 
 <fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="today" />  
 
-<fmt:formatDate value="${movieboxofficeList.movie_date}" pattern="yyyy-MM-dd" var="movie_date"/>
+<fmt:formatDate value="${movieboxofficeList2.movie_date}" pattern="yyyy-MM-dd" var="movie_date"/>
 
-<c:if test="${today >= movie_date }">
+<c:if test="${today <= movie_date }">
 
 <c:url var="viewURL" value="/movieView.see">
-	<c:param name="movie_no" value="${movieboxofficeList.movie_no }"/>
+	<c:param name="movie_no" value="${movieboxofficeList2.movie_no }"/>
 </c:url>
 <c:url var="reserveURL" value="/movieTicketing.see">
-	<c:param name="movie_no" value="${movieboxofficeList.movie_no}"/>
+	<c:param name="movie_no" value="${movieboxofficeList2.movie_no}"/>
 </c:url>
-
 <li>
 <div class="curr_box">
 <span class="img">
    <a href=''>
-   <img src="<%= cp %>/resources/upload/movie/main_movie/${movieboxofficeList.movie_poster}"></a>
+   <img src="<%= cp %>/resources/upload/movie/main_movie/${movieboxofficeList2.movie_poster}"></a>
 </span>
 </div>
 
@@ -176,13 +138,11 @@ function Today() {
 </div>
 <dl class="list_text">
    <dt>
-      <a href='javascript:GoToMovie("12154");'><span class="grade_all">전체</span>${movieboxofficeList.movie_name}</a>
+      <a href='javascript:GoToMovie("12154");'><span class="grade_all">전체</span>${movieboxofficeList2.movie_name}</a>
    </dt>
    <dd>
-   <%-- <fmt:formatDate value="${movieboxofficeList.movie_date}" pattern="yyyy.MM.dd"></fmt:formatDate> --%>
-   
-      <!-- <span class="rate">관람 평점 0.0%</span>
-      <span class="list_score">관람평점 0.0</span> -->
+      <span class="rate">관람 평점 0.0%</span>
+      <span class="list_score">관람평점 0.0</span>
    </dd>
 </dl>
 </li>
@@ -190,8 +150,6 @@ function Today() {
 </c:if>
 
 </c:forEach>      
-
-<%-- </form:form>--%>
 </ul>
 
                     <div class="srchResult_none" style="display:none;" id="searchResultNone">

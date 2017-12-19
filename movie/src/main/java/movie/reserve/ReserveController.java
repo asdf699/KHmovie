@@ -80,15 +80,18 @@ public class ReserveController {
 
 	//주문2
 	@RequestMapping(value = "/movieTicketing1.see",method = RequestMethod.GET)
-	public ModelAndView movieTicketing1(HttpServletRequest request) throws ParseException{
+	public ModelAndView movieTicketing1(HttpServletRequest request, MovieModel movieModel) throws ParseException{
 		
 		ModelAndView mv = new ModelAndView();
-
+		
+		int timetable_movie_no = Integer.parseInt(request.getParameter("timetable_movie_no"));
 		int timetable_no = Integer.parseInt(request.getParameter("timetable_no"));
 		
 		ReserveTimeTableModel reserve_seat = reserveService.reserve_seat(timetable_no);
 		MovieBannerModel bannerselect = movieService.banner_select();
+		movieModel = reserveService.selectMovie_no(timetable_movie_no);
 		
+		mv.addObject("movieModel", movieModel);// 영화 thumnail 가져오기
 		mv.addObject("reserve_seat",reserve_seat); //예매정보
 		mv.addObject("bannerselect", bannerselect); //하단 배너
 		
