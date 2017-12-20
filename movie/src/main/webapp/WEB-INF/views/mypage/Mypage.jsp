@@ -23,17 +23,9 @@
 </ul>
 </li>
 
-<li class="active">
+<li class="">
 <a href="<%=cp %>/aMovieList.see" title="영화">영화</a>
 <div class="depth">
-
-<ul>
-<li class="active"><a href="<%=cp %>/aMovieList.see" title="박스오피스">박스오피스</a></li>
-<li class=""><a href="<%=cp %>/bMovieList.see" title="아르떼">아르떼</a></li>
-<li class=""><a href="<%=cp %>/cMovieList.see" title="G시네마">G시네마</a></li>
-<li class=""><a href="<%=cp %>/dMovieList.see" title="중국영화상영관/영화제">중국영화상영관/영화제</a></li>
-<li class=""><a href="<%=cp %>/eMovieList.see" title="오페라">오페라</a></li>
-</ul>
 </div>
 </li>
 
@@ -41,38 +33,36 @@
 <a href="<%=cp %>/aMovieTheater.see" title="영화관">영화관</a>
 <div class="depth">
 </div>
-<ul>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ul>
 </li>
 
 <li>
 <a href="http://event.lottecinema.co.kr/LCHS/Contents/Event/event-summary-list.aspx" title="이벤트">이벤트</a>
 <div class="depth">
-<ul>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ul>
 </div>
 </li>
 
 <li>
 <a href="http://www.lottecinema.co.kr/LCHS/Contents/Cinema-Mall/gift-shop.aspx" title="기프트샵">기프트샵</a>
 </li>
-
 </ul>
 </div>
+<div class="myCinema">
+                <!-- 내 정보 -->
+                <div class="myInfo">
+                    <h2 class="order_tit02 Lang-LBL0000">마이시네마</h2>
+                    <div class="myInfoTit">
+                        <em><span class="userName" id="spnUserName">김종록</span>님 환영합니다!</em>
+                        <dl>
+                            <dt>회원 등급</dt><!--170915 cok 회원님의 회원 등급 -> 회원 등급 -->
+                            <!-- 20150918 수정 -->
+                            <dd class="rating Lang-LBL0000"><span id="spnMemberGrade"></span></dd>
+                            <!-- 20161101 삭제 -->
+                            <!-- <dd><a href="javascript:void(0)" class="bnfView Lang-LBL0000" id="aViewBenefit">혜택보기</a></dd> -->
+                        </dl>
+                    </div>
+                </div>
+                <!-- //내 정보 -->
+            </div>
 
 <div class="content">
 
@@ -81,7 +71,7 @@
                 <!-- 마이시네마 탭 메뉴 -->
                 <ul class="tab_st03" id="ulTab">
                     <li class="">
-                        <a href="javascript:void(0)" class="Lang-LBL3001">예매/구매내역</a>
+                        <a href="<%= cp %>/mypage/reserveList.see" class="Lang-LBL3001">예매/구매내역</a>
 <!--                         <ul class="tabDep2">
                             <li class="on"><a href="javascript:void(0)" class="Lang-LBL3016">예매/구매내역</a></li>
                             <li><a href="javascript:void(0)" class="Lang-LBL3000">선물내역</a></li>
@@ -90,63 +80,57 @@
                     </li>
                     
                     <li class="">
-                    	<a href="">나의 취소내역</a>
+                    	<a href="<%= cp %>/mypage/reserveCancel.see">나의 취소내역</a>
                     </li>
                     
                     <li class="pointRat" style="">
-                        <a href="javascript:void(0)">VIP</a><!--170915 cok 문구 교체 멤버십 ->VIP 기준 -->
+                        <a href="<%= cp %>/mypage/vip.see">VIP</a><!--170915 cok 문구 교체 멤버십 ->VIP 기준 -->
                         <ul class="tabDep2">
                             <li class="on"><a href="javascript:void(0)">VIP 승급 금액 안내</a></li><!--20170111 sunho 문구 교체 VIP승급포인트 안내 -> VIP승급 금액 안내 -->
                         </ul>
                     </li>
                     
                     <li class="mvHistory" style="">
-                        <a href="javascript:void(0)">무비 히스토리</a>
+                        <a href="<%= cp %>/mypage/movieHistory.see">무비 히스토리</a>
 
                     </li>
                     
                     <li class="myContact" style="">
-                        <a href="javascript:void(0)">나의 문의 내역</a>
+                        <a href="<%= cp %>/mypage/qna.see">나의 문의 내역</a>
 
                     </li>
                     <li class="active" style="">
-                        <a href="javascript:void(0)">나의 정보관리</a>
+                        <a href="<%= cp %>/mypage/mypage.see">나의 정보관리</a>
                     </li>
 
                 </ul>
                 <!-- //마이시네마 탭 메뉴 -->
                 <!-- 탭 내용 -->
-                <div class="tabCont" id="divTabContent"><!--검색결과가 없을때 -->
-
-<div class="srchResult_none" style="" id="searchResultNone">
-	<span class="txt Lang-LBL3056">예매/구매한 내역이 없습니다.</span>
+                <<div class="tabCont my_manage" id="divTabContent"><!-- 탭 내용 -->
+<!--
+<div class="tabCont my_manage">
+-->
+	<!-- my_manage 클래스 추가 -->
+	<ol class="manage_step">
+		<li class="on first"><a href="javascript:void(0);" id="aInformationChange">회원정보변경</a></li>
+		<li class="second"><a href="javascript:void(0);" id="aPasswordChange">비밀번호변경</a></li>
+		<li class="third"><a href="javascript:void(0);" id="aAuthChange">회원인증방식변경</a></li>
+		<li class="last"><a href="javascript:void(0);" id="aMemberDelete">회원탈퇴</a></li>
+	</ol>
+    <ul class="manege_list">
+        <li>롯데시네마는 L.POINT 제휴 사이트입니다. 비밀번호/회원정보는 롯데멤버스㈜에서 관리되고 있으며, 회원가입 시 등록하신 개인정보는 롯데멤버스㈜에서 변경하실 수 있습니다.</li>
+        <li>롯데시네마 회원탈퇴를 원하시면 회원탈퇴 버튼을 클릭해주세요. 회원을 탈퇴하시면 등록되어 있던 쿠폰/할인권/관람권/L.POINT카드 등 개인정보가 삭제되어 재가입 시 다시 입력하셔야 합니다.</li>
+        <li>회원님의 광고 수신동의 일자를 확인하실 수 있습니다.<a href="javascript:openADAgreePopup();" title="새창" class="btn_sWhite">광고 수신동의 일자 확인하기</a></li>
+        <!--<li>롯데시네마의 이메일 주소 변경, 수신관리 설정을 원하시면 이메일설정 버튼을 클릭하세요. <a href="https://member.lpoint.com/door/user/editUser.jsp?sid=CINEMA&amp;opentyp=p&amp;returnurl=http://www.lottecinema.co.kr/LHS/AT/Auth/Logout.aspx" target="_balnk" title="새창" class="btnEmail">이메일설정</a></li>-->
+        <li class="gap">L.POINT 적립 및 사용 현황을 확인하세요.<a href="https://www.lpoint.com/app/mypage/LHMA200100.do" target="_balnk" title="새창" class="btn_sWhite">L.POINT 적립/사용 열람</a></li><!-- 추가 20171025 -->
+    </ul>					
+<!--
 </div>
-
-
-<div class="info_box">
-    <h4 class="infoB_tit Lang-LBL3004">유의사항</h4>
-    <!-- 0309 수정 -->
-    
-    <dl>
-        <dt class="Lang-LBL3005">[예매취소 안내]</dt> 
-        <dd>
-            <ul>
-            <li class="point_red">온라인 예매 취소는 상영 20분 전까지 가능하며, 20분 이전부터는 현장 취소만 가능합니다. (단, 무대인사 취소는 영화 시작 24시간 전 까지만 가능합니다.)</li>
-            <li>적립 예정 L.POINT는 영화 관람 다음 날 적립됩니다.</li><li>예고편과 광고 상영으로 실제 영화 시작 시간이 10분 정도 차이 날 수 있습니다.</li>
-            <li>SMS 수신을 이용하시면 예매내역을 휴대폰으로 받을 수 있습니다.</li></ul>
-        </dd>
-        <dt class="Lang-LBL3009">[상품취소 안내]</dt>
-        <dd>
-            <ul>
-            <li>스위트샵 상품의 취소기한은 구매일로부터 30일, 기프트샵 상품의 취소기한은 구매일로부터 93일 입니다.</li>
-            <li style="background:initial;background:inherit;">(구매일로부터 75일 이상, 93일 이내인 상품 취소를 원하실 경우, 고객센터 1544-8855로 문의 바랍니다.)</li>
-            <li>구매취소는 취소기한 내 마이시네마 &gt; 예매/구매내역에서만 가능합니다.(현장취소 불가)</li><li>구매하신 상품은 부분환불 및 현금환불이 되지 않습니다.</li>
-            <li>좌석 구매 시 함께 구매한 매점 상품은 영화 관람 완료 후에는 취소가 불가합니다.</li><li>얼리버드 상품은 특별관람권이므로 구매 후 7일 이내 환불 가능합니다.</li>
-            </ul>
-        </dd>
-    </dl>
-</div>
-
+-->
+<!-- //탭 내용 -->
+<!--
+<script src="/LCHS/Script/My-Cinema/infomation-management.js"></script>
+	-->
 </div>
 </div>
 </div>

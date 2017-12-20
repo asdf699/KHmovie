@@ -2,6 +2,7 @@ package movie.reserve;
 
 import java.util.List;
 
+import movie.reserve.ReserveModel;
 import movie.reserve.ReserveTimeTableModel;
 import movie.movie.MovieModel;
 
@@ -15,7 +16,9 @@ public interface ReserveDAO {
 	
 	public List<ReserveTimeTableModel> timetableSelect();
 	
-	public ReserveTimeTableModel reserve_seat(int timetable_no);
+	public ReserveTimeTableModel timetable_no(int timetable_no);
 	
 	public MovieModel selectMovie_no(int timetable_movie_no);
+	
+	public void insertReserve(ReserveModel reserveModel);
 }

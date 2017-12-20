@@ -23,17 +23,9 @@
 </ul>
 </li>
 
-<li class="active">
+<li class="">
 <a href="<%=cp %>/aMovieList.see" title="영화">영화</a>
 <div class="depth">
-
-<ul>
-<li class="active"><a href="<%=cp %>/aMovieList.see" title="박스오피스">박스오피스</a></li>
-<li class=""><a href="<%=cp %>/bMovieList.see" title="아르떼">아르떼</a></li>
-<li class=""><a href="<%=cp %>/cMovieList.see" title="G시네마">G시네마</a></li>
-<li class=""><a href="<%=cp %>/dMovieList.see" title="중국영화상영관/영화제">중국영화상영관/영화제</a></li>
-<li class=""><a href="<%=cp %>/eMovieList.see" title="오페라">오페라</a></li>
-</ul>
 </div>
 </li>
 
@@ -41,38 +33,36 @@
 <a href="<%=cp %>/aMovieTheater.see" title="영화관">영화관</a>
 <div class="depth">
 </div>
-<ul>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ul>
 </li>
 
 <li>
 <a href="http://event.lottecinema.co.kr/LCHS/Contents/Event/event-summary-list.aspx" title="이벤트">이벤트</a>
 <div class="depth">
-<ul>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ul>
 </div>
 </li>
 
 <li>
 <a href="http://www.lottecinema.co.kr/LCHS/Contents/Cinema-Mall/gift-shop.aspx" title="기프트샵">기프트샵</a>
 </li>
-
 </ul>
 </div>
+<div class="myCinema">
+                <!-- 내 정보 -->
+                <div class="myInfo">
+                    <h2 class="order_tit02 Lang-LBL0000">마이시네마</h2>
+                    <div class="myInfoTit">
+                        <em><span class="userName" id="spnUserName">김종록</span>님 환영합니다!</em>
+                        <dl>
+                            <dt>회원 등급</dt><!--170915 cok 회원님의 회원 등급 -> 회원 등급 -->
+                            <!-- 20150918 수정 -->
+                            <dd class="rating Lang-LBL0000"><span id="spnMemberGrade"></span></dd>
+                            <!-- 20161101 삭제 -->
+                            <!-- <dd><a href="javascript:void(0)" class="bnfView Lang-LBL0000" id="aViewBenefit">혜택보기</a></dd> -->
+                        </dl>
+                    </div>
+                </div>
+                <!-- //내 정보 -->
+            </div>
 
 <div class="content">
 
@@ -81,7 +71,7 @@
                 <!-- 마이시네마 탭 메뉴 -->
                 <ul class="tab_st03" id="ulTab">
                     <li class="">
-                        <a href="javascript:void(0)" class="Lang-LBL3001">예매/구매내역</a>
+                        <a href="<%= cp %>/mypage/reserveList.see" class="Lang-LBL3001">예매/구매내역</a>
 <!--                         <ul class="tabDep2">
                             <li class="on"><a href="javascript:void(0)" class="Lang-LBL3016">예매/구매내역</a></li>
                             <li><a href="javascript:void(0)" class="Lang-LBL3000">선물내역</a></li>
@@ -90,27 +80,27 @@
                     </li>
                     
                     <li class="">
-                    	<a href="">나의 취소내역</a>
+                    	<a href="<%= cp %>/mypage/reserveCancel.see">나의 취소내역</a>
                     </li>
                     
                     <li class="active" style="">
-                        <a href="javascript:void(0)">VIP</a><!--170915 cok 문구 교체 멤버십 ->VIP 기준 -->
+                        <a href="<%= cp %>/mypage/vip.see">VIP</a><!--170915 cok 문구 교체 멤버십 ->VIP 기준 -->
                         <ul class="tabDep2">
                             <li class="on"><a href="javascript:void(0)">VIP 승급 금액 안내</a></li><!--20170111 sunho 문구 교체 VIP승급포인트 안내 -> VIP승급 금액 안내 -->
                         </ul>
                     </li>
                     
                     <li class="mvHistory" style="">
-                        <a href="javascript:void(0)">무비 히스토리</a>
+                        <a href="<%= cp %>/mypage/movieHistory.see">무비 히스토리</a>
 
                     </li>
                     
                     <li class="myContact" style="">
-                        <a href="javascript:void(0)">나의 문의 내역</a>
+                        <a href="<%= cp %>/mypage/qna.see">나의 문의 내역</a>
 
                     </li>
                     <li class="myInfoMng" style="">
-                        <a href="javascript:void(0)">나의 정보관리</a>
+                        <a href="<%= cp %>/mypage/mypage.see">나의 정보관리</a>
                     </li>
 
                 </ul>

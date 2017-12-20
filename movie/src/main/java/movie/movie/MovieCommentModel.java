@@ -4,25 +4,24 @@ import java.util.Date;
 
 public class MovieCommentModel {
 	
-	private int comment_num;
-	private int movie_num;
+	private int comment_no;
+	private int movie_no;
 	private String cmter;
 	private String commentt;
 	private int movie_point;
 	private Date cmt_date;
 	
-	
-	public int getComment_num() {
-		return comment_num;
+	public int getComment_no() {
+		return comment_no;
 	}
-	public void setComment_num(int comment_num) {
-		this.comment_num = comment_num;
+	public void setComment_no(int comment_no) {
+		this.comment_no = comment_no;
 	}
-	public int getMovie_num() {
-		return movie_num;
+	public int getMovie_no() {
+		return movie_no;
 	}
-	public void setMovie_num(int movie_num) {
-		this.movie_num = movie_num;
+	public void setMovie_no(int movie_no) {
+		this.movie_no = movie_no;
 	}
 	public String getCmter() {
 		return cmter;
@@ -48,7 +47,4 @@ public class MovieCommentModel {
 	public void setCmt_date(Date cmt_date) {
 		this.cmt_date = cmt_date;
 	}
-	
-	
-
 }

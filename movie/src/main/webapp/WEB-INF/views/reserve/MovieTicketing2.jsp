@@ -217,7 +217,7 @@
                         <dt class="total_tit Lang-LBL0044">할인금액</dt>
                         <dd>
                             <ul class="order_List"></ul>
-                            <p class="price"><strong>0</strong> <span class="Lang-LBL3037">원</span></p>
+                            <p class="price"><strong>${reserveTimeTableModel.timetable_start_date}</strong> <span class="Lang-LBL3037">원</span></p>
                             <em class="icon equal">이퀄</em>
                         </dd>
                     </dl>
@@ -227,9 +227,24 @@
                             <strong><fmt:formatNumber value="${reserveTimeTableModel.timetable_adult_amt * reserveTimeTableModel.timetable_adult_cnt + reserveTimeTableModel.timetable_child_amt * reserveTimeTableModel.timetable_child_cnt}" pattern="\#,###.##"/></strong>
                             <span class="Lang-LBL3037">원</span>
                         </dd>
+                        <form action="reserveComplete.see" method="post">
+<!--                        <input type="hidden" name="reserve_no" value="" />
+                        	<input type="hidden" name="reserve_member_id" value="" /> -->
+                        	<input type="hidden" name="reserve_movie_name" value="${reserveTimeTableModel.timetable_movie_name}" />
+                        	<input type="hidden" name="reserve_timetable_no" value="${reserveTimeTableModel.timetable_no}" />
+                        	<input type="hidden" name="reserve_start_date" <fmt:formatDate value="${reserveTimeTableModel.timetable_start_date}" pattern="yyyy.MM.dd"></fmt:formatDate>
+                        	<input type="hidden" name="reserve_end_date" <fmt:formatDate value="${reserveTimeTableModel.timetable_end_date}" pattern="yyyy.MM.dd"></fmt:formatDate>
+                        	<input type="hidden" name="reserve_show_date" <fmt:formatDate value="${reserveTimeTableModel.timetable_show_date}" pattern="yyyy.MM.dd"></fmt:formatDate>
+                        	<input type="hidden" name="reserve_start_time" value="${reserveTimeTableModel.timetable_start_time}" />
+                        	<input type="hidden" name="reserve_end_time" value="${reserveTimeTableModel.timetable_end_time}" />
+                        	<input type="hidden" name="reserve_adult_amt" value="${reserveTimeTableModel.timetable_adult_amt}" />
+                        	<input type="hidden" name="reserve_child_amt" value="${reserveTimeTableModel.timetable_child_amt}" />
+                        	<input type="hidden" name="reserve_adult_cnt" value="${reserveTimeTableModel.timetable_adult_cnt}" />
+                        	<input type="hidden" name="reserve_child_cnt" value="${reserveTimeTableModel.timetable_child_amt}" />
                         <dd>
-                            <a class="btn_purchase Lang-LBL0046" href="javascript:void(0);" title="레이어 열림">결제하기</a>
+                            <input type="submit" class="btn_purchase Lang-LBL0046" title="레이어 열림" value="결제하기">
                         </dd>
+                        </form>
                     </dl>
                 </div>
             </div>

@@ -427,7 +427,7 @@ var onComment = function(){
       <fmt:formatDate value="${commentlist.cmt_date}" pattern="yy.MM.dd"></fmt:formatDate></div>
                </div>
                <%-- <c:if test="${session_member_id == commentlist.cmter}"> --%>
-               <a href="commentDelete.see?comment_num=${commentlist.comment_num}&movie_num=${movieModel.movie_no}" class="btn btnC_01 btnP_02">
+               <a href="commentDelete.see?comment_no=${commentlist.comment_no}&movie_no=${movieModel.movie_no}" class="btn btnC_01 btnP_02">
                   <span class="btn btnC_05 reply_btn">삭제</span>
                </a>
                <%-- </c:if> --%>

@@ -61,8 +61,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 댓글 선택 -->
 	<resultMap type="movieCommentModel" id="MovieCommentRes">
-		<result property="comment_num" column="comment_num"/>
-		<result property="movie_num" column="movie_num"/>
+		<result property="comment_no" column="comment_no"/>
+		<result property="movie_no" column="movie_no"/>
 		<result property="cmter" column="cmter"/>
 		<result property="cmt_date" column="cmt_date"/>
 		<result property="commentt" column="commentt"/>
@@ -85,7 +85,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="scoresearch" resultMap="MovieCommentRes" parameterType="int">
-		select * from view_comment where movie_num = #{movie_no}
+		select * from view_comment where movie_no = #{movie_no}
 	</select>
 	
 	<select id="selectView" resultMap="movieRes">
@@ -187,19 +187,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 코멘트 전체 꺼내오기 -->
 	<select id="commentList" resultMap="MovieCommentRes" parameterType="movieCommentModel">
 		select * from view_comment
-				where movie_num = #{movie_num}
-			    order by comment_num desc
+				where movie_no = #{movie_no}
+			    order by comment_no desc
 	</select>
 	
 	<!-- 코멘트 삭제 -->
 	<delete id="deletecomment" parameterType="movieCommentModel">
-		delete from view_comment where comment_num=#{comment_num} 
+		delete from view_comment where comment_no=#{comment_no} 
 	</delete>
 	
 		<!-- 코멘트 작성 -->
  	<insert id="writecomment" parameterType="int">
-		insert into view_comment (comment_num,
-      					        movie_num,
+		insert into view_comment (comment_no,
+      					        movie_no,
                          		cmter,                   		
                          		cmt_date,
                          		commentt,
@@ -207,7 +207,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
                          )
                 values (
                 view_comment_SEQ.nextval,
-                	 	#{movie_num,jdbcType=VARCHAR},
+                	 	#{movie_no,jdbcType=VARCHAR},
                 	 	 0,              	 	
                          sysdate,
                         #{commentt,jdbcType=VARCHAR},

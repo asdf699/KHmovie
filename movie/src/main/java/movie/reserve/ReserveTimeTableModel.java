@@ -20,6 +20,7 @@ public class ReserveTimeTableModel {
 	int timetable_child_amt;
 	int timetable_adult_cnt;
 	int timetable_child_cnt;
+	
 	public int getTimetable_no() {
 		return timetable_no;
 	}

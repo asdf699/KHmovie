@@ -29,12 +29,11 @@ public class MovieController{
       
       /*List<MovieModel> list_no = movieService.movieList_one(movie_no);*/
       MovieBannerModel bannerselect = movieService.banner_select();
+      
       MovieModel movieModel = movieService.movieView(movie_no);
-      MovieCommentModel movieCommentModel = movieService.scoresearch(movie_no);
       
       /*mv.addObject("currentPage", currentPage);*/
       
-      mv.addObject("movieCommentModel",movieCommentModel);
       mv.addObject("movieModel",movieModel);
       /*mv.addObject("list_no", list_no);*/
       mv.addObject("bannerselect", bannerselect);
@@ -61,14 +60,14 @@ public class MovieController{
          return mv;
       }
       
-      int movie_num = Integer.parseInt(request.getParameter("view_no"));
+      int movie_no = Integer.parseInt(request.getParameter("view_no"));
       
       movieCommentModel.setCommentt(request.getParameter("commentt").replaceAll("\r\n", "<br />"));
-      movieCommentModel.setMovie_num(movie_num);
+      movieCommentModel.setMovie_no(movie_no);
       
       movieService.writecomment(movieCommentModel);
       
-      mv.setViewName("redirect:movieView.see?movie_no="+movie_num);
+      mv.setViewName("redirect:movieView.see?movie_no="+movie_no);
       
       return mv;
    }
@@ -81,7 +80,7 @@ public class MovieController{
       
       movieService.deletecomment(movieCommentModel);
       
-      mv.setViewName("redirect:movieView.see?movie_no="+movieCommentModel.getMovie_num());
+      mv.setViewName("redirect:movieView.see?movie_no="+movieCommentModel.getMovie_no());
       
       return mv;
    }

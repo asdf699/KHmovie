@@ -24,26 +24,28 @@
 </div>
 
 <div class="luncher">
-                    <ul>
-                        <li>
-                            </li>
-                        <li>
-                            <a id="lbtnLogin" title="로그인" href="javascript:__doPostBack('ctl00$ctl00$lbtnLogin','')">로그인</a></li>
-                        
-                        <!-- 20161222 - Util 영역 개선 -->
-                        <!--<li><a href="https://member.lpoint.com/door/user/regUser.jsp?sid=CINEMA&returnurl=" target="_blank" title="회원가입">회원가입</a></li>-->
-                        <li><a href="/LCHS/Contents/Membership/l-point.aspx" title="회원가입">회원가입</a></li>
-                        <!-- 20161222 - Util 영역 개선 -->
-                        <!--<li><a href="https://member.lpoint.com/door/user/requestId.jsp?sid=CINEMA&opentype=N&returnurl=" target="_blank" title="아이디찾기">아이디찾기</a></li>
-                        <li><a href="https://member.lpoint.com/door/user/requestPasswd.jsp?sid=CINEMA&opentype=N&sch=&returnurl=" target="_blank" title="비밀번호찾기">비밀번호찾기</a></li>-->
-                        
-                        <li><a href="javascript:goToMembershipMenu(0,4,1);" title="멤버십">멤버십</a></li>
-                        <li><a href="javascript:goCustomerCenterMenu('0');" title="고객센터">고객센터</a></li>
-                        <li class="lang">
-                            <a href="javascript:void(0);" id="LanguageSetting" class="btn_english">ENGLISH</a>
-                        </li>
-                    </ul>
-                </div>
+	<ul>
+	<c:if test="${session_member_name == null }">    
+	<li><a id="lbtnLogin" title="로그인" href="<%= cp%>/member/login.see">로그인</a></li>
+	<li><a href="" title="회원가입">회원가입</a></li>
+	<li><a href="" title="멤버십">멤버십</a></li>
+	<li><a href="" title="고객센터">고객센터</a></li>
+	<li class="lang"><a href="javascript:void(0);" id="LanguageSetting" class="btn_english">ENGLISH</a></li>
+	</c:if>
+	
+	<c:if test="${session_member_name != null }">
+	<li>${session_member_name}&nbsp;님</li>
+		<c:if test="${session_member_name == 'admin' }">
+			<li><a href="<%= cp%>/admin/movieList.see">관리자페이지</a></li> 	
+		</c:if>
+	<li><a href="<%= cp%>/member/logout.see" title="로그아웃">로그아웃</a></li>
+	<li><a href="" title="멤버십">멤버십</a></li>
+	<li><a href="" title="고객센터">고객센터</a></li>
+	<li class="lang"><a href="javascript:void(0);" id="LanguageSetting" class="btn_english">ENGLISH</a></li>
+	</c:if>	
+	
+	</ul>
+</div>
                 
                 			    
 			    			    

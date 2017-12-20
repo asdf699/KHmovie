@@ -27,7 +27,7 @@ $(function(){
 	            $(this).removeClass('hover');
 	        });
 
-	        $('..curr_list li > a').focusin(function () {
+	        $('.curr_list li > a').focusin(function () {
 	            $(this).parent().addClass('hover').siblings().removeClass('hover');
 	        });
 	});

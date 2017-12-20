@@ -39,7 +39,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="movie_intro" column="movie_intro" />
 	</resultMap>
 	
-	 <resultMap  id="reserveTimeTableModelRes" type="ReserveTimeTableModel" >
+	<!-- 시간표 등록 -->
+	<resultMap  id="reserveTimeTableModelRes" type="ReserveTimeTableModel" >
 		<result property="timetable_no" column="timetable_time_no"/>
 		<result property="timetable_movie_no" column="timetable_movie_no" />
 		<result property="timetable_movie_name" column="timetable_movie_name" />
@@ -56,6 +57,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="timetable_child_cnt" column="timetable_child_cnt" /> 
 	</resultMap> 
 	
+	<!-- 영화 예매  -->
+	<resultMap  id="reserveModelRes" type="ReserveModel" >
+		<result property="reserve_no" column="reserve_no"/>
+		<result property="reserve_member_id" column="reserve_member_id" />
+		<result property="reserve_movie_name" column="reserve_movie_name" />
+		<result property="reserve_timetable_no" column="reserve_timetable_no" />
+		<result property="reserve_start_date" column="reserve_start_date"/>
+		<result property="reserve_end_date" column="reserve_end_date" />
+		<result property="reserve_show_date" column="reserve_show_date"/>
+		<result property="reserve_start_time" column="reserve_start_time"/>
+		<result property="reserve_end_time" column="reserve_end_time"/>
+		<result property="reserve_adult_amt" column="reserve_adult_amt" />
+		<result property="reserve_child_amt" column="reserve_child_amt" />
+		<result property="reserve_adult_cnt" column="reserve_adult_cnt" />
+		<result property="reserve_child_cnt" column="reserve_child_cnt" />
+	</resultMap> 
+	
 	<!-- 이름 번호 불러오기 -->
 	<select id="selectMovie_name" resultMap="movieRes">
 		select movie_name , movie_no from MOVIE 
@@ -70,16 +88,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  	<select id="timesearch" resultMap="reserveTimeTableModelRes">
 		select * from timetable where 
 		timetable_movie_no = #{timetable_movie_no} and
-		timetable_show_date = #{timetable_show_date} and  
+		<!-- timetable_show_date = #{timetable_show_date} and -->  
 		timetable_start_time = #{timetable_start_time}
 	</select> 
 	
-		<!-- 시간표 조회 -->
+	<!-- 시간표 조회 -->
 	<select id="timetableSelect" resultMap="reserveTimeTableModelRes">
 		select * from timetable order by timetable_no DESC
 	</select>
-	
-	<select id="reserve_seat" resultMap="reserveTimeTableModelRes">
+	<!-- 시간표로 timetable 가져옴 -->
+	<select id="timetable_no" resultMap="reserveTimeTableModelRes">
 		select * from timetable
 		where timetable_no = #{timetable_no}
 	</select>
@@ -87,5 +105,42 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!--  상세보기 -->
 	<select id="selectOne-timetable" parameterType="ReserveTimeTableModel" resultMap="reserveTimeTableModelRes">
 		select * from timetable where timetable_no = #{timetable_no}
+	</select>
+	
+	<!-- 예매 -->
+	
+	<select id="insertReserve" resultMap="reserveModelRes">
+		insert into reserve
+			(
+			reserve_no,
+			reserve_member_id,
+			reserve_movie_name,
+			reserve_timetable_no,
+ 			reserve_start_date;
+			reserve_end_date;
+			reserve_show_date;
+			reserve_start_time,
+			reserve_end_time,
+			reserve_adult_amt,
+			reserve_child_amt,
+			reserve_adult_cnt,
+			reserve_child_cnt
+			)
+		values
+			(
+			reserve_seq.nextval,
+			#{reserve_member_id},
+			#{reserve_movie_name},
+			#{reserve_timetable_no},
+ 			#{reserve_start_date},
+			#{reserve_end_date},
+			#{reserve_show_date},
+			#{reserve_start_time},
+			#{reserve_end_time},
+			#{reserve_adult_amt},
+			#{reserve_child_amt},
+			#{reserve_adult_cnt},
+			#{reserve_child_cnt}
+			)
 	</select>
 </mapper>

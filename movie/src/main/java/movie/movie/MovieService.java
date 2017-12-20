@@ -45,10 +45,6 @@ public class MovieService implements MovieDAO{
 		return sqlSessionTemplate.selectOne("movie.selectMovie_One",movie_no);
 	}
 	
-	public MovieCommentModel scoresearch(int movie_no){
-		return sqlSessionTemplate.selectOne("movie.scoresearch",movie_no);
-	}
-	
 	//영화 수정
 	public boolean movieUpdate(MovieModel movieModel) {
 		// TODO Auto-generated method stub
@@ -77,9 +73,9 @@ public class MovieService implements MovieDAO{
 	}
 		
 	//댓글 리스트
-	public List<MovieCommentModel> commentList(int movie_num) {
+	public List<MovieCommentModel> commentList(int movie_no) {
 		// TODO Auto-generated method stub
-		return sqlSessionTemplate.selectList("movie.commentList",movie_num);
+		return sqlSessionTemplate.selectList("movie.commentList",movie_no);
 	}
 		
 	//댓글 삭제

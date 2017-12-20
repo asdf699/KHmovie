@@ -28,5 +28,4 @@ public interface MovieDAO {
 
 	public Object deletecomment(MovieCommentModel movieCommentModel);
 	
-	public MovieCommentModel scoresearch(int movie_no);
 }

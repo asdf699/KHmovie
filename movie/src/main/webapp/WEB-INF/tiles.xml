@@ -97,6 +97,31 @@
 	
 	<!-- Member End -->
    
+   <!-- mypage -->
+   
+   <definition name="reserveList" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/mypage/ReserveList.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="reserveCancel" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/mypage/ReserveCancel.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="vip" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/mypage/Vip.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="movieHistory" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/mypage/MovieHistory.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="qna" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/mypage/Qna.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="mypage" extends="main">
+		<put-attribute name="main_body" value="/WEB-INF/views/mypage/Mypage.jsp"></put-attribute>
+	</definition>
    
    <!-- admin page-->
 	<definition name="admin" template="/WEB-INF/views/tiles/admin/admin_layout.jsp">
